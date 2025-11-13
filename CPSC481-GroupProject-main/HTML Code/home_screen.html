@@ -51,9 +51,14 @@
             <a class="top-bar-text" style="float:right; margin-top: -55px" id="datetime"></a>
 
             <script>
-            var now = new Date();
-            var datetime = now.toLocaleString();
-            document.getElementById("datetime").innerHTML = datetime;
+                function updateClock() {
+                    const now = new Date();
+                    const time = now.toLocaleTimeString('en-US', {hour: '2-digit', minute: '2-digit', hour12: true});
+                    const date = now.toLocaleDateString('en-US', {weekday: 'long', month: 'long', day: 'numeric'});
+                    document.getElementById('datetime').textContent = `${time} ${date}`;
+                }
+                updateClock();
+                setInterval(updateClock, 1000);
             </script>
         </div>
 
@@ -95,9 +100,10 @@
                 padding: 15px;
                 text-align: center;
                 height: 300px;
+                background-color: #dddddd;
             ">
-                <h2>Buy Tickets</h2>
-                <ul style="list-style: none; padding: 0;">
+                <h2 style="color: black;">Buy Tickets</h2>
+                <ul style="list-style: none; padding: 0; color: black;">
                     <li>• Single Ticket</li>
                     <li>• Day Pass</li>
                     <li>• Monthly Pass</li>
@@ -111,10 +117,11 @@
                 padding: 15px;
                 text-align: center;
                 height: 300px;
+                background-color: #dddddd;
             ">
-                <h2>Check Route</h2>
+                <h2 style="color: black;">Check Route</h2>
                 <ul style="list-style: none; padding: 0;">
-                    <li>• Find out which route you need to take</li>
+                    <li style="color: black;">• Find out which route you need to take</li>
                 </ul>
             </a>
 
@@ -125,32 +132,34 @@
                 padding: 15px;
                 text-align: center;
                 height: 300px;
+                background-color: #dddddd;
             ">
-                <h2>Check Bus and Train Timings</h2>
+                <h2 style="color: black;">Check Bus and Train Timings</h2>
                 <ul style="list-style: none; padding: 0;">
-                    <li>• Find out when your bus is arriving</li>
+                    <li style="color: black;">• Find out when your bus is arriving</li>
                 </ul>
             </a>
         </div>
 
 
-<div class="bottom-bar" style="
-    display: flex;
-    justify-content: center;
-    margin-bottom: 10px;
+        <div class="bottom-bar" style="
+            display: flex;
+            justify-content: center;
+            margin-bottom: 10px;
 
-">
-    <a href="../HTML Code/short_cut_1_screen.html" class="bottom-bar-button" style="
+        ">
+            <a href="../HTML Code/short_cut_1_screen.html" class="bottom-bar-button" style="
 
-        text-decoration: none;
-        flex: 1;
-        border: 2px solid #ccc;
-        padding: 15px;
-        text-align: center;
-        max-width: 400px;
-    ">
-        <h2>1 Adult Ticket</h2>
-    </a>
-</div>
+                text-decoration: none;
+                flex: 1;
+                border: 2px solid #ccc;
+                padding: 15px;
+                text-align: center;
+                max-width: 1500px;
+                background-color: #dddddd;
+            ">
+                <h2 style="color: black;">1 Adult Ticket</h2>
+            </a>
+        </div>
     </body>
 </html>
