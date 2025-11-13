@@ -79,98 +79,147 @@
 
         </div>
 
+<div style="position: relative; width: 100%; padding: 0;">
 
-    <!--SideBar & 2 Buttons-->
-    <div style="position: relative; width: 100%; min-height: 200px;">
-        <!--SideBar-->
-        <div class="main-content-and-side-bar" style="
+    <div class="main-content-and-side-bar" style="
+        display: flex;
+        width: 98%;
+        max-width: 1900px;
+        margin: 0 auto;
+    ">
+
+        <div class="side-bar" style="
+            width: 120px;
+            position: relative;
+            top: -100px;
+
             display: flex;
-            width: 100%;
-            max-width: 1900px;
-            margin: 0 auto;
+            flex-direction: column;
+
+            align-items: center;
+
+            border: 2px solid #ccc;
+            background-color: #f0f0f0;
+            padding: 10px 0;
+            flex-shrink: 0;
         ">
-
-            <div class="side-bar" style="
-                width: 150px;
-                display: flex;
-                flex-direction: column;
-                border: 2px solid #ccc;
-                background-color: #f0f0f0;
-                padding-top: 0px;
+            <a href="../HTML Code/home_screen.html" class="side-bar-option" style="
+                text-decoration: none;
+                text-align: center;
+                padding: 10px 0;
+                width: 80%;
+                background-color: #ccc;
+                margin-bottom: 10px;
             ">
-                <a href="../HTML Code/home_screen.html" class="side-bar-option" style="text-decoration: none; text-align: center; padding: 10px 0; background-color: #ccc;">
-                    <img src="../images/home_icon.png" alt="Home Icon" style="width: 40px; height: 40px;">
-                    <h3 style="color: black; margin: 5px 0 0 0;">HOME</h3>
-                </a>
+                <img src="../images/home_icon.png" alt="Home Icon" style="width: 40px; height: 40px;">
+                <h3 style="color: black; margin: 5px 0 0 0; font-size: 15px;">HOME</h3>
+            </a>
 
-                <a href="../HTML Code/check_route_screen.html" class="side-bar-option" style="text-decoration: none; text-align: center; padding: 10px 0; background-color: #ccc;">
-                    <img src="../images/route_icon.png" alt="Route Icon" style="width: 40px; height: 40px;">
-                    <h3 style="color: black; margin: 5px 0 0 0;">ROUTE</h3>
-                </a>
-
-                <a href="../HTML Code/schedule_screen.html" class="side-bar-option" style="text-decoration: none; text-align: center; padding: 10px 0; background-color: #ccc;">
-                    <img src="../images/schedule_icon.png" alt="Schedule Icon" style="width: 40px; height: 40px;">
-                    <h3 style="color: black; margin: 5px 0 0 0;">SCHEDULE</h3>
-                </a>
-
-                <a href="../HTML Code/help_screen.html" class="side-bar-option" style="text-decoration: none; text-align: center; padding: 10px 0; background-color: #ccc;">
-                    <img src="../images/help_icon.png" alt="Help Icon" style="width: 40px; height: 40px;">
-                    <h3 style="color: black; margin: 5px 0 0 0;">HELP</h3>
-                </a>
-
-                <a href="../HTML Code/language_screen.html" class="side-bar-option" style="text-decoration: none; text-align: center; padding: 10px 0; background-color: #ccc;">
-                    <img src="../images/language_icon.png" alt="Language Icon" style="width: 40px; height: 40px;">
-                    <h3 style="color: black; margin: 5px 0 0 0;">FR ∇</h3>
-                </a>
-
-                <a href="../HTML Code/home_screen.html" class="side-bar-option" style="text-decoration: none; text-align: center; padding: 10px 0; background-color: #ccc;">
-                    <img src="../images/back_icon.png" alt="Back Icon" style="width: 40px; height: 40px;">
-                    <h3 style="color: black; margin: 5px 0 0 0;">BACK</h3>
-                </a>
-            </div>
-            <!--2 Buttons-->
-            <div class="main-content" style="
-                display: flex;
-                flex-direction: column;
-                flex-grow: 1;
-                align-items: center;
-                padding: 20px;
+            <a href="../HTML Code/check_route_screen.html" class="side-bar-option" style="
+                text-decoration: none;
+                text-align: center;
+                padding: 10px 0;
+                width: 80%;
+                background-color: #ccc;
+                margin-bottom: 10px;
             ">
-                <div style="
-                    display: flex;
-                    justify-content: center;
-                    width: 100%;
-                    max-width: 600px;
-                    gap: 40px;
+                <img src="../images/route_icon.png" alt="Route Icon" style="width: 40px; height: 40px;">
+                <h3 style="color: black; margin: 5px 0 0 0; font-size: 15px;">ROUTE</h3>
+            </a>
+
+            <a href="../HTML Code/schedule_screen.html" class="side-bar-option" style="
+                text-decoration: none;
+                text-align: center;
+                padding: 10px 0;
+                width: 80%;
+                background-color: #ccc;
+                margin-bottom: 10px;
+            ">
+                <img src="../images/schedule_icon.png" alt="Schedule Icon" style="width: 40px; height: 40px;">
+                <h3 style="color: black; margin: 5px 0 0 0; font-size: 15px;">SCHEDULE</h3>
+            </a>
+
+            <a href="../HTML Code/help_screen.html" class="side-bar-option" style="
+                text-decoration: none;
+                text-align: center;
+                padding: 10px 0;
+                width: 80%;
+                background-color: #ccc;
+                margin-bottom: 10px;
+            ">
+                <img src="../images/help_icon.png" alt="Help Icon" style="width: 40px; height: 40px;">
+                <h3 style="color: black; margin: 5px 0 0 0; font-size: 15px;">HELP</h3>
+            </a>
+
+            <a href="../HTML Code/language_screen.html" class="side-bar-option" style="
+                text-decoration: none;
+                text-align: center;
+                padding: 10px 0;
+                width: 80%;
+                background-color: #ccc;
+                margin-bottom: 10px;
+            ">
+                <img src="../images/language_icon.png" alt="Language Icon" style="width: 40px; height: 40px;">
+                <h3 style="color: black; margin: 5px 0 0 0; font-size: 15px;">FR ∇</h3>
+            </a>
+
+            <a href="../HTML Code/home_screen.html" class="side-bar-option" style="
+                text-decoration: none;
+                text-align: center;
+                padding: 10px 0;
+                width: 80%;
+                background-color: #ccc;
+                margin-bottom: 0;
+            ">
+                <img src="../images/back_icon.png" alt="Back Icon" style="width: 40px; height: 40px;">
+                <h3 style="color: black; margin: 5px 0 0 0; font-size: 15px;">PREVIOUS</h3>
+            </a>
+        </div>
+
+
+        <div class="main-content" style="
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        ">
+            <div style="
+                display: flex;
+                justify-content: center;
+                width: 100%;
+                max-width: 600px;
+                gap: 40px;
+            ">
+                <a href="../HTML Code/adult_ticket_screen.html" class="large-button-container" style="
+                    text-decoration: none;
+                    flex: 1;
+                    border: 2px solid #ccc;
+                    padding: 15px;
+                    text-align: center;
+                    height: 400px;
+                    background-color: #dddddd;
                 ">
-                    <a href="../HTML Code/adult_ticket_screen.html" class="large-button-container" style="
-                        text-decoration: none;
-                        flex: 1;
-                        border: 2px solid #ccc;
-                        padding: 15px;
-                        text-align: center;
-                        height: 400px;
-                        background-color: #dddddd;
-                    ">
-                        <h2 style="color: black;">Adult</h2>
-                        <h3 style="color: black;">For passengers aged between 18 and 64</h3>
-                    </a>
+                    <h2 style="color: black;">Adult</h2>
+                    <h3 style="color: black;">For passengers aged between 18 and 64</h3>
+                </a>
 
-                    <a href="../HTML Code/youth_ticket_screen.html" class="large-button-container" style="
-                        text-decoration: none;
-                        flex: 1;
-                        border: 2px solid #ccc;
-                        padding: 15px;
-                        text-align: center;
-                        height: 400px;
-                        background-color: #dddddd;
-                    ">
-                        <h2 style="color: black;">Youth</h2>
-                        <h3 style="color: black;">For passengers aged between 13 and 17</h3>
-                    </a>
-                </div>
+                <a href="../HTML Code/youth_ticket_screen.html" class="large-button-container" style="
+                    text-decoration: none;
+                    flex: 1;
+                    border: 2px solid #ccc;
+                    padding: 15px;
+                    text-align: center;
+                    height: 400px;
+                    background-color: #dddddd;
+                ">
+                    <h2 style="color: black;">Youth</h2>
+                    <h3 style="color: black;">For passengers aged between 13 and 17</h3>
+                </a>
             </div>
         </div>
     </div>
+</div>
 </body>
 </html>
