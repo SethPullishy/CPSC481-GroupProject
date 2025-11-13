@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticket Selection Screen</title>
+
+        <style>
+        body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .top-bar {
+        overflow: hidden;
+        background-color: #c40000;
+        }
+
+        .top-bar a {
+        float: left;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px 16px;
+        font-size: 30px;
+        }
+
+</style>
+
+</head>
+
+
+<body>
+        <!--Top bar: present on most screens-->
+        <div class="top-bar">
+            <img src="../images/yyc_logo.png" alt="Calgary Logo" width="200" style="float:left">
+
+            <div style="
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            ">
+                <img src="../images/map_icon.png" alt="Map Pin Icon" width="50">
+                <a class="top-bar-text">Brentwood Station</a>
+            </div>
+
+            <a class="top-bar-text" style="float:right; margin-top: -65px" id="datetime"></a>
+
+            <script>
+            var now = new Date();
+            var datetime = now.toLocaleString();
+            document.getElementById("datetime").innerHTML = datetime;
+            </script>
+        </div>
+
+
+    <div class="main-content-and-side-bar">
+        <div class="side-bar">
+            <a href="../HTML Code/home_screen.html" class="side-bar-option">
+                <img src="../images/home_icon.png" alt="Home Icon">
+                <h3>HOME</h3>
+            </a>
+
+            <a href="../HTML Code/check_route_screen.html" class="side-bar-option">
+                <img src="../images/route_icon.png" alt="Route Icon">
+                <h3>ROUTE</h3>
+            </a>
+
+            <a href="../HTML Code/schedule_screen.html" class="side-bar-option">
+                <img src="../images/schedule_icon.png" alt="Schedule Icon">
+                <h3>SCHEDULE</h3>
+            </a>
+
+            <a href="../HTML Code/help_screen.html" class="side-bar-option">
+                <img src="../images/help_icon.png" alt="Help Icon">
+                <h3>HELP</h3>
+            </a>
+
+            <a href="../HTML Code/language_screen.html" class="side-bar-option">
+                <img src="../images/language_icon.png" alt="Language Icon">
+                <h3>FR ∇</h3>
+            </a>
+
+            <a href="../HTML Code/home_screen.html" class="side-bar-option">
+                <img src="../images/back_icon.png" alt="Back Icon">
+                <h3>BACK</h3>
+            </a>
+        </div>
+
+        <div class="main-content">
+            <div class="title-level">
+                <img src="../images/weather_icon.png" alt="Weather Icon">
+                <h1>Which Fare?</h1>
+            </div>
+
+
+            <div class="main-actions">
+                <a href="../HTML Code/adult_ticket_screen.html" class="large-button-container">
+                    <h2>Adult</h2>
+                    <h3>For passengers aged between 18 and 64</h3>
+                </a>
+
+                <a href="../HTML Code/youth_ticket_screen.html" class="large-button-container">
+                    <h2>Youth</h2>
+                    <h3>For passengers aged between 13 and 17</h3>
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
