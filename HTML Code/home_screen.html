@@ -1,58 +1,164 @@
 <!DOCTYPE html>
 <html lang="en">
+    <div>
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Home Screen</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <style>
+        body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .top-bar {
+        overflow: hidden;
+        background-color: #CC1330;
+        }
+
+        .top-bar a {
+        float: left;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px 16px;
+        font-size: 24px;
+
+        }
+
+</style>
+
     </head>
 
     <body>
+
+        <!--Top bar: present on most screens-->
         <div class="top-bar">
-            <img src="../images/yyc_logo.png" alt="Calgary Logo">
-            <img src="../images/map_icon.png" alt="Map Pin Icon">
-            <h3 class="top-bar-text">Brentwood Station</h3>
-            <h3 class="top-bar-text">12:55 PM Friday, October 31</h3> 
+            <img src="../images/yyc_logo.png" alt="Calgary Logo" width="200" style="float:left">
+
+            <div style="
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px
+            ">
+                <img src="../images/map_icon.png" alt="Map Pin Icon" width="50">
+                <a class="top-bar-text">Brentwood Station</a>
+            </div>
+
+            <a class="top-bar-text" style="float:right; margin-top: -55px" id="datetime"></a>
+
+            <script>
+                function updateClock() {
+                    const now = new Date();
+                    const time = now.toLocaleTimeString('en-US', {hour: '2-digit', minute: '2-digit', hour12: true});
+                    const date = now.toLocaleDateString('en-US', {weekday: 'long', month: 'long', day: 'numeric'});
+                    document.getElementById('datetime').textContent = `${time} ${date}`;
+                }
+                updateClock();
+                setInterval(updateClock, 1000);
+            </script>
         </div>
 
+        <!--Weather-->
+        <div style="position: relative; width: 100%; min-height: 200px;">
+            <div class="title-weather" style="
+                position: absolute;
+                top: 20px;
+                right: 20px;
+            ">
+                <iframe title="Environment Canada Weather" width="296" height="191" src="https://weather.gc.ca/wxlink/wxlink.html?coords=51.046%2C-114.057&lang=e" allowtransparency="true" style="border: 0;"></iframe>
+            </div>
 
-        <div class="title-level">
-            <h1>Welcome,</h1>
-            <img src="../images/weather_icon.png">
-            <h1>What would you like to do today?</h1>
+            <div class="title-level" style="
+                width: 100%;
+                text-align: center;
+                padding-top: 40px;
+            ">
+                <h1>Welcome,</h1>
+                <h1>What would you like to do today?</h1>
+            </div>
+
         </div>
 
-
-        <div class="main-actions">
-            <a href="../HTML Code/ticket_screen.html" class="large-button-container">
-                <h2>Buy Tickets</h2>
-                <ul>
-                    <li>Single Ticket</li>
-                    <li>Day Pass</li>
-                    <li>Monthly Pass</li>
+        <!--3 Buttons-->
+        <div class="main-actions" style="
+            display: flex;
+            justify-content: center;
+            width: 80%;
+            margin: 0 auto;
+            align-items: flex-start;
+            gap: 20px;
+            padding: 20px 0;
+        ">
+            <a href="../HTML Code/ticket_screen.html" class="large-button-container" style="
+                text-decoration: none;
+                flex: 1;
+                border: 2px solid #ccc;
+                padding: 15px;
+                text-align: center;
+                height: 300px;
+                background-color: #dddddd;
+            ">
+                <h2 style="color: black;">Buy Tickets</h2>
+                <ul style="list-style: none; padding: 0; color: black;">
+                    <li>• Single Ticket</li>
+                    <li>• Day Pass</li>
+                    <li>• Monthly Pass</li>
                 </ul>
             </a>
 
-            <a href="../HTML Code/check_route_screen.html" class="large-button-container">
-                <h2>Check Route</h2>
-                <ul>
-                    <li>Find out which route you need to take</li>
+            <a href="../HTML Code/check_route_screen.html" class="large-button-container" style="
+                text-decoration: none;
+                flex: 1;
+                border: 2px solid #ccc;
+                padding: 15px;
+                text-align: center;
+                height: 300px;
+                background-color: #dddddd;
+            ">
+                <h2 style="color: black;">Check Route</h2>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="color: black;">• Find out which route you need to take</li>
                 </ul>
             </a>
 
-            <a href="../HTML Code/schedule_screen.html" class="large-button-container">
-                <h2>Check Bus and Train Timings</h2>
-                <ul>
-                    <li>Find out when your bus is arriving</li>
+            <a href="../HTML Code/schedule_screen.html" class="large-button-container" style="
+                text-decoration: none;
+                flex: 1;
+                border: 2px solid #ccc;
+                padding: 15px;
+                text-align: center;
+                height: 300px;
+                background-color: #dddddd;
+            ">
+                <h2 style="color: black;">Check Bus and Train Timings</h2>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="color: black;">• Find out when your bus is arriving</li>
                 </ul>
             </a>
         </div>
 
 
-        <div class="bottom-bar">
-            <a href="../HTML Code/short_cut_1_screen.html">
-                <div class="large-button-container">
-                    <h2>1 Adult Ticket</h2>
-                </div>
+        <div class="bottom-bar" style="
+            display: flex;
+            justify-content: center;
+            margin-bottom: 10px;
+
+        ">
+            <a href="../HTML Code/short_cut_1_screen.html" class="bottom-bar-button" style="
+
+                text-decoration: none;
+                flex: 1;
+                border: 2px solid #ccc;
+                padding: 15px;
+                text-align: center;
+                max-width: 1500px;
+                background-color: #dddddd;
+            ">
+                <h2 style="color: black;">1 Adult Ticket</h2>
             </a>
         </div>
     </body>
