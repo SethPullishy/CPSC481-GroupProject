@@ -4,53 +4,113 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cash/Coin Payment Screen</title>
+
+        <style>
+        body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .top-bar {
+        overflow: hidden;
+        background-color: #CC1330;
+        }
+
+        .top-bar a {
+        float: left;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px 16px;
+        font-size: 24px;
+
+        }
+
+        .quantity-selection-widget{
+            display: flex;
+            justify-content: center;
+            width: 80%;
+            margin: 0 auto;
+            align-items: flex-start;
+            gap: 20px;
+            padding: 20px 0;
+        }
+
+        .side-bar-option{
+                text-decoration: none;
+                text-align: center;
+                padding: 10px 0;
+                width: 80%;
+                background-color: #ccc;
+                margin-bottom: 10px;
+        }
+
+</style>
+
 </head>
 
 
 <body>
-    <div class="top-bar">
-        <img src="../images/yyc_logo.png" alt="Calgary Logo">
-        <img src="../images/map_icon.png" alt="Map Pin Icon">
-        <h3 class="top-bar-text">Brentwood Station</h3>
-        <h3 class="top-bar-text">12:55 PM Friday, October 31</h3> 
-    </div>
+        <!--Top bar: present on most screens-->
+        <div class="top-bar">
+            <img src="../images/yyc_logo.png" alt="Calgary Logo" width="200" style="float:left">
 
+            <div style="
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px
+            ">
+                <img src="../images/map_icon.png" alt="Map Pin Icon" width="50">
+                <a class="top-bar-text">Brentwood Station</a>
+            </div>
 
-    <div class="main-content-and-side-bar">
-        <div class="side-bar">
-            <a href="../HTML Code/home_screen.html" class="side-bar-option">
-                <img src="../images/home_icon.png" alt="Home Icon">
-                <h3>HOME</h3>
-            </a>
+            <a class="top-bar-text" style="float:right; margin-top: -55px" id="datetime"></a>
 
-            <a href="../HTML Code/check_route_screen.html" class="side-bar-option">
-                <img src="../images/route_icon.png" alt="Route Icon">
-                <h3>ROUTE</h3>
-            </a>
-
-            <a href="../HTML Code/schedule_screen.html" class="side-bar-option">
-                <img src="../images/schedule_icon.png" alt="Schedule Icon">
-                <h3>SCHEDULE</h3>
-            </a>
-
-            <a href="../HTML Code/help_screen.html" class="side-bar-option">
-                <img src="../images/help_icon.png" alt="Help Icon">
-                <h3>HELP</h3>
-            </a>
-
-            <a href="../HTML Code/language_screen.html" class="side-bar-option">
-                <img src="../images/language_icon.png" alt="Language Icon">
-                <h3>FR ∇</h3>
-            </a>
-
-            <a href="../HTML Code/short_cut_1_screen.html" class="side-bar-option">
-                <img src="../images/back_icon.png" alt="Back Icon">
-                <h3>BACK</h3>
-            </a>
+            <script>
+                function updateClock() {
+                    const now = new Date();
+                    const time = now.toLocaleTimeString('en-US', {hour: '2-digit', minute: '2-digit', hour12: true});
+                    const date = now.toLocaleDateString('en-US', {weekday: 'long', month: 'long', day: 'numeric'});
+                    document.getElementById('datetime').textContent = `${time} ${date}`;
+                }
+                updateClock();
+                setInterval(updateClock, 1000);
+            </script>
         </div>
 
+        <!--Weather-->
+        <div style="position: relative; width: 100%; min-height: 200px;">
 
-        <div class="main-content">
+            <div class="title-level" style="
+                width: 100%;
+                text-align: center;
+                padding-top: 40px;
+            ">
+            </div>
+
+        </div>
+
+<div style="position: relative; width: 100%; padding: 0;">
+
+    <div class="main-content-and-side-bar" style="
+        display: flex;
+        width: 98%;
+        max-width: 1900px;
+        margin: 0 auto;
+    ">
+
+        <!--3 ticket option-->
+            <div class="main-actions" style="
+            display: flex;
+            justify-content: center;
+            width: 80%;
+            margin: 0 auto;
+            align-items: flex-start;
+            gap: 20px;
+            padding: 20px 0;
+        ">
+
+
             <a href="../HTML Code/cash_coin_screen_8.html" class="payment-wait-text">
                 <h1>Insert Coins or Bills</h1>
                 <br>
@@ -60,6 +120,7 @@
                 <br>
                 <h1>$0.80</h1>
             </a>
+        </div>
         </div>
     </div>
 </body>

@@ -4,24 +4,141 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome Screen</title>
+
+        <style>
+        body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .top-bar {
+        overflow: hidden;
+        background-color: #CC1330;
+        }
+
+        .top-bar a {
+        float: left;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px 16px;
+        font-size: 24px;
+
+        }
+
+        .quantity-selection-widget{
+            display: flex;
+            justify-content: center;
+            width: 80%;
+            margin: 0 auto;
+            align-items: flex-start;
+            gap: 20px;
+            padding: 20px 0;
+        }
+        .side-bar-option{
+                text-decoration: none;
+                text-align: center;
+                padding: 10px 0;
+                height: 100xp;
+                width: 148px;
+                margin-left: 20px;
+                background-color: #ccc;
+                margin-bottom: 10px;
+                border-radius: 5px;
+        }
+
+</style>
+
 </head>
 
 
 <body>
-    <div class="top-bar">
-        <img src="../images/yyc_logo.png" alt="Calgary Logo">
-        <img src="../images/map_icon.png" alt="Map Pin Icon">
-        <h3 class="top-bar-text">Brentwood Station</h3>
-        <h3 class="top-bar-text">12:55 PM Friday, October 31</h3> 
+        <!--Top bar: present on most screens-->
+        <div class="top-bar">
+            <img src="../images/yyc_logo.png" alt="Calgary Logo" width="200" style="float:left">
+
+            <div style="
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px
+            ">
+                <img src="../images/map_icon.png" alt="Map Pin Icon" width="50">
+                <a class="top-bar-text">Brentwood Station</a>
+            </div>
+
+            <a class="top-bar-text" style="float:right; margin-top: -55px" id="datetime"></a>
+
+            <script>
+                function updateClock() {
+                    const now = new Date();
+                    const time = now.toLocaleTimeString('en-US', {hour: '2-digit', minute: '2-digit', hour12: true});
+                    const date = now.toLocaleDateString('en-US', {weekday: 'long', month: 'long', day: 'numeric'});
+                    document.getElementById('datetime').textContent = `${time} ${date}`;
+                }
+                updateClock();
+                setInterval(updateClock, 1000);
+            </script>
+        </div>
+
+        <!--Weather-->
+        <div style="position: relative; width: 100%; min-height: 200px;">
+
+            <div class="title-level" style="
+                width: 100%;
+                text-align: center;
+                padding-top: 40px;
+            ">
+            </div>
+
+        </div>
+
+<a href="../HTML Code/home_screen.html" style="position: relative; top: -200px;;">
+    <img src="../images/calgary_downtown.png" style="width: 1900px;">
+</a>
+
+<div>
+        <div class="side-bar" style="
+            width: 700px;
+            margin-left: 250px;
+            margin-top: -174px;
+            display: flex;
+            flex-direction: row;
+
+            align-items: center;
+
+            border: 2px solid #ccc;
+            background-color: #f0f0f0;
+            padding: 10px 0;
+            flex-shrink: 0;
+        ">
+
+            <a href="../HTML Code/check_route_screen.html" class="side-bar-option">
+                <img src="../images/route_icon.png" alt="Route Icon" style="width: 40px; height: 40px;">
+                <h3 style="color: black; margin: 5px 0 0 0; font-size: 15px;">ROUTE</h3>
+            </a>
+
+            <a href="../HTML Code/schedule_screen.html" class="side-bar-option">
+                <img src="../images/schedule_icon.png" alt="Schedule Icon" style="width: 40px; height: 40px;">
+                <h3 style="color: black; margin: 5px 0 0 0; font-size: 15px;">SCHEDULE</h3>
+            </a>
+
+            <a href="../HTML Code/help_screen.html" class="side-bar-option">
+                <img src="../images/help_icon.png" alt="Help Icon" style="width: 40px; height: 40px;">
+                <h3 style="color: black; margin: 5px 0 0 0; font-size: 15px;">HELP</h3>
+            </a>
+
+            <a href="../HTML Code/language_screen.html" class="side-bar-option">
+                <img src="../images/language_icon.png" alt="Language Icon" style="width: 40px; height: 40px;">
+                <h3 style="color: black; margin: 5px 0 0 0; font-size: 15px;">FR ∇</h3>
+            </a>
+        </div>
+
+
+    <img src="../images/traintime.png" style="height: 220px; width: 720px; position:relative; top: 10px; left: 250px;">
+    <div style="position: absolute; right: 250px; top: 420px; height: 350px; width: 700px; overflow-y: auto;" >
+        <img src="../images/waiting_bus_inf.png" style="height: 570px; width: 680px;">
     </div>
-
-
-    <div class="main-content">
-        <a href="../HTML Code/home_screen.html">
-            <img src="../images/calgary_downtown.png">
-        </a>
-        <img src="../images/waiting_screen_info.png"
-
-    </div>
+<img src="../images/news.png" style="height: 140px; width: 1900px; position: absolute; bottom: 0px; left: 0px;">
+</div>
 </body>
 </html>
