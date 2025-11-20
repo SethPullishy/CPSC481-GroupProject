@@ -53,6 +53,8 @@ body {
     gap: 24px;
     padding: 20px 40px 0;
     box-sizing: border-box;
+    
+    flex-wrap: nowrap;
 }
 
 .left-column {
@@ -120,10 +122,12 @@ body {
 }
 
 .right-column img {
-    max-width: 700px;
+    max-width: 700px;   /* smaller width */
+    max-height: 350px;  /* cap the height */
     width: 100%;
     height: auto;
     display: block;
+    object-fit: contain; /* keep it from stretching */
 }
 
 /* News banner at bottom */
@@ -131,5 +135,5 @@ body {
     width: 100%;
     height: 140px;
     display: block;
-    margin-top: 20px;
+    margin-top: 8px;   /* smaller gap so it sits higher */
 }
