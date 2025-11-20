@@ -1,0 +1,135 @@
+/* Global */
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Top bar */
+.top-bar {
+    background-color: #CC1330;
+    color: #f2f2f2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 24px;
+    box-sizing: border-box;
+}
+
+.top-left img {
+    height: 80px;
+}
+
+.top-center {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 24px;
+}
+
+.top-right {
+    font-size: 24px;
+    text-align: right;
+    max-width: 35%;
+}
+
+/* Press-to-start image */
+.hero-container img {
+    width: 100%;
+    display: block;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: pointer;
+}
+
+.hero-container a:hover img {
+    transform: scale(1.02);                    /* slight zoom */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.35);   /* subtle shadow */
+}
+
+
+/* Middle row: buttons + train list on left, bus info on right */
+.main-row {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    padding: 20px 40px 0;
+    box-sizing: border-box;
+}
+
+.left-column {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.side-bar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border: 2px solid #ccc;
+    background-color: #f0f0f0;
+    padding: 10px 0;
+}
+
+.side-bar-option {
+    text-decoration: none;
+    text-align: center;
+    height: 100px;
+    width: 148px;
+    margin-left: 20px;
+    margin-bottom: 10px;
+    background-color: #ccc;
+    border-radius: 5px;
+
+    /* center content */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    /* smooth hover animation */
+    transition: background-color 0.15s ease,
+                transform 0.1s ease,
+                box-shadow 0.15s ease;
+}
+
+    /* hover state */
+    .side-bar-option:hover {
+        background-color: #d6d6d6;      /* slightly lighter */
+        transform: translateY(-2px);    /* tiny lift */
+        box-shadow: 0 3px 6px rgba(0,0,0,0.25);
+        cursor: pointer;
+}
+
+
+.side-bar-option img {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 6px;   /* space between icon and text */
+}
+
+.side-bar-option h3 {
+    color: black;
+    margin: 0;
+    font-size: 15px;
+}
+
+
+.train-time-img {
+    width: 720px;
+    height: 220px;
+}
+
+.right-column img {
+    max-width: 700px;
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* News banner at bottom */
+.news-banner {
+    width: 100%;
+    height: 140px;
+    display: block;
+    margin-top: 20px;
+}
