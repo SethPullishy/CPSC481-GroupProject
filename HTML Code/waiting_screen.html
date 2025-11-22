@@ -1,89 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome Screen</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome Screen</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-    <!-- Top bar -->
-    <div class="top-bar">
-        <div class="top-left">
-            <img src="../images/yyc_logo.png" alt="Calgary Logo">
-        </div>
-
-        <div class="top-center">
-            <img src="../images/map_icon.png" alt="Map Pin Icon" width="50">
-            <span>Brentwood Station</span>
-        </div>
-
-        <div class="top-right" id="datetime"></div>
+  <!-- Top bar -->
+  <div class="top-bar">
+    <div class="top-left">
+      <img src="../images/yyc_logo.png" alt="Calgary Logo">
     </div>
 
-    <script>
-        function updateClock() {
-            const now = new Date();
-            const time = now.toLocaleTimeString('en-US', {
-                hour: '2-digit',
-                minute: '2-digit',
-                hour12: true
-            });
-            const date = now.toLocaleDateString('en-US', {
-                weekday: 'long',
-                month: 'long',
-                day: 'numeric'
-            });
-            document.getElementById('datetime').textContent = `${time} ${date}`;
-        }
-        updateClock();
-        setInterval(updateClock, 1000);
-    </script>
+    <div class="top-center">
+      <img src="../images/map_icon.png" alt="Map Pin Icon" width="50">
+      <span>Brentwood Station</span>
+    </div>
 
-    <!-- Hero: press anywhere to start -->
-    <div class="hero-container">
-        <a href="../HTML Code/home_screen.html">
-            <img src="../images/calgary_downtown.png" alt="Calgary Downtown">
+    <div class="top-right" id="datetime"></div>
+  </div>
+
+  <script>
+    function updateClock() {
+      const now = new Date();
+      const time = now.toLocaleTimeString('en-US', {
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+        hour12: true
+      });
+      const date = now.toLocaleDateString('en-US', {
+        weekday: 'long',
+        month: 'long',
+        day: 'numeric'
+      });
+      document.getElementById('datetime').textContent = `${time} ${date}`;
+    }
+    updateClock();
+    setInterval(updateClock, 1000);
+  </script>
+
+  <!-- Hero: press anywhere to start -->
+  <div class="hero-container">
+    <a href="../HTML Code/home_screen.html">
+      <img src="../images/calgary_downtown.png" alt="Calgary Downtown">
+    </a>
+  </div>
+
+  <!-- Middle section -->
+  <div class="main-row">
+    <!-- Left: buttons + train times -->
+    <div class="left-column">
+      <div class="side-bar">
+        <a href="../HTML Code/check_route_screen.html" class="side-bar-option">
+          <img src="../images/route_icon.png" alt="Route Icon">
+          <h3>ROUTE</h3>
         </a>
+
+        <a href="../HTML Code/schedule_screen.html" class="side-bar-option">
+          <img src="../images/schedule_icon.png" alt="Schedule Icon">
+          <h3>SCHEDULE</h3>
+        </a>
+
+        <a href="../HTML Code/help_screen.html" class="side-bar-option">
+          <img src="../images/help_icon.png" alt="Help Icon">
+          <h3>HELP</h3>
+        </a>
+
+        <a href="../HTML Code/language_screen.html" class="side-bar-option">
+          <img src="../images/language_icon.png" alt="Language Icon">
+          <h3>FR ∇</h3>
+        </a>
+      </div>
+
+      <img src="../images/traintime.png" class="train-time-img" alt="Train Times">
     </div>
 
-    <!-- Middle section -->
-    <div class="main-row">
-        <!-- Left: buttons + train times -->
-        <div class="left-column">
-            <div class="side-bar">
-                <a href="../HTML Code/check_route_screen.html" class="side-bar-option">
-                    <img src="../images/route_icon.png" alt="Route Icon">
-                    <h3>ROUTE</h3>
-                </a>
-
-                <a href="../HTML Code/schedule_screen.html" class="side-bar-option">
-                    <img src="../images/schedule_icon.png" alt="Schedule Icon">
-                    <h3>SCHEDULE</h3>
-                </a>
-
-                <a href="../HTML Code/help_screen.html" class="side-bar-option">
-                    <img src="../images/help_icon.png" alt="Help Icon">
-                    <h3>HELP</h3>
-                </a>
-
-                <a href="../HTML Code/language_screen.html" class="side-bar-option">
-                    <img src="../images/language_icon.png" alt="Language Icon">
-                    <h3>FR ∇</h3>
-                </a>
-            </div>
-
-            <img src="../images/traintime.png" class="train-time-img" alt="Train Times">
-        </div>
-
-        <!-- Right: bus info -->
-        <div class="right-column">
-            <img src="../images/waiting_bus_inf.png" alt="Bus Info">
-        </div>
+    <!-- Right: bus info -->
+    <div class="right-column">
+      <img src="../images/waiting_bus_inf.png" alt="Bus Info">
     </div>
+  </div>
 
-    <!-- Bottom news bar -->
-    <img src="../images/news.png" class="news-banner" alt="News banner">
+  <!-- Bottom news bar -->
+  <img src="../images/news.png" class="news-banner" alt="News banner">
 </body>
 </html>
