@@ -1,192 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Payment Error Screen</title>
-
-        <style>
-        body {
-        margin: 0;
-        font-family: Arial, Helvetica, sans-serif;
-        }
-
-        .top-bar {
-        overflow: hidden;
-        background-color: #CC1330;
-        }
-
-        .top-bar a {
-        float: left;
-        color: #f2f2f2;
-        text-align: center;
-        padding: 14px 16px;
-        font-size: 24px;
-
-        }
-
-        .quantity-selection-widget{
-            display: flex;
-            justify-content: center;
-            width: 80%;
-            margin: 0 auto;
-            align-items: flex-start;
-            gap: 20px;
-            padding: 20px 0;
-        }
-        
-        .side-bar-option{
-                text-decoration: none;
-                text-align: center;
-                padding: 10px 0;
-                width: 80%;
-                background-color: #ccc;
-                margin-bottom: 10px;
-        }
-
-</style>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payment Error</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 
+<body class="payment-error-page">
 
-<body>
-        <!--Top bar: present on most screens-->
-        <div class="top-bar">
-            <img src="../images/yyc_logo.png" alt="Calgary Logo" width="200" style="float:left">
-
-            <div style="
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-top: 20px
-            ">
-                <img src="../images/map_icon.png" alt="Map Pin Icon" width="50">
-                <a class="top-bar-text">Brentwood Station</a>
-            </div>
-
-            <a class="top-bar-text" style="float:right; margin-top: -55px" id="datetime"></a>
-
-            <script>
-                function updateClock() {
-                    const now = new Date();
-                    const time = now.toLocaleTimeString('en-US', {hour: '2-digit', minute: '2-digit', hour12: true});
-                    const date = now.toLocaleDateString('en-US', {weekday: 'long', month: 'long', day: 'numeric'});
-                    document.getElementById('datetime').textContent = `${time} ${date}`;
-                }
-                updateClock();
-                setInterval(updateClock, 1000);
-            </script>
-        </div>
-
-        <!--Weather-->
-        <div style="position: relative; width: 100%; min-height: 200px;">
-
-            <div class="title-level" style="
-                width: 100%;
-                text-align: center;
-                padding-top: 40px;
-            ">
-            </div>
-
-        </div>
-
-<div style="position: relative; width: 100%; padding: 0;">
-
-    <div class="main-content-and-side-bar" style="
-        display: flex;
-        width: 98%;
-        max-width: 1900px;
-        margin: 0 auto;
-    ">
-
-        <div class="side-bar" style="
-            width: 120px;
-            position: relative;
-            top: -100px;
-
-            display: flex;
-            flex-direction: column;
-
-            align-items: center;
-
-            border: 2px solid #ccc;
-            background-color: #f0f0f0;
-            padding: 10px 0;
-            flex-shrink: 0;
-        ">
-            <a href="../HTML Code/home_screen.html" class="side-bar-option">
-                <img src="../images/home_icon.png" alt="Home Icon" style="width: 40px; height: 40px;">
-                <h3 style="color: black; margin: 5px 0 0 0; font-size: 15px;">HOME</h3>
-            </a>
-
-            <a href="../HTML Code/check_route_screen.html" class="side-bar-option">
-                <img src="../images/route_icon.png" alt="Route Icon" style="width: 40px; height: 40px;">
-                <h3 style="color: black; margin: 5px 0 0 0; font-size: 15px;">ROUTE</h3>
-            </a>
-
-            <a href="../HTML Code/schedule_screen.html" class="side-bar-option">
-                <img src="../images/schedule_icon.png" alt="Schedule Icon" style="width: 40px; height: 40px;">
-                <h3 style="color: black; margin: 5px 0 0 0; font-size: 15px;">SCHEDULE</h3>
-            </a>
-
-            <a href="../HTML Code/help_screen.html" class="side-bar-option">
-                <img src="../images/help_icon.png" alt="Help Icon" style="width: 40px; height: 40px;">
-                <h3 style="color: black; margin: 5px 0 0 0; font-size: 15px;">HELP</h3>
-            </a>
-
-            <a href="../HTML Code/language_screen.html" class="side-bar-option">
-                <img src="../images/language_icon.png" alt="Language Icon" style="width: 40px; height: 40px;">
-                <h3 style="color: black; margin: 5px 0 0 0; font-size: 15px;">FR ∇</h3>
-            </a>
-
-            <a onclick="history.back()" class="side-bar-option">
-                <img src="../images/back_icon.png" alt="Back Icon" style="width: 40px; height: 40px;">
-                <h3 style="color: black; margin: 5px 0 0 0; font-size: 15px;">PREVIOUS</h3>
-            </a>
-        </div>
-
-        <!--3 ticket option-->
-            <div class="main-actions" style="
-            display: flex;
-            justify-content: center;
-            width: 80%;
-            margin: 0 auto;
-            align-items: flex-start;
-            gap: 20px;
-            padding: 20px 0;
-        ">
-
-            <a href="../HTML Code/waiting_screen.html" class="receipt-process-text">
-                <h1>There has been an error with payment</h1>
-                <h1>Please return to the payment screen to try again</h1>
-            </a>
-
-        </div>
-        </div>
-                <div class="bottom-bar" style="
-            display: flex;
-            justify-content: center;
-            margin-bottom: 10px;
-
-            ">
-
-
-            <a href="../HTML Code/payment_screen.html" class="bottom-bar-button" style="
-
-                text-decoration: none;
-                flex: 1;
-                border: 2px solid #ccc;
-                padding: 30px;
-                text-align: center;
-                margin-top: -200px;
-                max-width: 1500px;
-                background-color: #dddddd;
-                border-radius: 12px;
-            ">
-                <img src="../images/back_icon.png">
-                <h2 style="color: black;">Return to Payment Screen</h2>
-            </a>
-        </div>
+  <div class="top-bar">
+    <div class="top-left">
+      <img src="../images/yyc_logo.png" alt="Calgary Logo">
     </div>
+
+    <div class="top-center">
+      <img src="../images/map_icon.png" alt="Map Pin Icon" width="50">
+      <span>Brentwood Station</span>
+
+      <div class="weather-mini">
+        <iframe
+          src="https://widgets.commoninja.com/iframe/d0542a0e-2b72-4421-9c7d-d52b9fb80201"
+          width="760"
+          height="165"
+          frameborder="0"
+          scrolling="no">
+        </iframe>
+      </div>
+    </div>
+
+    <div class="top-right" id="datetime"></div>
+  </div>
+
+  <script>
+    function updateClock() {
+      const now = new Date();
+      const time = now.toLocaleTimeString('en-US', {
+        hour:'2-digit', minute:'2-digit', hour12:true
+      });
+      const date = now.toLocaleDateString('en-US', {
+        weekday:'long', month:'long', day:'numeric'
+      });
+      document.getElementById('datetime').innerHTML = `${date}<br>${time}`;
+    }
+    updateClock();
+    setInterval(updateClock, 1000);
+  </script>
+
+  <div class="payment-error-hero">
+    <h1 class="payment-error-title">
+  Payment <span class="error-word">Error</span>
+</h1>
+  </div>
+
+  <div class="payment-error-layout">
+
+    <div class="ticket-side-bar">
+      <a href="../HTML Code/home_screen.html" class="ticket-side-option">
+        <img src="../images/home_icon.png" alt="Home Icon">
+        <h3>HOME</h3>
+      </a>
+
+      <a href="../HTML Code/check_route_screen.html" class="ticket-side-option">
+        <img src="../images/route_icon.png" alt="Route Icon">
+        <h3>ROUTE</h3>
+      </a>
+
+      <a href="../HTML Code/schedule_screen.html" class="ticket-side-option">
+        <img src="../images/schedule_icon.png" alt="Schedule Icon">
+        <h3>SCHEDULE</h3>
+      </a>
+
+      <a href="../HTML Code/help_screen.html" class="ticket-side-option">
+        <img src="../images/help_icon.png" alt="Help Icon">
+        <h3>HELP</h3>
+      </a>
+
+      <a href="../HTML Code/language_screen.html" class="ticket-side-option">
+        <img src="../images/language_icon.png" alt="Language Icon">
+        <h3>FR ∇</h3>
+      </a>
+
+      <a onclick="history.back()" class="ticket-side-option">
+        <img src="../images/back_icon.png" alt="Back Icon">
+        <h3>PREVIOUS</h3>
+      </a>
+    </div>
+
+    <main class="payment-error-center">
+      <div class="payment-error-card">
+        <h1>There has been an error your payment</h1>        <p>Please return to the payment screen and try again.</p>
+      </div>
+    </main>
+
+  </div>
+
+  <div class="adult-bottom-bar error-bottom-bar">
+    <a href="../HTML Code/payment_screen.html" class="adult-bottom-option error-bottom-option">
+      <img src="../images/back_icon.png" alt="Back Icon">
+      <h3>Return to Payment Screen</h3>
+    </a>
+  </div>
+
 </body>
 </html>

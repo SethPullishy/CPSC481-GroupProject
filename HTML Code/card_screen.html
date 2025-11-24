@@ -1,133 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Card Payment Screen</title>
-
-        <style>
-        body {
-        margin: 0;
-        font-family: Arial, Helvetica, sans-serif;
-        }
-
-        .top-bar {
-        overflow: hidden;
-        background-color: #CC1330;
-        }
-
-        .top-bar a {
-        float: left;
-        color: #f2f2f2;
-        text-align: center;
-        padding: 14px 16px;
-        font-size: 24px;
-
-        }
-
-        .quantity-selection-widget{
-            display: flex;
-            justify-content: center;
-            width: 80%;
-            margin: 0 auto;
-            align-items: flex-start;
-            gap: 20px;
-            padding: 20px 0;
-        }
-
-        .large-button-container{
-                text-decoration: none;
-                flex: 1;
-                border: 2px solid #ccc;
-                padding: 15px;
-                text-align: center;
-                height: 550px;
-                background-color: #dddddd;
-        }
-
-        .side-bar-option{
-                text-decoration: none;
-                text-align: center;
-                padding: 10px 0;
-                width: 80%;
-                background-color: #ccc;
-                margin-bottom: 10px;
-        }
-
-</style>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Card Payment Screen</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 
+<body class="card-page">
 
-<body>
-        <!--Top bar: present on most screens-->
-        <div class="top-bar">
-            <img src="../images/yyc_logo.png" alt="Calgary Logo" width="200" style="float:left">
-
-            <div style="
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-top: 20px
-            ">
-                <img src="../images/map_icon.png" alt="Map Pin Icon" width="50">
-                <a class="top-bar-text">Brentwood Station</a>
-            </div>
-
-            <a class="top-bar-text" style="float:right; margin-top: -55px" id="datetime"></a>
-
-            <script>
-                function updateClock() {
-                    const now = new Date();
-                    const time = now.toLocaleTimeString('en-US', {hour: '2-digit', minute: '2-digit', hour12: true});
-                    const date = now.toLocaleDateString('en-US', {weekday: 'long', month: 'long', day: 'numeric'});
-                    document.getElementById('datetime').textContent = `${time} ${date}`;
-                }
-                updateClock();
-                setInterval(updateClock, 1000);
-            </script>
-        </div>
-
-        <!--Weather-->
-        <div style="position: relative; width: 100%; min-height: 200px;">
-
-            <div class="title-level" style="
-                width: 100%;
-                text-align: center;
-                padding-top: 40px;
-            ">
-            </div>
-
-        </div>
-
-<div style="position: relative; width: 100%; padding: 0;">
-
-    <div class="main-content-and-side-bar" style="
-        display: flex;
-        width: 98%;
-        max-width: 1900px;
-        margin: 0 auto;
-    ">
-
-        <!--3 ticket option-->
-            <div class="main-actions" style="
-            display: flex;
-            justify-content: center;
-            width: 80%;
-            margin: 0 auto;
-            align-items: flex-start;
-            gap: 20px;
-            padding: 20px 0;
-        ">
-
-
-            <a href="../HTML Code/receipt_selection_screen.html" class="payment-wait-text">
-                <h1>Please follow the instructions on the card reader</h1>
-                <br>
-                <h1>Processing...</h1>
-            </a>
-        </div>
-        </div>
+  <div class="top-bar">
+    <div class="top-left">
+      <img src="../images/yyc_logo.png" alt="Calgary Logo">
     </div>
+
+    <div class="top-center">
+      <img src="../images/map_icon.png" alt="Map Pin Icon" width="50">
+      <span>Brentwood Station</span>
+
+      <div class="weather-mini">
+        <iframe
+          src="https://widgets.commoninja.com/iframe/d0542a0e-2b72-4421-9c7d-d52b9fb80201"
+          width="760"
+          height="165"
+          frameborder="0"
+          scrolling="no">
+        </iframe>
+      </div>
+    </div>
+
+    <div class="top-right" id="datetime"></div>
+  </div>
+
+  <script>
+    function updateClock() {
+      const now = new Date();
+      const time = now.toLocaleTimeString('en-US', {
+        hour:'2-digit', minute:'2-digit', hour12:true
+      });
+      const date = now.toLocaleDateString('en-US', {
+        weekday:'long', month:'long', day:'numeric'
+      });
+      document.getElementById('datetime').innerHTML = `${date}<br>${time}`;
+    }
+    updateClock();
+    setInterval(updateClock, 1000);
+  </script>
+
+  <main class="card-center">
+  <a href="../HTML Code/receipt_selection_screen.html" class="card-loader-link">
+    <div class="card-loader">
+      <h1>Please follow the instructions on the card reader</h1>
+      <p class="processing-text">Processing your payment…</p>
+
+      <div class="loader-dots" aria-hidden="true">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </a>
+</main>
+
 </body>
 </html>
