@@ -43,30 +43,52 @@ body {
   line-height: 1.3;
 }
 
-/* Weather widget in top bar */
+
+/* Weather Widget Window */
 .weather-mini {
   display: block;
-  margin-left: 140px;
-  width: 420px;
-  height: 70px;
+  position: relative;
+
+  margin-left: 130px;
+  width: 300px;
+  height: 80px;
+
+  border-radius: 15px;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  overflow: hidden;
+  flex-shrink: 0;
+
   position: absolute;
   left: 50%;
-  top: -10px;
+  top: -17px;
   z-index: 50;
   pointer-events: auto !important;
 }
 
-.weather-mini iframe {
-  width: 1000px !important;
-  height: 165px !important;
-  transform: scale(0.42);
+/* Weather widget contents */
+.weather-mini #ww_abe5a5917cfa1 {
+  width: 1200px !important;
+  height: 250px !important;
+
+  transform: scale(0.28);
   transform-origin: top left;
+
   position: absolute;
-  top: 0;
+  top: -15px;
   left: 0;
-  border: none !important;
+
+  font-size: 16px !important;
+  color: white !important;
   display: block !important;
 }
+
+/* Hide the link text */
+.weather-mini a {
+  display: none !important;
+}
+
 
 /* ===== Waiting Screen ===== */
 .hero-container img {
@@ -900,14 +922,12 @@ body {
   color: #444;
 }
 
-/* Card loading screen link should look like a normal panel */
 .card-loader-link {
   text-decoration: none;
   color: inherit;
-  display: block; /* makes the whole area clickable cleanly */
+  display: block;
 }
 
-/* extra safety: make sure nested text doesn't re-underline */
 .card-loader-link * {
   text-decoration: none;
   color: inherit;
