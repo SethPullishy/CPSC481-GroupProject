@@ -1398,8 +1398,8 @@ body {
 /* Payment error screen */
 
 .error-word {
-  color: #CC1330; /* same red as your top bar */
-  font-weight: 700; /* optional, makes it pop */
+  color: #CC1330; 
+  font-weight: 700;
 }
 
 .payment-error-page {
@@ -1428,7 +1428,7 @@ body {
   gap: 20px;
   align-items: flex-start;
   box-sizing: border-box;
-  padding-bottom: 110px; /* space for fixed bottom bar */
+  padding-bottom: 110px; 
 }
 
 .payment-error-center {
