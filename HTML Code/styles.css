@@ -1471,7 +1471,7 @@ body {
   max-width: 1500px;
 }
 
-/* Prevent text highlighting on tappable cash card */
+/* Prevent text highlighting on tappable cash cards */
 .cash-card-link,
 .cash-card,
 .cash-card * {
