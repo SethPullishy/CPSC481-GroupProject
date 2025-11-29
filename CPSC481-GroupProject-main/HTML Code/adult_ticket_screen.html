@@ -3,12 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Youth Ticket Selection Screen</title>
+  <title>Adult Ticket Selection Screen</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="youth-page">
+<body class="adult-page">
 
+  <!-- Top bar -->
   <div class="top-bar">
     <div class="top-left">
       <img src="../images/yyc_logo.png" alt="Calgary Logo">
@@ -62,12 +63,15 @@
     setInterval(updateClock, 1000);
   </script>
 
-  <div class="youth-hero">
-    <h1>Select <span class="youth-highlight">Youth</span> Ticket</h1>
+  <!-- Title -->
+  <div class="adult-hero">
+    <h1>Select <span class="adult-highlight">Adult</span> Ticket</h1>
   </div>
 
-  <div class="youth-layout">
+  <!-- Layout -->
+  <div class="adult-layout">
 
+    <!-- Side bar -->
     <div class="ticket-side-bar">
       <a href="../HTML Code/home_screen.html" class="ticket-side-option">
         <img src="../images/home_icon.png" alt="Home Icon">
@@ -89,9 +93,9 @@
         <h3>HELP</h3>
       </a>
 
-      <a href="../HTML Code/home_screen_fr.html" class="ticket-side-option">
+      <a href="../HTML Code/language_screen.html" class="ticket-side-option">
         <img src="../images/language_icon.png" alt="Language Icon">
-        <h3>Français</h3>
+        <h3>FR ∇</h3>
       </a>
 
       <a onclick="history.back()" class="ticket-side-option">
@@ -100,13 +104,14 @@
       </a>
     </div>
 
-    <div class="youth-actions">
-      <div class="youth-card" data-price="2.55" data-key="youth-single">
+    <!-- Ticket cards -->
+    <div class="adult-actions">
+      <div class="adult-card" data-price="3.80" data-key="adult-single">
         <h2>Single</h2>
         <ul>
           <li>Valid for 90 minutes</li>
           <li>One time use</li>
-          <li>$2.55</li>
+          <li>$3.80</li>
         </ul>
 
         <div class="qty-widget">
@@ -116,11 +121,11 @@
         </div>
       </div>
 
-      <div class="youth-card" data-price="8.75" data-key="youth-day">
+      <div class="adult-card" data-price="11.95" data-key="adult-day">
         <h2>Day</h2>
         <ul>
           <li>Valid until end of service that day</li>
-          <li>$8.75</li>
+          <li>$11.95</li>
         </ul>
 
         <div class="qty-widget">
@@ -130,11 +135,11 @@
         </div>
       </div>
 
-      <div class="youth-card" data-price="86.00" data-key="youth-monthly">
+      <div class="adult-card" data-price="118.00" data-key="adult-monthly">
         <h2>Monthly</h2>
         <ul>
           <li>Valid until end of current calendar month</li>
-          <li>$86.00</li>
+          <li>$118.00</li>
         </ul>
 
         <div class="qty-widget">
@@ -147,72 +152,74 @@
 
   </div>
 
-  <div class="youth-bottom-bar">
-    <a href="../HTML Code/adult_ticket_screen.html" class="youth-bottom-option">
-      <img src="../images/home_icon.png" alt="Adult Fare">
-      <h3>+ Select Adult Fare</h3>
+  <!-- Bottom bar -->
+  <div class="adult-bottom-bar">
+    <a href="../HTML Code/youth_ticket_screen.html" class="adult-bottom-option">
+      <img src="../images/home_icon.png" alt="Youth Fare">
+      <h3>+ Select Youth Fare</h3>
     </a>
 
-    <div class="youth-bottom-option">
+    <div class="total">
       <img src="../images/total_icon.png" alt="Total">
       <h3 id="cart-total">$0.00</h3>
     </div>
 
-    <a href="../HTML Code/payment_screen.html" class="youth-bottom-option">
+    <a href="../HTML Code/payment_screen.html" class="adult-bottom-option">
       <img src="../images/continue_icon.png" alt="Continue">
       <h3>CONTINUE</h3>
     </a>
   </div>
 
   <script>
-    const totalEl = document.getElementById('cart-total');
+  const totalEl = document.getElementById('cart-total');
 
-    function getCount(key) {
-      return parseInt(localStorage.getItem(key) || "0");
-    }
-    function setCount(key, val) {
-      localStorage.setItem(key, String(val));
-    }
+  function getCount(key) {
+    return parseInt(localStorage.getItem(key) || "0");
+  }
+  function setCount(key, val) {
+    localStorage.setItem(key, String(val));
+  }
 
-    function recalcCombinedTotal() {
-      let total = 0;
+  function recalcCombinedTotal() {
+    let total = 0;
 
-      document.querySelectorAll('[data-key]').forEach(card => {
-        const price = parseFloat(card.dataset.price || "0");
-        const key = card.dataset.key;
-        total += price * getCount(key);
-      });
-
-      totalEl.textContent = `$${total.toFixed(2)}`;
-    }
-
-    document.querySelectorAll('.youth-card[data-key]').forEach(card => {
+    document.querySelectorAll('[data-key]').forEach(card => {
+      const price = parseFloat(card.dataset.price || "0");
       const key = card.dataset.key;
-      const widget = card.querySelector('.qty-widget');
-      const plus = widget.querySelectorAll('.qty-btn')[0];
-      const minus = widget.querySelectorAll('.qty-btn')[1];
-      const readout = widget.querySelector('.qty-read');
-
-      let count = getCount(key);
-      readout.textContent = count;
-
-      plus.addEventListener('click', () => {
-        count++;
-        setCount(key, count);
-        readout.textContent = count;
-        recalcCombinedTotal();
-      });
-
-      minus.addEventListener('click', () => {
-        if (count > 0) count--;
-        setCount(key, count);
-        readout.textContent = count;
-        recalcCombinedTotal();
-      });
+      total += price * getCount(key);
     });
 
-    recalcCombinedTotal();
-  </script>
+    totalEl.textContent = `$${total.toFixed(2)}`;
+  }
+
+  document.querySelectorAll('.adult-card[data-key]').forEach(card => {
+    const key = card.dataset.key;
+    const widget = card.querySelector('.qty-widget');
+    const plus = widget.querySelectorAll('.qty-btn')[0];
+    const minus = widget.querySelectorAll('.qty-btn')[1];
+    const readout = widget.querySelector('.qty-read');
+
+    let count = getCount(key);
+    readout.textContent = count;
+
+    plus.addEventListener('click', () => {
+      count++;
+      setCount(key, count);
+      readout.textContent = count;
+      recalcCombinedTotal();
+    });
+
+    minus.addEventListener('click', () => {
+      if (count > 0) count--;
+      setCount(key, count);
+      readout.textContent = count;
+      recalcCombinedTotal();
+    });
+  });
+
+  recalcCombinedTotal();
+</script>
+
 
 </body>
 </html>

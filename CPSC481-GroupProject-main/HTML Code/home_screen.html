@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Welcome Screen</title>
+  <title>Home Screen</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 
-<body>
+<body class="home-page">
   <div class="top-bar">
     
     <div class="top-left">
@@ -38,6 +38,7 @@
       const time = now.toLocaleTimeString('en-US', {
         hour: '2-digit',
         minute: '2-digit',
+        second: '2-digit',
         hour12: true
       });
       const date = now.toLocaleDateString('en-US', {
@@ -52,45 +53,45 @@
     setInterval(updateClock, 1000);
   </script>
 
-  <div class="hero-container">
-    <a href="../HTML Code/home_screen.html">
-      <img src="../images/calgary_downtown.png" alt="Calgary Downtown">
+  <div class="home-hero">
+    <div class="title-level">
+      <h1 class="welcome-title">Welcome</h1>
+      <h1 class="welcome-subtitle">What would you like to do today?</h1>
+    </div>
+  </div>
+
+  <div class="main-actions">
+    <a href="../HTML Code/ticket_screen.html" class="large-button-container">
+      <img src="../images/total_icon.png" alt="Ticket Icon">
+      <h2>Buy Tickets</h2>
+      <ul>
+        <li>  Single Ticket</li>
+        <li>  Day Pass</li>
+        <li>  Monthly Pass</li>
+      </ul>
+    </a>
+
+    <a href="../HTML Code/check_route_screen.html" class="large-button-container">
+      <img src="../images/route_icon.png" alt="Route Icon">
+      <h2>Check Route</h2>
+      <ul>
+        <li>  Find out which route you need to take</li>
+      </ul>
+    </a>
+
+    <a href="../HTML Code/schedule_screen.html" class="large-button-container">
+      <img src="../images/schedule_icon.png" alt="Schedule Icon">
+      <h2>Check Timings</h2>
+      <ul>
+        <li>  Find out when your bus is arriving</li>
+      </ul>
     </a>
   </div>
 
-  <div class="main-row">
-    <div class="left-column">
-      <div class="side-bar">
-        <a href="../HTML Code/check_route_screen.html" class="side-bar-option">
-          <img src="../images/route_icon.png" alt="Route Icon">
-          <h3>ROUTE</h3>
-        </a>
-
-        <a href="../HTML Code/schedule_screen.html" class="side-bar-option">
-          <img src="../images/schedule_icon.png" alt="Schedule Icon">
-          <h3>SCHEDULE</h3>
-        </a>
-
-        <a href="../HTML Code/help_screen.html" class="side-bar-option">
-          <img src="../images/help_icon.png" alt="Help Icon">
-          <h3>HELP</h3>
-        </a>
-
-        <a href="../HTML Code/home_screen_fr.html" class="side-bar-option">
-          <img src="../images/language_icon.png" alt="Language Icon">
-          <h3>Français</h3>
-        </a>
-      </div>
-
-      <img src="../images/traintime.png" class="train-time-img" alt="Train Times">
-    </div>
-
-    <div class="right-column">
-      <img src="../images/waiting_bus_inf.png" alt="Bus Info">
-    </div>
+  <div class="bottom-bar">
+    <a href="../HTML Code/short_cut_1_screen.html" class="bottom-bar-button">
+      <h2>Quick Buy: 1 Adult Ticket</h2>
+    </a>
   </div>
-
-  <img src="../images/news.png" class="news-banner" alt="News banner">
-  
 </body>
 </html>

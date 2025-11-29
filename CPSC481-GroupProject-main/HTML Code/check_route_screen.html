@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Payment Screen</title>
+    <title>Check Route</title>
     <style>
         body {
             margin: 0;
@@ -23,31 +23,6 @@
             font-size: 24px;
         }
 
-        .main-actions {
-            display: flex;
-            justify-content: center;
-            width: 580px;
-            height: 404px;
-            margin: 0 auto;
-            align-items: flex-start;
-            gap: 20px;
-            padding: 0px 0;
-            border-style: solid;
-            border-color: #a7a7a7;
-            background-color: #f2f2f2;
-
-        }
-
-        .quantity-selection-widget{
-            display: flex;
-            justify-content: center;
-            width: 80%;
-            margin: 0 auto;
-            align-items: flex-start;
-            gap: 20px;
-            padding: 20px 0;
-        }
-
         .side-bar-option{
                 text-decoration: none;
                 text-align: center;
@@ -56,68 +31,9 @@
                 background-color: #ccc;
                 margin-bottom: 10px;
         }
-        .money-button{
-            display: flex;
-            justify-content: center;
-            width: 500px;
-            height: 200px;
-            margin: 0 auto;
-            align-items: flex-start;
-            gap: 20px;
-            padding: 10px 0;
-            border-style: solid;
-            border-color: #a7a7a7;
-            background-color: #f2f2f2;
-            text-decoration: none;
-            align-items: center;
-        }
-        .return-button{
-            display: flex;
-            justify-content: center;
-            width: 580px;
-            height: 50px;
-            margin: 0 auto;
-            margin: 20px auto 0 auto;
-            align-items: flex-start;
-            gap: 20px;
-            padding: 10px 0;
-            border-style: solid;
-            border-color: #f2f2f2;
-            background-color: #d7d7d7;
-            text-decoration: none;
-            align-items: center;
-        }
-
-        .payment-select{
-            margin-left: 100px;
-            display: flex;
-            flex-direction: column;
-            gap: 50px;
-            margin-top: 0px;
-            text-decoration: none;
-        }
-        .cost-matrix-top-row{
-            display: flex;
-            flex-direction: row;
-            gap: 190px;
-        }
-
-        .cost-matrix-A-row{
-            display: flex;
-            flex-direction: row;
-            gap: 150px;
-        }
-
-        .cost-matrix-total-row{
-            display: flex;
-            flex-direction: row;
-            gap: 150px;
-            margin-bottom: 0%;
-            margin-left: 235px;
-        }
-
     </style>
 </head>
+
 
 <body>
     <div class="top-bar">
@@ -161,7 +77,8 @@
                 text-align: center;
                 padding-top: 40px;
             ">
-            <h1>How Would You Like To Pay?</h1>
+            <h1>Find out Which Bus is Best</h1>
+            <h3>Don't Forget This Thing</h3>
         </div>
 
     </div>
@@ -195,7 +112,7 @@
                 <h3 style="color: black; margin: 5px 0 0 0; font-size: 15px;">HOME</h3>
             </a>
 
-            <a href="../HTML Code/check_route_screen.html" class="side-bar-option">
+            <a href="../HTML Code/check_route_screen.html" class="side-bar-option" style=" box-shadow: 0 0 5px 0px; color: #CC1330;">
                 <img src="../images/route_icon.png" alt="Route Icon" style="width: 40px; height: 40px;">
                 <h3 style="color: black; margin: 5px 0 0 0; font-size: 15px;">ROUTE</h3>
             </a>
@@ -210,9 +127,9 @@
                 <h3 style="color: black; margin: 5px 0 0 0; font-size: 15px;">HELP</h3>
             </a>
 
-            <a href="../HTML Code/home_screen_fr.html" class="side-bar-option">
+            <a href="../HTML Code/language_screen.html" class="side-bar-option">
                 <img src="../images/language_icon.png" alt="Language Icon" style="width: 40px; height: 40px;">
-                <h3 style="color: black; margin: 5px 0 0 0; font-size: 15px;">Français</h3>
+                <h3 style="color: black; margin: 5px 0 0 0; font-size: 15px;">FR ∇</h3>
             </a>
 
             <a onclick="history.back()" class="side-bar-option">
@@ -220,61 +137,19 @@
                 <h3 style="color: black; margin: 5px 0 0 0; font-size: 15px;">PREVIOUS</h3>
             </a>
         </div>
-        <div style="
-                    display: flex;
+
+            <div class="main-actions" style="
+            display: flex;
             justify-content: center;
+            width: 80%;
             margin: 0 auto;
             align-items: flex-start;
-            gap: 10px;
-            padding: 0px 0;
+            gap: 20px;
+            padding: 20px 0;
         ">
-        <div style="
-        display: flex;
-        flex-direction: column;
-        ">
-            <div class="main-actions">
-                <div class="total-cost">
-                    <h2><b>Your Cart</b></h2>
-
-                    <div class="cost-matrix">
-                        <div class="cost-matrix-top-row">
-                            <h3><b>QTY</b></h3>
-                            <h3><b>ITEM</b></h3>
-                            <h3><b>COST</b></h3>
-                        </div>
-
-                        <div class="cost-matrix-A-row">
-                            <h3>1</h3>
-                            <h3>Adult Single Ticket </h3>
-                            <h3>$3.80</h3>
-                        </div>
-
-                        <div class="cost-matrix-A-row">
-                            <h3>0</h3>
-                            <h3>Youth Single Ticket</h3>
-                            <h3>$0.00</h3>
-                        </div>
-                            <hr style="width:100%">
-                        <div class="cost-matrix-total-row">
-                            <h3>Total Cost:</h3>
-                            <h3>$3.80</h3>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        <a href="ticket_screen.html" class="return-button">
-            <h2 style="color: black;">RETURN TO TICKET SELECTION</h2>
-        </a>
-        </div>
-                <div class="payment-select">
-                    <a href="card_screen.html" class="money-button">
-                        <h2 style="color: black;">Credit/Debit Card</h2>
-                    </a>
-                    <a href="cash_coin_screen.html" class="money-button">
-                        <h2 style="color: black;">Cash/Coins</h2>
-                    </a>
-                </div>
-            </div>
+            <a href="../HTML Code/payment_screen.html" class="large-button-container">
+                <img src="../images/check_route_map_1.png">
+            </a>
         </div>
     </div>
 </body>

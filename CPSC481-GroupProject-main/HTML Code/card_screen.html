@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Card Payment Screen</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="card-page">
+
+  <div class="top-bar">
+    <div class="top-left">
+      <img src="../images/yyc_logo.png" alt="Calgary Logo">
+    </div>
+
+    <div class="top-center">
+      <img src="../images/map_icon.png" alt="Map Pin Icon" width="50">
+      <span>Brentwood Station</span>
+
+      <div class="weather-mini">
+        <iframe
+          src="https://widgets.commoninja.com/iframe/d0542a0e-2b72-4421-9c7d-d52b9fb80201"
+          width="760"
+          height="165"
+          frameborder="0"
+          scrolling="no">
+        </iframe>
+      </div>
+    </div>
+
+    <div class="top-right" id="datetime"></div>
+  </div>
+
+  <script>
+    function updateClock() {
+      const now = new Date();
+      const time = now.toLocaleTimeString('en-US', {
+        hour:'2-digit', minute:'2-digit', hour12:true
+      });
+      const date = now.toLocaleDateString('en-US', {
+        weekday:'long', month:'long', day:'numeric'
+      });
+      document.getElementById('datetime').innerHTML = `${date}<br>${time}`;
+    }
+    updateClock();
+    setInterval(updateClock, 1000);
+  </script>
+
+  <main class="card-center">
+  <a href="../HTML Code/receipt_selection_screen.html" class="card-loader-link">
+    <div class="card-loader">
+      <h1>Please follow the instructions on the card reader</h1>
+      <p class="processing-text">Processing your payment…</p>
+
+      <div class="loader-dots" aria-hidden="true">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </a>
+</main>
+
+</body>
+</html>

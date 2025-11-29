@@ -3,13 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Email Sent</title>
+  <title>Cash/Coin Payment Screen</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="email-sent-page">
+<body class="cash-page">
 
-  <!-- Top bar -->
   <div class="top-bar">
     <div class="top-left">
       <img src="../images/yyc_logo.png" alt="Calgary Logo">
@@ -19,7 +18,7 @@
       <img src="../images/map_icon.png" alt="Map Pin Icon" width="50">
       <span>Brentwood Station</span>
 
-      <div class="weather-mini">
+     <div class="weather-mini">
   <div id="ww_cc758efd500b8" 
        v="1.3" 
        loc="id" 
@@ -37,7 +36,6 @@
   </div>
   <script async src="https://app3.weatherwidget.org/js/?id=ww_cc758efd500b8"></script>
 </div>
-
 
     </div>
 
@@ -59,57 +57,99 @@
     setInterval(updateClock, 1000);
   </script>
 
-  <div class="email-sent-hero">
-    <h1 class="email-sent-title">Receipt Email</h1>
+  <div class="cash-hero">
+    <h1 class="cash-title">Insert Coins or Bills</h1>
   </div>
 
-  <div class="email-sent-layout">
+  <div class="cash-layout">
 
-    <!-- Side bar -->
     <div class="ticket-side-bar">
       <a href="../HTML Code/home_screen.html" class="ticket-side-option">
-        <img src="../images/home_icon.png">
+        <img src="../images/home_icon.png" alt="Home Icon">
         <h3>HOME</h3>
       </a>
-
       <a href="../HTML Code/check_route_screen.html" class="ticket-side-option">
-        <img src="../images/route_icon.png">
+        <img src="../images/route_icon.png" alt="Route Icon">
         <h3>ROUTE</h3>
       </a>
-
       <a href="../HTML Code/schedule_screen.html" class="ticket-side-option">
-        <img src="../images/schedule_icon.png">
+        <img src="../images/schedule_icon.png" alt="Schedule Icon">
         <h3>SCHEDULE</h3>
       </a>
-
       <a href="../HTML Code/help_screen.html" class="ticket-side-option">
-        <img src="../images/help_icon.png">
+        <img src="../images/help_icon.png" alt="Help Icon">
         <h3>HELP</h3>
       </a>
-
-      <a href="../HTML Code/home_screen_fr.html" class="ticket-side-option">
-        <img src="../images/language_icon.png">
-        <h3>Français</h3>
+      <a href="../HTML Code/language_screen.html" class="ticket-side-option">
+        <img src="../images/language_icon.png" alt="Language Icon">
+        <h3>FR ∇</h3>
       </a>
-
       <a onclick="history.back()" class="ticket-side-option">
-        <img src="../images/back_icon.png">
+        <img src="../images/back_icon.png" alt="Back Icon">
         <h3>PREVIOUS</h3>
       </a>
     </div>
 
-    <!-- Main Content -->
-    <div class="email-sent-center">
-      <a href="../HTML Code/thank_you_screen.html" class="email-sent-card-link">
-        <div class="email-sent-card">
-          <h1>Email sent</h1>
-          <p>Check your inbox</p>
-          <p class="email-sent-sub">Tap here to continue</p>
+    <div class="cash-center">
+      <!-- changed from <a href> to a div so clicking doesn't auto-navigate -->
+      <div id="cash-card" class="cash-card">
+        <h1>Insert Coins or Bills</h1>
+        <p class="cash-sub">Processing payment…</p>
+
+        <div class="cash-balance">
+          <h2>Balance Due</h2>
+          <h1 id="balance-due">$0.00</h1>
         </div>
-      </a>
+
+        <p class="cash-hint">Tap anywhere to insert cash</p>
+      </div>
     </div>
 
   </div>
+
+  <script>
+  const ITEMS = [
+    { key: "adult-single",  price: 3.80 },
+    { key: "adult-day",     price: 11.95 },
+    { key: "adult-monthly", price: 118.00 },
+    { key: "youth-single",  price: 2.55 },
+    { key: "youth-day",     price: 8.75 },
+    { key: "youth-monthly", price: 86.00 }
+  ];
+
+  function getCount(key) {
+    return parseInt(localStorage.getItem(key) || "0");
+  }
+
+  function calcTotal() {
+    let total = 0;
+    ITEMS.forEach(item => {
+      total += item.price * getCount(item.key);
+    });
+    return total;
+  }
+
+  const DENOMS = [0.05, 0.10, 0.25, 1, 2, 5, 10, 20];
+
+  let balance = calcTotal();
+  const balanceEl = document.getElementById("balance-due");
+
+  function renderBalance() {
+    balanceEl.textContent = `$${balance.toFixed(2)}`;
+  }
+
+  renderBalance();
+
+  document.getElementById("cash-card").addEventListener("click", () => {
+    const inserted = DENOMS[Math.floor(Math.random() * DENOMS.length)];
+    balance = Math.max(0, balance - inserted);
+    renderBalance();
+
+    if (balance <= 0) {
+      window.location.href = "../HTML Code/payment_error_screen.html";
+    }
+  });
+</script>
 
 </body>
 </html>

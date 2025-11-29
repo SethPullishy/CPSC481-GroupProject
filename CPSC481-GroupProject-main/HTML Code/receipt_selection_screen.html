@@ -3,13 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Email Sent</title>
+  <title>Receipt Selection Screen</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="email-sent-page">
+<body class="receipt-page">
 
-  <!-- Top bar -->
   <div class="top-bar">
     <div class="top-left">
       <img src="../images/yyc_logo.png" alt="Calgary Logo">
@@ -38,7 +37,6 @@
   <script async src="https://app3.weatherwidget.org/js/?id=ww_cc758efd500b8"></script>
 </div>
 
-
     </div>
 
     <div class="top-right" id="datetime"></div>
@@ -48,10 +46,14 @@
     function updateClock() {
       const now = new Date();
       const time = now.toLocaleTimeString('en-US', {
-        hour:'2-digit', minute:'2-digit', hour12:true
+        hour: '2-digit',
+        minute: '2-digit',
+        hour12: true
       });
       const date = now.toLocaleDateString('en-US', {
-        weekday:'long', month:'long', day:'numeric'
+        weekday: 'long',
+        month: 'long',
+        day: 'numeric'
       });
       document.getElementById('datetime').innerHTML = `${date}<br>${time}`;
     }
@@ -59,53 +61,55 @@
     setInterval(updateClock, 1000);
   </script>
 
-  <div class="email-sent-hero">
-    <h1 class="email-sent-title">Receipt Email</h1>
+  <div class="receipt-hero">
+    <h1 class="receipt-title">How would you like your receipt?</h1>
   </div>
 
-  <div class="email-sent-layout">
+  <div class="receipt-layout">
 
-    <!-- Side bar -->
     <div class="ticket-side-bar">
       <a href="../HTML Code/home_screen.html" class="ticket-side-option">
-        <img src="../images/home_icon.png">
+        <img src="../images/home_icon.png" alt="Home Icon">
         <h3>HOME</h3>
       </a>
 
       <a href="../HTML Code/check_route_screen.html" class="ticket-side-option">
-        <img src="../images/route_icon.png">
+        <img src="../images/route_icon.png" alt="Route Icon">
         <h3>ROUTE</h3>
       </a>
 
       <a href="../HTML Code/schedule_screen.html" class="ticket-side-option">
-        <img src="../images/schedule_icon.png">
+        <img src="../images/schedule_icon.png" alt="Schedule Icon">
         <h3>SCHEDULE</h3>
       </a>
 
       <a href="../HTML Code/help_screen.html" class="ticket-side-option">
-        <img src="../images/help_icon.png">
+        <img src="../images/help_icon.png" alt="Help Icon">
         <h3>HELP</h3>
       </a>
 
-      <a href="../HTML Code/home_screen_fr.html" class="ticket-side-option">
-        <img src="../images/language_icon.png">
-        <h3>Français</h3>
+      <a href="../HTML Code/language_screen.html" class="ticket-side-option">
+        <img src="../images/language_icon.png" alt="Language Icon">
+        <h3>FR ∇</h3>
       </a>
 
       <a onclick="history.back()" class="ticket-side-option">
-        <img src="../images/back_icon.png">
+        <img src="../images/back_icon.png" alt="Back Icon">
         <h3>PREVIOUS</h3>
       </a>
     </div>
 
-    <!-- Main Content -->
-    <div class="email-sent-center">
-      <a href="../HTML Code/thank_you_screen.html" class="email-sent-card-link">
-        <div class="email-sent-card">
-          <h1>Email sent</h1>
-          <p>Check your inbox</p>
-          <p class="email-sent-sub">Tap here to continue</p>
-        </div>
+    <div class="receipt-actions">
+      <a href="../HTML Code/print_receipt_screen.html" class="receipt-button">
+        <h2>Print</h2>
+      </a>
+
+      <a href="../HTML Code/receipt_enter_email_screen.html" class="receipt-button">
+        <h2>Email</h2>
+      </a>
+
+      <a href="../HTML Code/thank_you_screen.html" class="receipt-button">
+        <h2>No Receipt</h2>
       </a>
     </div>
 
@@ -113,4 +117,3 @@
 
 </body>
 </html>
-
