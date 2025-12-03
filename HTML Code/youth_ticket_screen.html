@@ -110,9 +110,9 @@
         </ul>
 
         <div class="qty-widget">
-          <button class="qty-btn">+</button>
-          <p class="qty-read">0</p>
           <button class="qty-btn">-</button>
+          <p class="qty-read">0</p>
+          <button class="qty-btn">+</button>
         </div>
       </div>
 
@@ -124,9 +124,9 @@
         </ul>
 
         <div class="qty-widget">
-          <button class="qty-btn">+</button>
-          <p class="qty-read">0</p>
           <button class="qty-btn">-</button>
+          <p class="qty-read">0</p>
+          <button class="qty-btn">+</button>
         </div>
       </div>
 
@@ -138,9 +138,9 @@
         </ul>
 
         <div class="qty-widget">
-          <button class="qty-btn">+</button>
-          <p class="qty-read">0</p>
           <button class="qty-btn">-</button>
+          <p class="qty-read">0</p>
+          <button class="qty-btn">+</button>
         </div>
       </div>
     </div>
@@ -189,8 +189,8 @@
     document.querySelectorAll('.youth-card[data-key]').forEach(card => {
       const key = card.dataset.key;
       const widget = card.querySelector('.qty-widget');
-      const plus = widget.querySelectorAll('.qty-btn')[0];
-      const minus = widget.querySelectorAll('.qty-btn')[1];
+      const plus = widget.querySelectorAll('.qty-btn')[1];
+      const minus = widget.querySelectorAll('.qty-btn')[0];
       const readout = widget.querySelector('.qty-read');
 
       let count = getCount(key);
