@@ -95,7 +95,7 @@
 
       <a href="../HTML Code/home_screen_fr.html" class="ticket-side-option">
         <img src="../images/language_icon.png" alt="Language Icon">
-        <h3>Français</h3>
+        <h3>FRANÇAIS</h3>
       </a>
 
       <a onclick="history.back()" class="ticket-side-option">
@@ -115,9 +115,9 @@
         </ul>
 
         <div class="qty-widget">
-          <button class="qty-btn">+</button>
-          <p class="qty-read">0</p>
           <button class="qty-btn">-</button>
+          <p class="qty-read">0</p>
+          <button class="qty-btn">+</button>
         </div>
       </div>
 
@@ -129,9 +129,9 @@
         </ul>
 
         <div class="qty-widget">
-          <button class="qty-btn">+</button>
-          <p class="qty-read">0</p>
           <button class="qty-btn">-</button>
+          <p class="qty-read">0</p>
+          <button class="qty-btn">+</button>
         </div>
       </div>
 
@@ -143,9 +143,9 @@
         </ul>
 
         <div class="qty-widget">
-          <button class="qty-btn">+</button>
-          <p class="qty-read">0</p>
           <button class="qty-btn">-</button>
+          <p class="qty-read">0</p>
+          <button class="qty-btn">+</button>
         </div>
       </div>
     </div>
@@ -195,8 +195,8 @@
   document.querySelectorAll('.adult-card[data-key]').forEach(card => {
     const key = card.dataset.key;
     const widget = card.querySelector('.qty-widget');
-    const plus = widget.querySelectorAll('.qty-btn')[0];
-    const minus = widget.querySelectorAll('.qty-btn')[1];
+    const plus = widget.querySelectorAll('.qty-btn')[1];
+    const minus = widget.querySelectorAll('.qty-btn')[0];
     const readout = widget.querySelector('.qty-read');
 
     let count = getCount(key);
