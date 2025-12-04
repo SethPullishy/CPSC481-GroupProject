@@ -53,9 +53,62 @@
                 background-color: #ccc;
                 margin-bottom: 10px;
         }
+/*accordion menu styling*/
+        .accordion-container{
+            border-radius: 10px;
+            position: relative;
+            width: 80%; /*completely arbritrary*/
+            max-width: 700px;
+            max-height: 550px;/*match sidebar?*/
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            background-color: #f0f0f0;
+        }
 
+        h1{
+            text-align: center;
+        }
+        .accordion-card{
+            /*values are once again, arbritrary*/
+            border: 1px #ccc;
+            border-radius: 6px;
+            /*background-color: yellow;*/
+            width: 100%;
+        }
+        .accordion-card-header{
+            border-radius: 5px;
+            background-color: #ccc;
+            position: relative;/*why relative?*/
+            padding: 10px;
+            margin: 0 5px;
+        }
+        .icon{
+            position: absolute;
+            right: 10px;
+            color: red;
+            transform: rotate(0deg);
+            transition:
+                transform 300ms;
+                color:  300ms;
+        }
+        .accordion-card-content{
+            border-top: solid 2px red;
+            padding: 10px;
+            background-color: #ccc;
+            display: none;/*hides the content*/
+            margin: 0 5px;
+        }
+        .toggleIcon{
+            transform: rotate(45deg);
+            color: hsl(0, 70%, 50%)/*desaturate when it has been selected*/
+        }
+
+        .active{
+            display: block;/*show the content*/
+        }
 </style>
-
 </head>
 
 
@@ -76,6 +129,15 @@
 
             <a class="top-bar-text" style="float:right; margin-top: -55px" id="datetime"></a>
 
+            <div class="weather-mini">
+                <div id="ww_cc758efd500b8" 
+                    v='1.3' 
+                    loc='id' 
+                    a='{"t":"horizontal","lang":"en","sl_lpl":1,"ids":["wl3002"],"font":"Arial","sl_ics":"one_a","sl_sot":"celsius","cl_bkg":"#FFFFFF00","cl_font":"rgba(255,255,255,1)","cl_cloud":"#d4d4d4","cl_persp":"#2196F3","cl_sun":"#FFC107","cl_moon":"#FFC107","cl_thund":"#FF5722","el_nme":3,"el_phw":3,"el_whr":3}'>
+                    More forecasts: <a href="https://oneweather.org/calgary/30_days/" id="ww_cc758efd500b8_u" target="_blank">Calgary weather 30 days</a>
+                </div>
+                <script async src="https://app3.weatherwidget.org/js/?id=ww_cc758efd500b8"></script>
+            </div>
             <script>
                 function updateClock() {
                     const now = new Date();
@@ -86,26 +148,6 @@
                 updateClock();
                 setInterval(updateClock, 1000);
             </script>
-        </div>
-
-        <!--Weather-->
-        <div style="position: relative; width: 100%; min-height: 200px;">
-            <div class="title-weather" style="
-                position: absolute;
-                top: 20px;
-                right: 20px;
-            ">
-                <iframe title="Environment Canada Weather" width="296" height="191" src="https://weather.gc.ca/wxlink/wxlink.html?coords=51.046%2C-114.057&lang=e" allowtransparency="true" style="border: 0;"></iframe>
-            </div>
-
-            <div class="title-level" style="
-                width: 100%;
-                text-align: center;
-                padding-top: 40px;
-            ">
-                <h1>Help & Support</h1>
-            </div>
-
         </div>
 
 <div style="position: relative; width: 100%; padding: 0;">
@@ -120,7 +162,6 @@
         <div class="side-bar" style="
             width: 120px;
             position: relative;
-            top: -100px;
 
             display: flex;
             flex-direction: column;
@@ -154,7 +195,7 @@
 
             <a href="../HTML Code/home_screen_fr.html" class="side-bar-option">
                 <img src="../images/language_icon.png" alt="Language Icon" style="width: 40px; height: 40px;">
-                <h3 style="color: black; margin: 5px 0 0 0; font-size: 15px;">Français</h3>
+                <h3 style="color: black; margin: 5px 0 0 0; font-size: 15px;">FRANÇAIS</h3>
             </a>
 
             <a onclick="history.back()" class="side-bar-option">
@@ -163,23 +204,89 @@
             </a>
         </div>
 
-        <!--3 ticket option-->
-            <div class="main-actions" style="
-            display: flex;
-            justify-content: center;
-            width: 80%;
-            margin: 0 auto;
-            align-items: flex-start;
-            gap: 20px;
-            padding: 20px 0;
-        ">
+<!--FAQ accordion menu-->
+        <div class="accordion-container">
+            <h1>
+                How can we help today?
+            </h1>
+            <div class="accordion-card">
+                <h3 class="accordion-card-header">
+                    How do I buy a ticket?
+                    <span class="icon"> + </span>
+                </h3>
+                <p class="accordion-card-content">
+                    Navigate to the ticket purchase screen with the button through the home screen.
+                </p>
+            </div>
+            <div class="accordion-card">
+                <h3 class="accordion-card-header">
+                    How do I plan a trip?
+                    <span class="icon"> + </span>
+                </h3>
+                <p class="accordion-card-content">
+                    Naivgate to the route planner by using the button in the left sidebar.
+                </p>
+            </div>
+            <div class="accordion-card">
+                <h3 class="accordion-card-header">
+                    I'd like to report a problem?
+                    <span class="icon"> + </span>
+                </h3>
+                <p class="accordion-card-content">
+                    Call xxx-xxx-xxxx.
+                </p>
+            </div>
+            <div class="accordion-card">
+                <h3 class="accordion-card-header">
+                    I'd like to find the lost and found.
+                    <span class="icon"> + </span>
+                </h3>
+                <p class="accordion-card-content">
+                    Lost and founds are only available...
+                </p>
+            </div>
+            <div class="accordion-card">
+                <h3 class="accordion-card-header">
+                    What are the fares and pricing?
+                    <span class="icon"> + </span>
+                </h3>
+                <p class="accordion-card-content">
+                    Check fares at...
+                </p>
+            </div>
+            <div class="accordion-card">
+                <h3 class="accordion-card-header">
+                    I want to contact Calgary Transit immediately
+                    <span class="icon"> + </span>
+                </h3>
+                <p class="accordion-card-content">
+                    Call us at...
+                </p>
+            </div>
 
-            <a class="large-button-container" >
-                <img src="../images/help_image.png">
-            </a>
-        </div>
+            <script>
+                const accordionBtnToggle = document.querySelectorAll(".accordion-card-header");
+
+                for(i of accordionBtnToggle){
+                    i.addEventListener("click", accordionToggleFunction);
+                }
+                function accordionToggleFunction(){
+                    /*this.nextElementSibling.classList.toggle("active");
+                    this.children[0].classList.toggle("toggleIcon");*/
+                    for(i of accordionBtnToggle){
+                        i.nextElementSibling.style.display = "none";
+                        i.children[0].classList.remove("toggleIcon");
+                    }
+                    if(this.nextElementSibling.style.display == "none"){
+                        this.nextElementSibling.style.display = "block";
+                        this.children[0].classList.add("toggleIcon");
+                    }
+                }
+            </script>
+
         </div>
     </div>
+</div>
 </body>
 </html>
 
