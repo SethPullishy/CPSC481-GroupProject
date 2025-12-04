@@ -1484,3 +1484,7 @@ body {
   -webkit-tap-highlight-color: transparent;
 }
 
+.train-time-img {
+  width: 800px;
+  height: 300px;
+}
