@@ -89,9 +89,40 @@
   </div>
 
   <div class="bottom-bar">
-    <a href="../HTML Code/short_cut_1_screen.html" class="bottom-bar-button">
-      <h2>Quick Buy: 1 Adult Ticket</h2>
-    </a>
-  </div>
+  <a href="../HTML Code/payment_screen.html" 
+     class="bottom-bar-button" 
+     id="quick-buy-1-adult">
+    <h2>Quick Buy: 1 Adult Ticket</h2>
+  </a>
+</div>
+
+<script>
+  // keys you used for tickets
+  const TICKET_KEYS = [
+    "adult-single",
+    "adult-day",
+    "adult-monthly",
+    "youth-single",
+    "youth-day",
+    "youth-monthly"
+  ];
+
+  window.addEventListener("DOMContentLoaded", () => {
+    // clear all ticket counts when home loads
+    TICKET_KEYS.forEach(key => localStorage.removeItem(key));
+
+    // wire up quick buy
+    const quick = document.getElementById("quick-buy-1-adult");
+    if (quick) {
+      quick.addEventListener("click", (e) => {
+        e.preventDefault();                      // stop normal link behavior
+        localStorage.setItem("adult-single", "1"); // set 1 adult single
+        window.location.href = "../HTML Code/payment_screen.html";
+      });
+    }
+  });
+</script>
+
+
 </body>
 </html>
