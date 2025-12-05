@@ -2044,7 +2044,7 @@ body {
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 10px;
   max-width: 1000px;
   margin: 0 auto;
 }
@@ -2063,9 +2063,10 @@ body {
   cursor: pointer;
   position: relative;
   font-size: 22px;
-  font-weight: 700;
+  font-weight: 00;
   transition: background-color 0.2s;
 }
+
 
 .accordion-card-header:hover {
   background-color: #d0d0d0;
