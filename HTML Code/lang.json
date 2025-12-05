@@ -1,0 +1,20 @@
+{
+    "en":{
+        "welcome": "Welcome"
+        
+        
+    },
+    
+    "fr":{
+        "welcome": "Bienvenue",
+        "sidebar.home": "accueil",
+        "sidebar.route": "ligne",
+        "sidebar.schedule": "programme",
+        "sidebar.help": "aide",
+        "sidebar.previous": "précédent",
+
+        "help.header": "l'assistance",
+        "help.subheader": ""
+
+    }
+}
