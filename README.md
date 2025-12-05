@@ -3,8 +3,7 @@ This is the HTML and CSS code comprising of our CPSC481 final project. bus ticke
 
  Since we are simulating a kiosk, the necessary machinery for a kiosk, like card payment machines, coin/cash payment machines, ticket dispensers, ticket printers, receipt printers, among other necessary external devices has been assumed to be installed along with the kiosk, and their actions are reflected by the screens projected. Imitating a kiosk, the current programs is reflecting the functionality of a kiosk on a website for a computer, therefore the user's interaction of tapping on a kiosk screen should be imitated with a mouse press of m1, but any changes while moving the mouse without the mouse being pressed should be ignored. 
 
-The optimal way to simulate the project is to initially open the index.html on any browser, and click on ctrl+shift+m
-Pressing on the enable touch simulation will simulate the touch interactions the users will have on an actual kiosk.
+The optimal way to simulate the touch input kiosk experience is by initially open the welcome screen on any browser, and clicking on ctrl+shift+m. Pressing on the "enable touch simulation" will simulate the touch interactions the users will have on an actual kiosk.
 
 To run as currently set up, select waiting_screen.html and run that. It will open in your browser and you can move from there. As the project moves towards finished this is subject to change.
 
