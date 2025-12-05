@@ -1394,7 +1394,14 @@ body {
   font-size: 18px;
   color: #666;
 }
-
+.cash-coin{
+  width: 40px; 
+  height: 40px;
+}
+.cash-cash{
+  width: 70px; 
+  height: 40px;
+}
 
 /* Payment error screen */
 
