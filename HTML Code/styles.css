@@ -62,7 +62,7 @@ body {
 
   position: absolute;
   left: 50%;
-  top: -17px;
+  top: -7px;
   z-index: 50;
   pointer-events: auto !important;
 }
