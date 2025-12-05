@@ -1,7 +1,10 @@
 # CPSC481-GroupProject
 This is the HTML and CSS code comprising of our CPSC481 final project. bus ticketing kiosk system
 
- This is designed for a computer with a (potentially) different aspect ratio from your laptop, the current size of the screen is 1920x1080, a 16:9 ratio. Since we are simulating a kiosk, the necessary machinery for a kiosk, like card payment machines, coin/cash payment machines, ticket dispensers, ticket printers, receipt printers, among other necessary external devices has been assumed to be installed along with the kiosk, and their actions are reflected by the screens projected. Imitating a kiosk, the current programs is reflecting the functionality of a kiosk on a website for a computer, therefore the user's interaction of tapping on a kiosk screen should be imitated with a mouse press of m1, but any changes while moving the mouse without the mouse being pressed should be ignored. 
+ Since we are simulating a kiosk, the necessary machinery for a kiosk, like card payment machines, coin/cash payment machines, ticket dispensers, ticket printers, receipt printers, among other necessary external devices has been assumed to be installed along with the kiosk, and their actions are reflected by the screens projected. Imitating a kiosk, the current programs is reflecting the functionality of a kiosk on a website for a computer, therefore the user's interaction of tapping on a kiosk screen should be imitated with a mouse press of m1, but any changes while moving the mouse without the mouse being pressed should be ignored. 
+
+The optimal way to simulate the project is to initially open the index.html on any browser, and click on ctrl+shift+m
+Pressing on the enable touch simulation will simulate the touch interactions the users will have on an actual kiosk.
 
 To run as currently set up, select waiting_screen.html and run that. It will open in your browser and you can move from there. As the project moves towards finished this is subject to change.
 
@@ -16,5 +19,7 @@ The payment screen will simulate when a user has not added any tickets on the ti
 The card screen is simulating a payment process which would wait until the user finish using the card machine, which will be simulated by pressing on the center button.
 
 The print reciept screen is simulating the printing of reciept process which would wait until the reciept has been full printed by the reciept printing machine, which will be simulated by pressing on the center button.
+
+The french buttons will change the pages and the folling changes to french, which can be reverted by pressing the now changed english button and will remain in the french language until the thank you screen resets the kiosk.
 
 The thank you screen will automatically return to the welcome screne after 3 seconds, resetting all data that was previously saved by the kiosk.
