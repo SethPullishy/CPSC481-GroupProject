@@ -1,4 +1,7 @@
 # CPSC481-GroupProject
+
+LINK -- https://sethpullishy.github.io/CPSC481-GroupProject/
+
 This is the HTML and CSS code comprising of our CPSC481 final project. bus ticketing kiosk system
 
  Since we are simulating a kiosk, the necessary machinery for a kiosk, like card payment machines, coin/cash payment machines, ticket dispensers, ticket printers, receipt printers, among other necessary external devices has been assumed to be installed along with the kiosk, and their actions are reflected by the screens projected. Imitating a kiosk, the current programs is reflecting the functionality of a kiosk on a website for a computer, therefore the user's interaction of tapping on a kiosk screen should be imitated with a mouse press of m1, but any changes while moving the mouse without the mouse being pressed should be ignored. 
