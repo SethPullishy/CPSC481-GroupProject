@@ -104,12 +104,73 @@
       </a>
     </div>
       
-      <div class="main-actions">
-        <a href="../HTML Code/payment_screen.html">
-          <img src="../images/schedules.png" alt="Schedules" class="train-time-img">
-        </a>
+      <div class="main-actions" style="flex-direction: column; align-items: center;">
+    
+    <div class="schedule-widget">
+      <div class="schedule-header">
+        <h2>Live Departures</h2>
+        <p>Brentwood Station</p>
       </div>
+
+      <table class="schedule-table">
+        <thead>
+          <tr>
+            <th>Route</th>
+            <th>Destination</th>
+            <th>Next Bus</th>
+            <th>Following</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="route-box">9</span></td>
+            <td class="destination">Dalhousie Station</td>
+            <td class="time-cell">
+              <span class="time-live">4 min</span>
+              <span class="status status-late">Late 2m</span>
+            </td>
+            <td>12:48 PM</td>
+          </tr>
+          <tr>
+            <td><span class="route-box">82</span></td>
+            <td class="destination">Nolan Hill</td>
+            <td class="time-cell">
+              <span class="time-live">12 min</span>
+              <span class="status status-ontime">On Time</span>
+            </td>
+            <td>1:05 PM</td>
+          </tr>
+          <tr>
+            <td><span class="route-box">90</span></td>
+            <td class="destination">Bridgeland/Foothills</td>
+            <td class="time-cell">
+              <span class="time-text">12:55 PM</span>
+              <span class="status status-ontime">On Time</span>
+            </td>
+            <td>1:25 PM</td>
+          </tr>
+          <tr>
+            <td><span class="route-box">305</span></td>
+            <td class="destination">City Centre BRT</td>
+            <td class="time-cell">
+              <span class="time-live">Now</span>
+              <span class="status status-early">Early 1m</span>
+            </td>
+            <td>12:45 PM</td>
+          </tr>
+          <tr>
+            <td><span class="route-box">407</span></td>
+            <td class="destination">Greenwood/Bowness</td>
+            <td class="time-cell">
+              <span class="time-text">1:10 PM</span>
+              <span class="status status-late">Late 5m</span>
+            </td>
+            <td>1:40 PM</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
+
   </div>
 </body>
 </html>

@@ -1579,3 +1579,158 @@ body {
   margin-top: 0;
 }
 
+/* ===== LIVE SCHEDULE WIDGET (Schedule Screen) ===== */
+
+.schedule-widget {
+  background-color: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  width: 100%;
+  max-width: 1000px; 
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid #CC1330; 
+}
+
+.schedule-header {
+  background-color: #CC1330;
+  color: white;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.schedule-header h2 {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.schedule-header p {
+  margin: 0;
+  font-size: 18px;
+  opacity: 0.9;
+  font-weight: 600;
+}
+
+.schedule-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.schedule-table thead th {
+  background-color: #f0f0f0;
+  color: #333;
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 15px 20px;
+  border-bottom: 3px solid #dcdcdc;
+}
+
+.schedule-table tbody tr {
+  border-bottom: 1px solid #eee;
+  transition: background-color 0.1s ease;
+}
+
+.schedule-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.schedule-table tbody tr:hover {
+  background-color: #fff5f6; /* Very faint red hover */
+}
+
+.schedule-table td {
+  padding: 15px 20px;
+  font-size: 20px;
+  color: #333;
+  vertical-align: middle;
+}
+
+/* Red box for Route Number */
+.route-box {
+  display: inline-block;
+  background-color: #CC1330;
+  color: white;
+  font-weight: 700;
+  font-size: 22px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  min-width: 50px;
+  text-align: center;
+}
+
+.destination {
+  font-weight: 600;
+  font-size: 22px;
+}
+
+/* Style for "Live" times (e.g., "4 min") */
+.time-live {
+  color: #CC1330;
+  font-weight: 800;
+  position: relative;
+}
+
+/* Optional: Add a little "live" icon */
+.time-live::before {
+  content: '•';
+  color: #CC1330;
+  margin-right: 6px;
+  font-size: 24px;
+  line-height: 0;
+  position: relative;
+  top: 2px;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { opacity: 0.5; }
+  50% { opacity: 1; }
+  100% { opacity: 0.5; }
+}
+
+.time-cell {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px 20px !important;
+}
+
+.status {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 2px 6px;
+  border-radius: 4px;
+  margin-top: 4px;
+  width: fit-content;
+}
+
+/* Colors */
+.status-ontime {
+  background-color: #e6f4ea;
+  color: #1e8e3e; 
+}
+
+.status-late {
+  background-color: #fce8e6;
+  color: #c5221f; 
+}
+
+.status-early {
+  background-color: #e8f0fe;
+  color: #1967d2; 
+}
+
+.schedule-table td {
+  padding: 12px 20px; 
+  vertical-align: middle;
+}
+
+
