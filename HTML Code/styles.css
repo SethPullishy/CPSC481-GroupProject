@@ -177,7 +177,7 @@ body {
 
 .train-time-img {
   width: 720px;
-  height: 220px;
+  height: 230px !important;
 }
 
 .right-column img {
@@ -1641,7 +1641,7 @@ body {
 }
 
 .schedule-table tbody tr:hover {
-  background-color: #fff5f6; 
+  background-color: #fff5f6; /* Very faint red hover */
 }
 
 
@@ -1660,8 +1660,8 @@ body {
 .search-container {
   display: flex;
   width: 100%;
-  gap: 10px; 
-  margin-bottom: 15px;
+  gap: 10px; /* Space between input and button */
+  margin-bottom: 15px; /* Space between search and map */
 }
 
 .search-input {
@@ -1701,10 +1701,10 @@ body {
 .route-main-split {
   flex: 1;
   display: flex;
-  flex-direction: row; 
+  flex-direction: row; /* Side by Side */
   justify-content: center;
   align-items: center;
-  gap: 50px;
+  gap: 50px; /* Space between inputs and map */
   padding: 20px;
 }
 
@@ -1749,7 +1749,7 @@ body {
 }
 
 .fixed-input {
-  background-color: #e0e0e0;
+  background-color: #e0e0e0; /* Greyed out to show it's fixed */
   color: #555;
 }
 
@@ -1766,7 +1766,7 @@ body {
   width: 400px;
   height: 300px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-  background: #eee;
+  background: #eee; /* Placeholder color while loading */
 }
 
 
@@ -1893,7 +1893,7 @@ body {
   background: #f7f7f7;
   border: 2px solid #d0d0d0;
   border-radius: 12px;
-  padding: 10px 24px 16px; 
+  padding: 10px 24px 16px; /* Padding around contents */
   width: 100%;
   box-sizing: border-box;
   height: auto; 
@@ -2010,7 +2010,7 @@ body {
 .help-hero {
   width: 100%;
   text-align: center;
-  padding: 30px 0 20px;
+  padding: 10px 0 20px;
   box-sizing: border-box;
 }
 
@@ -2044,7 +2044,7 @@ body {
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 10px;
   max-width: 1000px;
   margin: 0 auto;
 }
@@ -2063,9 +2063,10 @@ body {
   cursor: pointer;
   position: relative;
   font-size: 22px;
-  font-weight: 700;
+  font-weight: 00;
   transition: background-color 0.2s;
 }
+
 
 .accordion-card-header:hover {
   background-color: #d0d0d0;
