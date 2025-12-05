@@ -1935,7 +1935,11 @@ body {
   border-radius: 6px;
   border: 1px solid #bdbdbd;
   box-sizing: border-box;
+<<<<<<< HEAD
   height: 45px;
+=======
+  height: 45px; 
+>>>>>>> 7db7c1efddbb99d806c6b45b299e43475c749d9a
 }
 
 .fixed-input {
