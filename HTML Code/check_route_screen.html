@@ -13,22 +13,16 @@
     <div class="top-left">
       <img src="../images/yyc_logo.png" alt="Calgary Logo">
     </div>
-
     <div class="top-center">
       <img src="../images/map_icon.png" alt="Map Pin Icon" width="50">
       <span>Brentwood Station</span>
-
       <div class="weather-mini">
-        <div id="ww_cc758efd500b8" 
-             v='1.3' 
-             loc='id' 
-             a='{"t":"horizontal","lang":"en","sl_lpl":1,"ids":["wl3002"],"font":"Arial","sl_ics":"one_a","sl_sot":"celsius","cl_bkg":"#FFFFFF00","cl_font":"rgba(255,255,255,1)","cl_cloud":"#d4d4d4","cl_persp":"#2196F3","cl_sun":"#FFC107","cl_moon":"#FFC107","cl_thund":"#FF5722","el_nme":3,"el_phw":3,"el_whr":3}'>
+        <div id="ww_cc758efd500b8" v='1.3' loc='id' a='{"t":"horizontal","lang":"en","sl_lpl":1,"ids":["wl3002"],"font":"Arial","sl_ics":"one_a","sl_sot":"celsius","cl_bkg":"#FFFFFF00","cl_font":"rgba(255,255,255,1)","cl_cloud":"#d4d4d4","cl_persp":"#2196F3","cl_sun":"#FFC107","cl_moon":"#FFC107","cl_thund":"#FF5722","el_nme":3,"el_phw":3,"el_whr":3}'>
           More forecasts: <a href="https://oneweather.org/calgary/30_days/" id="ww_cc758efd500b8_u" target="_blank">Calgary weather 30 days</a>
         </div>
         <script async src="https://app3.weatherwidget.org/js/?id=ww_cc758efd500b8"></script>
       </div>
     </div>
-
     <div class="top-right" id="datetime"></div>
   </div>
 
@@ -52,58 +46,111 @@
     setInterval(updateClock, 1000);
   </script>
 
-  <div class="route-layout" style="margin-top: 30px;">
-
+  <div class="route-layout">
+    
     <div class="ticket-side-bar">
       <a href="../HTML Code/home_screen.html" class="ticket-side-option">
         <img src="../images/home_icon.png" alt="Home Icon">
         <h3>HOME</h3>
       </a>
-
       <a href="../HTML Code/check_route_screen.html" class="ticket-side-option" style="box-shadow: 0 0 5px 0px; color: #CC1330;">
         <img src="../images/route_icon.png" alt="Route Icon">
         <h3>MAP</h3>
       </a>
-
       <a href="../HTML Code/schedule_screen.html" class="ticket-side-option">
         <img src="../images/schedule_icon.png" alt="Schedule Icon">
         <h3>SCHEDULE</h3>
       </a>
-
       <a href="../HTML Code/help_screen.html" class="ticket-side-option">
         <img src="../images/help_icon.png" alt="Help Icon">
         <h3>HELP</h3>
       </a>
-
       <a href="../HTML Code/home_screen_fr.html" class="ticket-side-option">
         <img src="../images/language_icon.png" alt="Language Icon">
         <h3>FRANÇAIS</h3>
       </a>
-
       <a onclick="history.back()" class="ticket-side-option">
         <img src="../images/back_icon.png" alt="Back Icon">
         <h3>PREVIOUS</h3>
       </a>
     </div>
 
-    <div class="route-main">
-      <iframe 
-        class="route-map-frame"
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d211911.5671918656!2d-114.28166031370927!3d51.027997635766674!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x537170039f843fd5%3A0x266d3bb1b652b63a!2sCalgary%2C%20AB!5e0!3m2!1sen!2sca!4v1764895070387!5m2!1sen!2sca" 
-        width="100%" 
-        height="550" 
-        style="border:0;" 
-        allowfullscreen="" 
-        loading="lazy" 
-        referrerpolicy="no-referrer-when-downgrade">
-      </iframe>
+    <div class="route-main-split">
+      
+      <div class="planner-box">
+        <h2>Plan Your Trip</h2>
+        
+        <div class="planner-row">
+          <div class="input-group">
+            <label>FROM:</label>
+            <input type="text" value="Brentwood Station" readonly class="fixed-input">
+          </div>
 
-      <a href="../HTML Code/payment_screen.html" class="continue-button">
-        Buy Ticket
-      </a>
+          <div class="input-group">
+            <label>TO:</label>
+            <select id="destination-select" class="select-input" onchange="updateMap()">
+              <option value="default">Select Destination...</option>
+              <option value="uofc">University of Calgary</option>
+              <option value="marketmall">Market Mall</option>
+              <option value="zoo">Calgary Zoo</option>
+            </select>
+          </div>
+
+          <a href="../HTML Code/ticket_screen.html" class="continue-button">
+            Buy Ticket
+          </a>
+        </div>
+      </div>
+
+      <div class="map-box">
+        <iframe 
+          id="default-map"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d211911.5671918656!2d-114.28166031370927!3d51.027997635766674!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x537170039f843fd5%3A0x266d3bb1b652b63a!2sCalgary%2C%20AB!5e0!3m2!1sen!2sca!4v1764895070387!5m2!1sen!2sca" 
+          width="100%" 
+          height="100%" 
+          style="border:0;" 
+          allowfullscreen="" 
+          loading="lazy" 
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+
+        <img id="uofc-map" src="../images/UofC_Map.png" alt="Map to U of C" class="destination-map hidden">
+        <img id="marketmall-map" src="../images/Marketmall_Map.png" alt="Map to Market Mall" class="destination-map hidden">
+        <img id="zoo-map" src="../images/Zoo_Map.png" alt="Map to Zoo" class="destination-map hidden">
+      </div>
+
     </div>
 
   </div>
+
+  <script>
+    function updateMap() {
+      const selector = document.getElementById('destination-select');
+      const selectedValue = selector.value;
+      
+      const defaultMap = document.getElementById('default-map');
+      const uofcMap = document.getElementById('uofc-map');
+      const marketMap = document.getElementById('marketmall-map');
+      const zooMap = document.getElementById('zoo-map');
+
+      // Hide all
+      defaultMap.classList.add('hidden');
+      uofcMap.classList.add('hidden');
+      marketMap.classList.add('hidden');
+      zooMap.classList.add('hidden');
+
+      // Show selected
+      if (selectedValue === 'uofc') {
+        uofcMap.classList.remove('hidden');
+      } else if (selectedValue === 'marketmall') {
+        marketMap.classList.remove('hidden');
+      } else if (selectedValue === 'zoo') {
+        zooMap.classList.remove('hidden');
+      } else {
+        defaultMap.classList.remove('hidden');
+      }
+    }
+  </script>
 
 </body>
 </html>

@@ -1,292 +1,179 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Help Screen</title>
-
-        <style>
-        body {
-        margin: 0;
-        font-family: Arial, Helvetica, sans-serif;
-        }
-
-        .top-bar {
-        overflow: hidden;
-        background-color: #CC1330;
-        }
-
-        .top-bar a {
-        float: left;
-        color: #f2f2f2;
-        text-align: center;
-        padding: 14px 16px;
-        font-size: 24px;
-
-        }
-
-        .quantity-selection-widget{
-            display: flex;
-            justify-content: center;
-            width: 80%;
-            margin: 0 auto;
-            align-items: flex-start;
-            gap: 20px;
-            padding: 20px 0;
-        }
-
-        .large-button-container{
-                text-decoration: none;
-                flex: 1;
-                border: 2px solid #ccc;
-                padding: 15px;
-                text-align: center;
-                height: 550px;
-                background-color: #dddddd;
-        }
-
-        .side-bar-option{
-                text-decoration: none;
-                text-align: center;
-                padding: 10px 0;
-                width: 80%;
-                background-color: #ccc;
-                margin-bottom: 10px;
-        }
-/*accordion menu styling*/
-        .accordion-container{
-            border-radius: 10px;
-            position: relative;
-            width: 80%; /*completely arbritrary*/
-            max-width: 700px;
-            max-height: 550px;/*match sidebar?*/
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            background-color: #f0f0f0;
-        }
-
-        h1{
-            text-align: center;
-        }
-        .accordion-card{
-            /*values are once again, arbritrary*/
-            border: 1px #ccc;
-            border-radius: 6px;
-            /*background-color: yellow;*/
-            width: 100%;
-        }
-        .accordion-card-header{
-            border-radius: 5px;
-            background-color: #ccc;
-            position: relative;/*why relative?*/
-            padding: 10px;
-            margin: 0 5px;
-        }
-        .icon{
-            position: absolute;
-            right: 10px;
-            color: red;
-            transform: rotate(0deg);
-            transition:
-                transform 300ms;
-                color:  300ms;
-        }
-        .accordion-card-content{
-            border-top: solid 2px red;
-            padding: 10px;
-            background-color: #ccc;
-            display: none;/*hides the content*/
-            margin: 0 5px;
-        }
-        .toggleIcon{
-            transform: rotate(45deg);
-            color: hsl(0, 70%, 50%)/*desaturate when it has been selected*/
-        }
-
-        .active{
-            display: block;/*show the content*/
-        }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Help Screen</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 
+<body class="help-page">
 
-<body>
-        <!--Top bar: present on most screens-->
-        <div class="top-bar">
-            <img src="../images/yyc_logo.png" alt="Calgary Logo" width="200" style="float:left">
-
-            <div style="
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-top: 20px
-            ">
-                <img src="../images/map_icon.png" alt="Map Pin Icon" width="50">
-                <a class="top-bar-text">Brentwood Station</a>
-            </div>
-
-            <a class="top-bar-text" style="float:right; margin-top: -55px" id="datetime"></a>
-
-            <div class="weather-mini">
-                <div id="ww_cc758efd500b8" 
-                    v='1.3' 
-                    loc='id' 
-                    a='{"t":"horizontal","lang":"en","sl_lpl":1,"ids":["wl3002"],"font":"Arial","sl_ics":"one_a","sl_sot":"celsius","cl_bkg":"#FFFFFF00","cl_font":"rgba(255,255,255,1)","cl_cloud":"#d4d4d4","cl_persp":"#2196F3","cl_sun":"#FFC107","cl_moon":"#FFC107","cl_thund":"#FF5722","el_nme":3,"el_phw":3,"el_whr":3}'>
-                    More forecasts: <a href="https://oneweather.org/calgary/30_days/" id="ww_cc758efd500b8_u" target="_blank">Calgary weather 30 days</a>
-                </div>
-                <script async src="https://app3.weatherwidget.org/js/?id=ww_cc758efd500b8"></script>
-            </div>
-            <script>
-                function updateClock() {
-                    const now = new Date();
-                    const time = now.toLocaleTimeString('en-US', {hour: '2-digit', minute: '2-digit', hour12: true});
-                    const date = now.toLocaleDateString('en-US', {weekday: 'long', month: 'long', day: 'numeric'});
-                    document.getElementById('datetime').textContent = `${time} ${date}`;
-                }
-                updateClock();
-                setInterval(updateClock, 1000);
-            </script>
-        </div>
-
-<div style="position: relative; width: 100%; padding: 0;">
-
-    <div class="main-content-and-side-bar" style="
-        display: flex;
-        width: 98%;
-        max-width: 1900px;
-        margin: 0 auto;
-    ">
-
-        <div class="side-bar" style="
-            width: 120px;
-            position: relative;
-
-            display: flex;
-            flex-direction: column;
-
-            align-items: center;
-
-            border: 2px solid #ccc;
-            background-color: #f0f0f0;
-            padding: 10px 0;
-            flex-shrink: 0;
-        ">
-            <a href="../HTML Code/home_screen.html" class="side-bar-option">
-                <img src="../images/home_icon.png" alt="Home Icon" style="width: 40px; height: 40px;">
-                <h3 style="color: black; margin: 5px 0 0 0; font-size: 15px;">HOME</h3>
-            </a>
-
-            <a href="../HTML Code/check_route_screen.html" class="side-bar-option">
-                <img src="../images/route_icon.png" alt="Route Icon" style="width: 40px; height: 40px;">
-                <h3 style="color: black; margin: 5px 0 0 0; font-size: 15px;">ROUTE</h3>
-            </a>
-
-            <a href="../HTML Code/schedule_screen.html" class="side-bar-option">
-                <img src="../images/schedule_icon.png" alt="Schedule Icon" style="width: 40px; height: 40px;">
-                <h3 style="color: black; margin: 5px 0 0 0; font-size: 15px;">SCHEDULE</h3>
-            </a>
-
-            <a href="../HTML Code/help_screen.html" class="side-bar-option" style=" box-shadow: 0 0 5px 0px; color: #CC1330;">
-                <img src="../images/help_icon.png" alt="Help Icon" style="width: 40px; height: 40px;">
-                <h3 style="color: black; margin: 5px 0 0 0; font-size: 15px;">HELP</h3>
-            </a>
-
-            <a href="../HTML Code/home_screen_fr.html" class="side-bar-option">
-                <img src="../images/language_icon.png" alt="Language Icon" style="width: 40px; height: 40px;">
-                <h3 style="color: black; margin: 5px 0 0 0; font-size: 15px;">FRANÇAIS</h3>
-            </a>
-
-            <a onclick="history.back()" class="side-bar-option">
-                <img src="../images/back_icon.png" alt="Back Icon" style="width: 40px; height: 40px;">
-                <h3 style="color: black; margin: 5px 0 0 0; font-size: 15px;">PREVIOUS</h3>
-            </a>
-        </div>
-
-<!--FAQ accordion menu-->
-        <div class="accordion-container">
-            <h1>
-                How can we help today?
-            </h1>
-            <div class="accordion-card">
-                <h3 class="accordion-card-header">
-                    How do I buy a ticket?
-                    <span class="icon"> + </span>
-                </h3>
-                <p class="accordion-card-content">
-                    Navigate to the ticket purchase screen with the button through the home screen.
-                </p>
-            </div>
-            <div class="accordion-card">
-                <h3 class="accordion-card-header">
-                    How do I plan a trip?
-                    <span class="icon"> + </span>
-                </h3>
-                <p class="accordion-card-content">
-                    Naivgate to the route planner by using the button in the left sidebar.
-                </p>
-            </div>
-            <div class="accordion-card">
-                <h3 class="accordion-card-header">
-                    I'd like to report a problem?
-                    <span class="icon"> + </span>
-                </h3>
-                <p class="accordion-card-content">
-                    Call xxx-xxx-xxxx.
-                </p>
-            </div>
-            <div class="accordion-card">
-                <h3 class="accordion-card-header">
-                    I'd like to find the lost and found.
-                    <span class="icon"> + </span>
-                </h3>
-                <p class="accordion-card-content">
-                    Lost and founds are only available...
-                </p>
-            </div>
-            <div class="accordion-card">
-                <h3 class="accordion-card-header">
-                    What are the fares and pricing?
-                    <span class="icon"> + </span>
-                </h3>
-                <p class="accordion-card-content">
-                    Check fares at...
-                </p>
-            </div>
-            <div class="accordion-card">
-                <h3 class="accordion-card-header">
-                    I want to contact Calgary Transit immediately
-                    <span class="icon"> + </span>
-                </h3>
-                <p class="accordion-card-content">
-                    Call us at...
-                </p>
-            </div>
-
-            <script>
-                const accordionBtnToggle = document.querySelectorAll(".accordion-card-header");
-
-                for(i of accordionBtnToggle){
-                    i.addEventListener("click", accordionToggleFunction);
-                }
-                function accordionToggleFunction(){
-                    /*this.nextElementSibling.classList.toggle("active");
-                    this.children[0].classList.toggle("toggleIcon");*/
-                    for(i of accordionBtnToggle){
-                        i.nextElementSibling.style.display = "none";
-                        i.children[0].classList.remove("toggleIcon");
-                    }
-                    if(this.nextElementSibling.style.display == "none"){
-                        this.nextElementSibling.style.display = "block";
-                        this.children[0].classList.add("toggleIcon");
-                    }
-                }
-            </script>
-
-        </div>
+  <div class="top-bar">
+    <div class="top-left">
+      <img src="../images/yyc_logo.png" alt="Calgary Logo">
     </div>
-</div>
+
+    <div class="top-center">
+      <img src="../images/map_icon.png" alt="Map Pin Icon" width="50">
+      <span>Brentwood Station</span>
+
+      <div class="weather-mini">
+        <div id="ww_cc758efd500b8" 
+             v='1.3' 
+             loc='id' 
+             a='{"t":"horizontal","lang":"en","sl_lpl":1,"ids":["wl3002"],"font":"Arial","sl_ics":"one_a","sl_sot":"celsius","cl_bkg":"#FFFFFF00","cl_font":"rgba(255,255,255,1)","cl_cloud":"#d4d4d4","cl_persp":"#2196F3","cl_sun":"#FFC107","cl_moon":"#FFC107","cl_thund":"#FF5722","el_nme":3,"el_phw":3,"el_whr":3}'>
+          More forecasts: <a href="https://oneweather.org/calgary/30_days/" id="ww_cc758efd500b8_u" target="_blank">Calgary weather 30 days</a>
+        </div>
+        <script async src="https://app3.weatherwidget.org/js/?id=ww_cc758efd500b8"></script>
+      </div>
+    </div>
+
+    <div class="top-right" id="datetime"></div>
+  </div>
+
+  <script>
+    function updateClock() {
+      const now = new Date();
+      const time = now.toLocaleTimeString('en-US', {
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+        hour12: true
+      });
+      const date = now.toLocaleDateString('en-US', {
+        weekday: 'long',
+        month: 'long',
+        day: 'numeric'
+      });
+      document.getElementById('datetime').innerHTML = `${date}<br>${time}`;
+    }
+    updateClock();
+    setInterval(updateClock, 1000);
+  </script>
+
+  <div class="help-hero">
+    <h1>Help & Support</h1>
+    <h3>How can we help you today?</h3>
+  </div>
+
+  <div class="help-layout">
+
+    <div class="ticket-side-bar">
+      <a href="../HTML Code/home_screen.html" class="ticket-side-option">
+        <img src="../images/home_icon.png" alt="Home Icon">
+        <h3>HOME</h3>
+      </a>
+
+      <a href="../HTML Code/check_route_screen.html" class="ticket-side-option">
+        <img src="../images/route_icon.png" alt="Route Icon">
+        <h3>MAP</h3>
+      </a>
+
+      <a href="../HTML Code/schedule_screen.html" class="ticket-side-option">
+        <img src="../images/schedule_icon.png" alt="Schedule Icon">
+        <h3>SCHEDULE</h3>
+      </a>
+
+      <a href="../HTML Code/help_screen.html" class="ticket-side-option" style="box-shadow: 0 0 5px 0px; color: #CC1330;">
+        <img src="../images/help_icon.png" alt="Help Icon">
+        <h3>HELP</h3>
+      </a>
+
+      <a href="../HTML Code/home_screen_fr.html" class="ticket-side-option">
+        <img src="../images/language_icon.png" alt="Language Icon">
+        <h3>FRANÇAIS</h3>
+      </a>
+
+      <a onclick="history.back()" class="ticket-side-option">
+        <img src="../images/back_icon.png" alt="Back Icon">
+        <h3>PREVIOUS</h3>
+      </a>
+    </div>
+
+    <div class="accordion-container">
+      
+      <div class="accordion-card">
+        <h3 class="accordion-card-header">
+          How do I buy a ticket?
+          <span class="icon">+</span>
+        </h3>
+        <div class="accordion-card-content">
+          <p>Navigate to the ticket purchase screen by selecting "Buy Tickets" on the Home Screen.</p>
+        </div>
+      </div>
+
+      <div class="accordion-card">
+        <h3 class="accordion-card-header">
+          How do I plan a trip?
+          <span class="icon">+</span>
+        </h3>
+        <div class="accordion-card-content">
+          <p>Select "Check Route" or "Map" to use the trip planner and view the interactive map.</p>
+        </div>
+      </div>
+
+      <div class="accordion-card">
+        <h3 class="accordion-card-header">
+          I'd like to report a problem
+          <span class="icon">+</span>
+        </h3>
+        <div class="accordion-card-content">
+          <p>Please call 403-262-1000 or use the emergency phone located on the platform.</p>
+        </div>
+      </div>
+
+      <div class="accordion-card">
+        <h3 class="accordion-card-header">
+          Lost and Found
+          <span class="icon">+</span>
+        </h3>
+        <div class="accordion-card-content">
+          <p>Visit the Calgary Transit Customer Service Centre at 125 7 Ave SE.</p>
+        </div>
+      </div>
+
+      <div class="accordion-card">
+        <h3 class="accordion-card-header">
+          Fares & Pricing
+          <span class="icon">+</span>
+        </h3>
+        <div class="accordion-card-content">
+          <p>Adult Single: $3.80 | Youth Single: $2.55<br>Day Passes are also available.</p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <script>
+    const headers = document.querySelectorAll(".accordion-card-header");
+
+    headers.forEach(header => {
+      header.addEventListener("click", () => {
+        const content = header.nextElementSibling;
+        const icon = header.querySelector(".icon");
+
+        // Close others (optional - remove this loop if you want multiple open)
+        document.querySelectorAll(".accordion-card-content").forEach(item => {
+          if (item !== content) {
+            item.style.display = "none";
+            item.previousElementSibling.querySelector(".icon").classList.remove("toggleIcon");
+          }
+        });
+
+        // Toggle current
+        if (content.style.display === "block") {
+          content.style.display = "none";
+          icon.classList.remove("toggleIcon");
+        } else {
+          content.style.display = "block";
+          icon.classList.add("toggleIcon");
+        }
+      });
+    });
+  </script>
+
 </body>
 </html>
-

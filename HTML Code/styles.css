@@ -62,7 +62,7 @@ body {
 
   position: absolute;
   left: 50%;
-  top: -7px;
+  top: -15px;
   z-index: 50;
   pointer-events: auto !important;
 }
@@ -1641,8 +1641,11 @@ body {
 }
 
 .schedule-table tbody tr:hover {
-  background-color: #fff5f6; /* Very faint red hover */
+  background-color: #fff5f6; 
 }
+
+
+
 
 .schedule-table td {
   padding: 15px 20px;
@@ -1650,6 +1653,122 @@ body {
   color: #333;
   vertical-align: middle;
 }
+
+
+
+/* ===== Route Screen Search Bar ===== */
+.search-container {
+  display: flex;
+  width: 100%;
+  gap: 10px; 
+  margin-bottom: 15px;
+}
+
+.search-input {
+  flex: 1; /* Takes up all available space */
+  padding: 15px 20px;
+  font-size: 20px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.search-input:focus {
+  border-color: #CC1330; /* Turns red when you tap it */
+}
+
+.search-btn {
+  padding: 0 30px;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 20px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.search-btn:hover {
+  background-color: #CC1330;
+}
+
+
+/* ===== Route Screen Split Layout ===== */
+
+/* Container for the two columns */
+.route-main-split {
+  flex: 1;
+  display: flex;
+  flex-direction: row; 
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  padding: 20px;
+}
+
+/* Left Column: Planner Inputs */
+.planner-box {
+  background-color: #f9f9f9;
+  padding: 30px;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.planner-box h2 {
+  margin: 0 0 10px 0;
+  color: #CC1330;
+  font-size: 32px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.input-group label {
+  font-size: 18px;
+  font-weight: 700;
+  color: #333;
+}
+
+.fixed-input, .select-input {
+  padding: 12px;
+  font-size: 20px;
+  border: 2px solid #ccc;
+  border-radius: 6px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.fixed-input {
+  background-color: #e0e0e0;
+  color: #555;
+}
+
+.select-input:focus {
+  border-color: #CC1330;
+  outline: none;
+}
+
+/* Right Column: Map */
+.map-box {
+  border: 4px solid #CC1330; /* Red border around map */
+  border-radius: 12px;
+  overflow: hidden;
+  width: 400px;
+  height: 300px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  background: #eee;
+}
+
 
 /* Red box for Route Number */
 .route-box {
@@ -1733,4 +1852,243 @@ body {
   vertical-align: middle;
 }
 
+/* ===== Route Screen Split Layout ===== */
+
+/* Whole page */
+.route-page {
+  background: white;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Main container under the top bar */
+.route-layout {
+  flex: 1;
+  display: flex;
+  width: 98%;
+  max-width: 1900px;
+  margin: 30px auto 0;
+  gap: 20px;
+  align-items: stretch;
+  box-sizing: border-box;
+  padding-bottom: 20px;
+}
+
+/* Sidebar behaves normally here */
+.route-page .ticket-side-bar {
+  margin-top: 0;
+}
+
+/* Column with planner on top and map underneath */
+.route-main-split {
+  flex: 1;
+  display: flex;
+  flex-direction: column; 
+  gap: 18px;
+}
+
+/* --- 1. TOP: Plan Your Trip box (Horizontal) --- */
+.planner-box {
+  background: #f7f7f7;
+  border: 2px solid #d0d0d0;
+  border-radius: 12px;
+  padding: 10px 24px 16px; 
+  width: 100%;
+  box-sizing: border-box;
+  height: auto; 
+}
+
+.planner-box h2 {
+  margin: 0 0 0px 0;
+  font-size: 28px;
+  font-weight: 700;
+  color: #CC1330;
+}
+
+/* Container for the row of inputs */
+.planner-row {
+  display: flex;
+  align-items: flex-end; 
+  gap: 20px;
+}
+
+/* Inputs take up available space */
+.input-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.input-group label {
+  font-size: 18px;
+  margin-bottom: 4px;
+  font-weight: 700;
+  color: #333;
+}
+
+.fixed-input, 
+.select-input {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 18px;
+  border-radius: 6px;
+  border: 1px solid #bdbdbd;
+  box-sizing: border-box;
+  height: 45px; 
+
+.fixed-input {
+  background-color: #e0e0e0;
+  color: #555;
+}
+
+.select-input:focus {
+  border-color: #CC1330;
+  outline: none;
+}
+
+/* Button sits on the right of the row */
+.continue-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #CC1330;
+  color: white;
+  padding: 0 32px; 
+  height: 45px;    
+  font-size: 20px;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+  transition: transform 0.2s ease, background-color 0.2s ease;
+  white-space: nowrap;
+}
+
+.continue-button:hover {
+  background-color: #a30f26;
+  transform: translateY(-3px);
+  cursor: pointer;
+}
+
+/* --- 2. BOTTOM: Map area (Fills rest of space) --- */
+.map-box {
+  flex: 1;
+  width: 100%;
+  border: 2px solid #ccc;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  overflow: hidden;
+  position: relative;
+  background: #eee;
+}
+
+/* Iframe and images both fill the map box */
+.map-box iframe, 
+.map-box .destination-map {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  border: 0;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* ===== Help Screen ===== */
+
+.help-page {
+  background: white;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.help-hero {
+  width: 100%;
+  text-align: center;
+  padding: 30px 0 20px;
+  box-sizing: border-box;
+}
+
+.help-hero h1 {
+  margin: 0;
+  font-size: 48px;
+  font-weight: 700;
+  color: #111;
+}
+
+.help-hero h3 {
+  margin: 10px 0 0 0;
+  font-size: 22px;
+  color: #666;
+  font-weight: 400;
+}
+
+.help-layout {
+  flex: 1;
+  display: flex;
+  width: 98%;
+  max-width: 1900px;
+  margin: 0 auto;
+  gap: 40px;
+  align-items: flex-start;
+  box-sizing: border-box;
+}
+
+/* Accordion Styles */
+.accordion-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.accordion-card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #f9f9f9;
+}
+
+.accordion-card-header {
+  background-color: #e0e0e0;
+  padding: 20px;
+  margin: 0;
+  cursor: pointer;
+  position: relative;
+  font-size: 22px;
+  font-weight: 700;
+  transition: background-color 0.2s;
+}
+
+.accordion-card-header:hover {
+  background-color: #d0d0d0;
+}
+
+.accordion-card-header .icon {
+  position: absolute;
+  right: 20px;
+  font-size: 28px;
+  color: #CC1330;
+  transition: transform 0.3s;
+}
+
+.accordion-card-header .icon.toggleIcon {
+  transform: rotate(45deg);
+}
+
+.accordion-card-content {
+  display: none; 
+  padding: 20px;
+  background-color: white;
+  border-top: 2px solid #CC1330;
+  font-size: 20px;
+  line-height: 1.5;
+  color: #333;
+}
 
