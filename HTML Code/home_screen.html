@@ -18,7 +18,7 @@
 
     <div class="top-center">
       <img src="../images/map_icon.png" alt="Map Pin Icon" width="50">
-      <span>Brentwood Station</span>
+      <span data-i18n="location.brentwood">Brentwood Station</span>
 
       <div class="weather-mini">
         <div id="ww_cc758efd500b8" 
@@ -57,35 +57,35 @@
 
   <div class="home-hero">
     <div class="title-level">
-      <h1 class="welcome-title">Welcome</h1>
-      <h1 class="welcome-subtitle">What would you like to do today?</h1>
+      <h1 class="welcome-title" data-i18n="home.welcome">Welcome</h1>
+      <h1 class="welcome-subtitle" data-i18n="home.question">What would you like to do today?</h1>
     </div>
   </div>
 
   <div class="main-actions">
     <a href="../HTML Code/ticket_screen.html" class="large-button-container">
       <img src="../images/total_icon.png" alt="Ticket Icon">
-      <h2>Buy Tickets</h2>
+      <h2 data-i18n="home.buytickets">Buy Tickets</h2>
       <ul>
-        <li>  Single Ticket</li>
-        <li>  Day Pass</li>
-        <li>  Monthly Pass</li>
+        <li data-i18n="home.singleticket">  Single Ticket</li>
+        <li data-i18n="home.daypass">  Day Pass</li>
+        <li data-i18n="home.monthpass">  Monthly Pass</li>
       </ul>
     </a>
 
     <a href="../HTML Code/check_route_screen.html" class="large-button-container">
       <img src="../images/route_icon.png" alt="Route Icon">
-      <h2> Map</h2>
+      <h2 data-i18n="home.map"> Map</h2>
       <ul>
-        <li> View Map </li>
+        <li data-i18n="home.maptext"> View Map </li>
       </ul>
     </a>
 
     <a href="../HTML Code/schedule_screen.html" class="large-button-container">
       <img src="../images/schedule_icon.png" alt="Schedule Icon">
-      <h2>Check Timings</h2>
+      <h2 data-i18n="home.checksched">Check Timings</h2>
       <ul>
-        <li>  Find out when your bus is arriving</li>
+        <li data-i18n="home.checktext">  Find out when your bus is arriving</li>
       </ul>
     </a>
   </div>
@@ -94,7 +94,7 @@
   <a href="../HTML Code/payment_screen.html" 
      class="large-button-container" 
      id="quick-buy-1-adult">
-    <h2>Quick Buy: 1 Adult Ticket</h2>
+    <h2 data-i18n="home.shortcut">Quick Buy: 1 Adult Ticket</h2>
   </a>
 </div>
 
@@ -124,7 +124,6 @@
     }
   });
 </script>
-
-
+  <script src="translate.js"></script>
 </body>
 </html>

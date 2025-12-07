@@ -16,7 +16,7 @@
 
     <div class="top-center">
       <img src="../images/map_icon.png" alt="Map Pin Icon" width="50">
-      <span>Brentwood Station</span>
+      <span data-i18n="location.brentwood">Brentwood Station</span>
 
       <div class="weather-mini">
   <div id="ww_cc758efd500b8" 
@@ -62,56 +62,57 @@
   </script>
 
   <div class="payment-hero">
-    <h1 class="payment-title">How Would You Like To Pay?</h1>
+    <h1 class="payment-title" data-i18n="payment.header">How Would You Like To Pay?</h1>
   </div>
 
   <div class="payment-layout">
 
+    <!-- Side bar -->
     <div class="ticket-side-bar">
       <a href="../HTML Code/home_screen.html" class="ticket-side-option">
         <img src="../images/home_icon.png" alt="Home Icon">
-        <h3>HOME</h3>
+        <h3 data-i18n="sidebar.home">HOME</h3>
       </a>
 
       <a href="../HTML Code/check_route_screen.html" class="ticket-side-option">
         <img src="../images/route_icon.png" alt="Route Icon">
-        <h3>MAP</h3>
+        <h3 data-i18n="sidebar.route">MAP</h3>
       </a>
 
       <a href="../HTML Code/schedule_screen.html" class="ticket-side-option">
         <img src="../images/schedule_icon.png" alt="Schedule Icon">
-        <h3>SCHEDULE</h3>
+        <h3 data-i18n="sidebar.schedule">SCHEDULE</h3>
       </a>
 
       <a href="../HTML Code/help_screen.html" class="ticket-side-option">
         <img src="../images/help_icon.png" alt="Help Icon">
-        <h3>HELP</h3>
+        <h3 data-i18n="sidebar.help">HELP</h3>
       </a>
 
-      <a href="../HTML Code/home_screen_fr.html" class="ticket-side-option">
+      <button id="lang-toggle" class="ticket-side-option">
         <img src="../images/language_icon.png" alt="Language Icon">
-        <h3>FRANÇAIS</h3>
-      </a>
+        <h3 data-i18n="sidebar.lang"></h3>
+      </button>
 
       <a onclick="history.back()" class="ticket-side-option">
         <img src="../images/back_icon.png" alt="Back Icon">
-        <h3>PREVIOUS</h3>
+        <h3 data-i18n="sidebar.previous">PREVIOUS</h3>
       </a>
     </div>
 
     <div class="payment-content">
 
       <div class="cart-card">
-        <h2 class="cart-title">Your Cart</h2>
+        <h2 class="cart-title" data-i18n="payment.cart">Your Cart</h2>
 
         <div class="cart-table-wrap">
           <table class="cart-table">
             <thead>
               <tr>
                 <th>QTY</th>
-                <th>ITEM</th>
-                <th>UNIT</th>
-                <th>COST</th>
+                <th data-i18n="payment.item">ITEM</th>
+                <th data-i18n="payment.unit">UNIT</th>
+                <th data-i18n="payment.cost">COST</th>
               </tr>
             </thead>
             <tbody id="cart-body"></tbody>
@@ -124,25 +125,25 @@
             </tfoot>
           </table>
 
-          <div id="empty-cart" class="empty-cart" style="display:none;">
+          <div id="empty-cart" class="empty-cart" style="display:none;" data-i18n="payment.empty">
             No tickets selected yet.
           </div>
         </div>
-        <button id="clear-cart" class="clear-button">
+        <button id="clear-cart" class="clear-button" data-i18n="payment.clearcart">
         CLEAR CART
         </button>
 
-        <a href="ticket_screen.html" class="return-button">
+        <a href="ticket_screen.html" class="return-button" data-i18n="payment.return">
         RETURN TO TICKET SELECTION
         </a>
       </div>
 
       <div class="payment-options">
-        <a href="card_screen.html" class="pay-button">
+        <a href="card_screen.html" class="pay-button" data-i18n="payment.card">
           Credit/Debit Card
         </a>
 
-        <a href="cash_coin_screen.html" class="pay-button">
+        <a href="cash_coin_screen.html" class="pay-button" data-i18n="payment.cash">
           Cash/Coins
         </a>
       </div>
@@ -206,6 +207,7 @@
     renderCart();
     });
   </script>
+  <script src="translate.js"></script>
 
 </body>
 </html>

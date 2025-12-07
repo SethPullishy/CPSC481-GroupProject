@@ -68,33 +68,33 @@
     <!-- Side bar -->
     <div class="ticket-side-bar">
       <a href="../HTML Code/home_screen.html" class="ticket-side-option">
-        <img src="../images/home_icon.png">
-        <h3>HOME</h3>
+        <img src="../images/home_icon.png" alt="Home Icon">
+        <h3 data-i18n="sidebar.home">HOME</h3>
       </a>
 
       <a href="../HTML Code/check_route_screen.html" class="ticket-side-option">
-        <img src="../images/route_icon.png">
-        <h3>MAP</h3>
+        <img src="../images/route_icon.png" alt="Route Icon">
+        <h3 data-i18n="sidebar.route">MAP</h3>
       </a>
 
       <a href="../HTML Code/schedule_screen.html" class="ticket-side-option">
-        <img src="../images/schedule_icon.png">
-        <h3>SCHEDULE</h3>
+        <img src="../images/schedule_icon.png" alt="Schedule Icon">
+        <h3 data-i18n="sidebar.schedule">SCHEDULE</h3>
       </a>
 
       <a href="../HTML Code/help_screen.html" class="ticket-side-option">
-        <img src="../images/help_icon.png">
-        <h3>HELP</h3>
+        <img src="../images/help_icon.png" alt="Help Icon">
+        <h3 data-i18n="sidebar.help">HELP</h3>
       </a>
 
-      <a href="../HTML Code/home_screen_fr.html" class="ticket-side-option">
-        <img src="../images/language_icon.png">
-        <h3>FRANÇAIS</h3>
-      </a>
+      <button id="lang-toggle" class="ticket-side-option">
+        <img src="../images/language_icon.png" alt="Language Icon">
+        <h3 data-i18n="sidebar.lang"></h3>
+      </button>
 
       <a onclick="history.back()" class="ticket-side-option">
-        <img src="../images/back_icon.png">
-        <h3>PREVIOUS</h3>
+        <img src="../images/back_icon.png" alt="Back Icon">
+        <h3 data-i18n="sidebar.previous">PREVIOUS</h3>
       </a>
     </div>
 
@@ -102,15 +102,16 @@
     <div class="email-sent-center">
       <a href="../HTML Code/thank_you_screen.html" class="email-sent-card-link">
         <div class="email-sent-card">
-          <h1>Email sent</h1>
-          <p>Check your inbox</p>
-          <p class="email-sent-sub">Tap here to continue</p>
+          <h1 data-i18n="emailsent.confirm">Email sent</h1>
+          <p data-i18n="emailsent.subtext">Check your inbox</p>
+          <p class="email-sent-sub" data-i18n="emailsent.continue">Tap here to continue</p>
         </div>
       </a>
     </div>
 
   </div>
 
+  <script src="translate.js"></script>
 </body>
 </html>
 

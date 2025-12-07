@@ -17,7 +17,7 @@
 
     <div class="top-center">
       <img src="../images/map_icon.png" alt="Map Pin Icon" width="50">
-      <span>Brentwood Station</span>
+      <span data-i18n="location.brentwood">Brentwood Station</span>
 
       <div class="weather-mini">
   <div id="ww_cc758efd500b8" 
@@ -65,7 +65,7 @@
 
   <!-- Title -->
   <div class="ticket-hero">
-    <h1 class="ticket-title">Incoming Transit Options</h1>
+    <h1 class="ticket-title" data-i18n="schedule.incoming">Incoming Transit Options</h1>
   </div>
 
   <!-- Layout -->
@@ -75,32 +75,32 @@
     <div class="ticket-side-bar">
       <a href="../HTML Code/home_screen.html" class="ticket-side-option">
         <img src="../images/home_icon.png" alt="Home Icon">
-        <h3>HOME</h3>
+        <h3 data-i18n="sidebar.home">HOME</h3>
       </a>
 
       <a href="../HTML Code/check_route_screen.html" class="ticket-side-option">
         <img src="../images/route_icon.png" alt="Route Icon">
-        <h3>MAP</h3>
+        <h3 data-i18n="sidebar.route">MAP</h3>
       </a>
 
       <a href="../HTML Code/schedule_screen.html" class="ticket-side-option" style="box-shadow: 0 0 5px 0px; color: #CC1330;">
         <img src="../images/schedule_icon.png" alt="Schedule Icon">
-        <h3>SCHEDULE</h3>
+        <h3 data-i18n="sidebar.schedule">SCHEDULE</h3>
       </a>
 
       <a href="../HTML Code/help_screen.html" class="ticket-side-option">
         <img src="../images/help_icon.png" alt="Help Icon">
-        <h3>HELP</h3>
+        <h3 data-i18n="sidebar.help">HELP</h3>
       </a>
 
-      <a href="../HTML Code/home_screen_fr.html" class="ticket-side-option">
+      <button id="lang-toggle" class="ticket-side-option">
         <img src="../images/language_icon.png" alt="Language Icon">
-        <h3>FRANÇAIS</h3>
-      </a>
+        <h3 data-i18n="sidebar.lang"></h3>
+      </button>
 
       <a onclick="history.back()" class="ticket-side-option">
         <img src="../images/back_icon.png" alt="Back Icon">
-        <h3>PREVIOUS</h3>
+        <h3 data-i18n="sidebar.previous">PREVIOUS</h3>
       </a>
     </div>
       
@@ -108,17 +108,17 @@
     
     <div class="schedule-widget">
       <div class="schedule-header">
-        <h2>Live Departures</h2>
-        <p>Brentwood Station</p>
+        <h2 data-i18n="schedule.departures">Live Departures</h2>
+        <p data-i18n="location.brentwood">Brentwood Station</p>
       </div>
 
       <table class="schedule-table">
         <thead>
           <tr>
-            <th>Route</th>
+            <th data-i18n="schedule.route">Route</th>
             <th>Destination</th>
-            <th>Next Bus</th>
-            <th>Following</th>
+            <th data-i18n="schedule.next">Next Bus</th>
+            <th data-i18n="schedule.following">Following</th>
           </tr>
         </thead>
         <tbody>
@@ -127,7 +127,7 @@
             <td class="destination">Dalhousie Station</td>
             <td class="time-cell">
               <span class="time-live">4 min</span>
-              <span class="status status-late">Late 2m</span>
+              <span class="status status-late" data-i18n="schedule.latetag">Late 2m</span>
             </td>
             <td>12:48 PM</td>
           </tr>
@@ -136,7 +136,7 @@
             <td class="destination">Nolan Hill</td>
             <td class="time-cell">
               <span class="time-live">12 min</span>
-              <span class="status status-ontime">On Time</span>
+              <span class="status status-ontime" data-i18n="schedule.ontimetag">On Time</span>
             </td>
             <td>1:05 PM</td>
           </tr>
@@ -145,7 +145,7 @@
             <td class="destination">Bridgeland/Foothills</td>
             <td class="time-cell">
               <span class="time-text">12:55 PM</span>
-              <span class="status status-ontime">On Time</span>
+              <span class="status status-ontime" data-i18n="schedule.ontimetag">On Time</span>
             </td>
             <td>1:25 PM</td>
           </tr>
@@ -153,8 +153,8 @@
             <td><span class="route-box">305</span></td>
             <td class="destination">City Centre BRT</td>
             <td class="time-cell">
-              <span class="time-live">Now</span>
-              <span class="status status-early">Early 1m</span>
+              <span class="time-live" data-i18n="schedule.now">Now</span>
+              <span class="status status-early" data-i18n="schedule.earlytag">Early 1m</span>
             </td>
             <td>12:45 PM</td>
           </tr>
@@ -163,7 +163,7 @@
             <td class="destination">Greenwood/Bowness</td>
             <td class="time-cell">
               <span class="time-text">1:10 PM</span>
-              <span class="status status-late">Late 5m</span>
+              <span class="status status-late" data-i18n="schedule.latetag">Late 5m</span>
             </td>
             <td>1:40 PM</td>
           </tr>
@@ -172,5 +172,6 @@
     </div>
 
   </div>
+  <script src="translate.js"></script>
 </body>
 </html>

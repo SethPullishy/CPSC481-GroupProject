@@ -1,8 +1,27 @@
 {
     "en":{
-        "welcome": "Welcome"
-        
-        
+        "welcome": "Welcome",
+        "sidebar.home": "HOME",
+        "sidebar.route": "ROUTE",
+        "sidebar.schedule": "SCHEDULE",
+        "sidebar.help": "HELP",
+        "sidebar.lang": "FRANÇAIS",
+        "sidebar.previous": "PREVIOUS",
+
+        "help.header": "Help & Support",
+        "help.subheader": "How can we help you today?",
+        "faq.card1": "How do i buy a ticket?",
+        "faq.answer1": "Navigate to the ticket purchase screen with the button through the home screen. Select what you need, and pay.",
+        "faq.card2": "How do I plan a trip?",
+        "faq.answer2": "Navigate to the route planner by using the button in the left sidebar.",
+        "faq.card3": "I'd like to report a problem.",
+        "faq.answer3": "Call us at: 403-262-1000." ,
+        "faq.card4": "JI'd like to find the lost and found.",
+        "faq.answer4": "Lost and founds are only available at the city centre, Brentwood and Marlborough Bus Depots. Call the number 403-262-1000 to get more information.",
+        "faq.card5": "What are the fares and prices?",
+        "faq.answer5": "Check fares through the ticket purchase. You will be able to back out should you decide not to purchase.",
+        "faq.card6": "I want to contact Calgary Transit immediately.",
+        "faq.answer6": "Call us at: 403-262-1000."
     },
     
     "fr":{
@@ -11,10 +30,22 @@
         "sidebar.route": "ligne",
         "sidebar.schedule": "programme",
         "sidebar.help": "aide",
+        "sidebar.lang": "ENGLISH",
         "sidebar.previous": "précédent",
 
-        "help.header": "l'assistance",
-        "help.subheader": ""
-
+        "help.header": "l'Assistance",
+        "help.subheader": "Comment es-ce qu'on peut t'aider aujourd'hui?",
+        "faq.card1": "Comment est-ce je peut acheter des billets?",
+        "faq.answer1": "Navigez au écran avec le bouton. Ici, selctionez vos achats et payez",
+        "faq.card2": "Comment est-ce qu'on choisis une route?",
+        "faq.answer2": "Touchez le bouton 'Route' et navigez au ...",
+        "faq.card3": "Je veux signaler une problemme.",
+        "faq.answer3": "Appellez-nous à: 403-262-1000" ,
+        "faq.card4": "J'ai besoin du bureau des objets trouvés.",
+        "faq.answer4": "Le service des objets trouvés est uniquement disponible au centre-ville et aux gares routières de Brentwood et de Marlborough. Pour plus d'informations, veuillez composer le 403-262-1000.",
+        "faq.card5": "Que sont les prix des billets?",
+        "faq.answer5": "Verifiiez les prix lors de votre achat d'un billet",
+        "faq.card6": "Je veux contacter Calgary Transit immédiatement",
+        "faq.answer6": "Appelez-nous à: 403-262-1000"
     }
 }

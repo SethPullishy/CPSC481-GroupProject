@@ -17,7 +17,7 @@
 
     <div class="top-center">
       <img src="../images/map_icon.png" alt="Map Pin Icon" width="50">
-      <span>Brentwood Station</span>
+      <span data-i18n="location.brentwood">Brentwood Station</span>
 
       <div class="weather-mini">
   <div id="ww_cc758efd500b8" 
@@ -65,7 +65,7 @@
 
   <!-- Title -->
   <div class="receipt-email-hero">
-    <h1 class="receipt-email-title">Please type in your email</h1>
+    <h1 class="receipt-email-title" data-i18n="enteremail.header">Please type in your email</h1>
   </div>
 
   <!-- Layout -->
@@ -75,40 +75,39 @@
     <div class="ticket-side-bar">
       <a href="../HTML Code/home_screen.html" class="ticket-side-option">
         <img src="../images/home_icon.png" alt="Home Icon">
-        <h3>HOME</h3>
+        <h3 data-i18n="sidebar.home">HOME</h3>
       </a>
 
       <a href="../HTML Code/check_route_screen.html" class="ticket-side-option">
         <img src="../images/route_icon.png" alt="Route Icon">
-        <h3>ROUTE</h3>
+        <h3 data-i18n="sidebar.route">MAP</h3>
       </a>
 
       <a href="../HTML Code/schedule_screen.html" class="ticket-side-option">
         <img src="../images/schedule_icon.png" alt="Schedule Icon">
-        <h3>SCHEDULE</h3>
+        <h3 data-i18n="sidebar.schedule">SCHEDULE</h3>
       </a>
 
       <a href="../HTML Code/help_screen.html" class="ticket-side-option">
         <img src="../images/help_icon.png" alt="Help Icon">
-        <h3>HELP</h3>
+        <h3 data-i18n="sidebar.help">HELP</h3>
       </a>
 
-      <a href="../HTML Code/home_screen_fr.html" class="ticket-side-option">
+      <button id="lang-toggle" class="ticket-side-option">
         <img src="../images/language_icon.png" alt="Language Icon">
-        <h3>FRANÇAIS</h3>
-      </a>
+        <h3 data-i18n="sidebar.lang"></h3>
+      </button>
 
       <a onclick="history.back()" class="ticket-side-option">
         <img src="../images/back_icon.png" alt="Back Icon">
-        <h3>PREVIOUS</h3>
+        <h3 data-i18n="sidebar.previous">PREVIOUS</h3>
       </a>
     </div>
-
     <!-- Main content -->
     <div class="receipt-email-content">
       <div class="receipt-email-card">
 
-        <label for="email" class="receipt-email-label">Enter Email:</label>
+        <label for="email" class="receipt-email-label" data-i18n="enteremail.type">Enter Email:</label>
         <input
           type="text"
           id="email"
@@ -120,7 +119,7 @@
 
         <img src="../images/keyboard.png" alt="On-screen keyboard" class="receipt-email-keyboard">
 
-        <a href="../HTML Code/email_sent_screen.html" class="receipt-email-submit">
+        <a href="../HTML Code/email_sent_screen.html" class="receipt-email-submit" data-i18n="enteremail.submit">
           SUBMIT
         </a>
 
@@ -129,6 +128,7 @@
 
   </div>
 
+  <script src="translate.js"></script>
 </body>
 </html>
 

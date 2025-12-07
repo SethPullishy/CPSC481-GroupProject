@@ -16,7 +16,7 @@
 
     <div class="top-center">
       <img src="../images/map_icon.png" alt="Map Pin Icon" width="50">
-      <span>Brentwood Station</span>
+      <span data-i18n="location.brentwood">Brentwood Station</span>
 
       <div class="weather-mini">
         <div id="ww_cc758efd500b8" 
@@ -52,7 +52,7 @@
   </script>
 
   <div class="help-hero">
-    <h1>Help & Support</h1>
+    <h1 data-i18n="help.header">Help & Support</h1>
   </div>
 
   <div class="help-layout">
@@ -60,92 +60,80 @@
     <div class="ticket-side-bar">
       <a href="../HTML Code/home_screen.html" class="ticket-side-option">
         <img src="../images/home_icon.png" alt="Home Icon">
-        <h3>HOME</h3>
+        <h3 data-i18n="sidebar.home">HOME</h3>
       </a>
 
       <a href="../HTML Code/check_route_screen.html" class="ticket-side-option">
         <img src="../images/route_icon.png" alt="Route Icon">
-        <h3>MAP</h3>
+        <h3 data-i18n="sidebar.route"></h3>
       </a>
 
       <a href="../HTML Code/schedule_screen.html" class="ticket-side-option">
         <img src="../images/schedule_icon.png" alt="Schedule Icon">
-        <h3>SCHEDULE</h3>
+        <h3 data-i18n="sidebar.schedule">SCHEDULE</h3>
       </a>
 
       <a href="../HTML Code/help_screen.html" class="ticket-side-option" style="box-shadow: 0 0 5px 0px; color: #CC1330;">
         <img src="../images/help_icon.png" alt="Help Icon">
-        <h3>HELP</h3>
+        <h3 data-i18n="sidebar.help">HELP</h3>
       </a>
 
-      <a href="../HTML Code/home_screen_fr.html" class="ticket-side-option">
+      <!--works great, except the button has a black outline-->
+      <button id="lang-toggle" class="ticket-side-option">
         <img src="../images/language_icon.png" alt="Language Icon">
-        <h3>FRANÇAIS</h3>
-      </a>
+        <h3 data-i18n="sidebar.lang"></h3>
+      </button>
+
 
       <a onclick="history.back()" class="ticket-side-option">
         <img src="../images/back_icon.png" alt="Back Icon">
-        <h3>PREVIOUS</h3>
+        <h3 data-i18n="sidebar.previous">PREVIOUS</h3>
       </a>
     </div>
 
 <!--FAQ accordion menu-->
         <div class="accordion-container">
-            <h1>
-                How can we help today?
-            </h1>
+            <h1 data-i18n="help.subheader"></h1>
             <div class="accordion-card">
-                <h3 class="accordion-card-header">
-                    How do I buy a ticket?
+                <h3 class="accordion-card-header" data-i18n="faq.card1">
                     <span class="icon"> + </span>
                 </h3>
-                <p class="accordion-card-content">
-                    Navigate to the ticket purchase screen with the button through the home screen. Select what you need, and pay.
+                <p class="accordion-card-content" data-i18n="faq.answer1">
                 </p>
             </div>
             <div class="accordion-card">
-                <h3 class="accordion-card-header">
-                    How do I plan a trip?
+                <h3 class="accordion-card-header" data-i18n="faq.card2">
                     <span class="icon"> + </span>
                 </h3>
-                <p class="accordion-card-content">
-                    Naivgate to the route planner by using the button in the left sidebar.
+                <p class="accordion-card-content" data-i18n="faq.answer2">
                 </p>
             </div>
             <div class="accordion-card">
-                <h3 class="accordion-card-header">
-                    I'd like to report a problem.
+                <h3 class="accordion-card-header" data-i18n="faq.card3">
                     <span class="icon"> + </span>
                 </h3>
-                <p class="accordion-card-content">
-                    Call 403-262-1000.
+                <p class="accordion-card-content" data-i18n="faq.answer3">
                 </p>
             </div>
             <div class="accordion-card">
-                <h3 class="accordion-card-header">
-                    I'd like to find the lost and found.
+                <h3 class="accordion-card-header" data-i18n="faq.card4">
                     <span class="icon"> + </span>
                 </h3>
-                <p class="accordion-card-content">
-                    Lost and founds are only available at the city centre, Brentwood and Marlborough Bus Depots. Call the number 403-262-1000 to get more information.
+                <p class="accordion-card-content" data-i18n="faq.answer4">
                 </p>
             </div>
             <div class="accordion-card">
-                <h3 class="accordion-card-header">
-                    What are the fares and pricing?
+                <h3 class="accordion-card-header" data-i18n="faq.card5">
                     <span class="icon"> + </span>
                 </h3>
-                <p class="accordion-card-content">
-                    Check fares through the ticket purchase. You will be able to back out should you decide not to purchase.
+                <p class="accordion-card-content" data-i18n="faq.answer5">
                 </p>
             </div>
             <div class="accordion-card">
-                <h3 class="accordion-card-header">
-                    I want to contact Calgary Transit immediately
+                <h3 class="accordion-card-header" data-i18n="faq.card6">
                     <span class="icon"> + </span>
                 </h3>
-                <p class="accordion-card-content">
-                    Call us at 403-262-0000.
+                <p class="accordion-card-content" data-i18n="faq.answer6">
                 </p>
             </div>
 
@@ -176,6 +164,7 @@
       });
     });
   </script>
+  <script src="translate.js"></script>
 
 </body>
 </html>
