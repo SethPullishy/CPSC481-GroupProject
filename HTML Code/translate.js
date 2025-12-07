@@ -252,7 +252,7 @@ const translations = {
         "payment.item":"ARTICLE",
         "payment.unit":"UNITÉ",
         "payment.cost":"PRIX",
-        "payment.clearcart":"ViDER LE PANIER",
+        "payment.clearcart":"VIDER LE PANIER",
         "payment.return":"RETOUR À LA SÉLECTION DE TICKETS",
         "payment.cash":"Les espèces",
         "payment.card":"Crédit/Débit",
@@ -271,11 +271,11 @@ const translations = {
         "paycard.sub":"Traitement de votre paiement...",
     //receipt menu
         "receipt.header":"Comment souhaitez-vous recevoir votre reçu ?",
-        "receipt.print":"imprimé",
+        "receipt.print":"Imprimé",
         "receipt.email":"E-mail",
         "receipt.none":"Aucun",
         //print receipt
-        "print.header":"imprimant votre reçu",
+        "print.header":"Imprimant votre reçu",
         "print.processing":"Traitement...",
     //enter email
         "enteremail.header":"Veuillez saisir votre adresse e-mail :",
