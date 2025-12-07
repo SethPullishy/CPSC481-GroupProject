@@ -1,50 +1,4 @@
 /*
-let currentLang = localStorage.getItem("lang") || "en";//take user-selected lang, default to en
-let translations = {};
-
-//load JSON translations
-async function loadTranslations(){
-    const res = await fetch("lang.json");
-    translations = await res.json();
-    applyTranslations();
-}
-
-//fetching any marked text and replacing it?
-function applyTranslations(){
-    document.querySelectorAll("[data-i18n]").forEach(el => {
-        const key = el.getAttribute("data-i18n");
-        const text = translations[currentLang][key];
-
-//alternate js proposed by chat - what is it exactly?
-        if (!text) return;
-
-        // If element has an icon, preserve it
-        const icon = el.querySelector(".icon");
-        if (icon) {
-            el.innerHTML = text + icon.outerHTML;
-        } else {
-            el.textContent = text;
-        }
-
-        //if (text) el.childNodes[0].textContent = text;//limit target to first node (text)
-    });
-}
-
-//switch from en to fr and vice versa
-function toggleLanguage(){
-    currentLang = currentLang === "en" ? "fr" : "en";
-    localStorage.setItem("lang", currentLang);
-    applyTranslations();
-}
-
-//check for html file, load translations on button click
-document.addEventListener("DOMContentLoaded", () => {
-    loadTranslations();
-    const btn = document.getElementById("lang-toggle");
-    if (btn) btn.addEventListener("click", toggleLanguage);
-});
-*/
-/*
     FINAL TRANSLATION SYSTEM
     -------------------------------------------------------------------------------------------------------
     • No JSON file required
@@ -56,7 +10,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
 console.log("TRANSLATE JS LOADED");//debug thing
 
-let currentLang = localStorage.getItem("lang") || "en";
+let savedLang = localStorage.getItem("lang");
+const validLangs = ["en", "fr"];//force the code to only consider the two from the dict
+
+//let currentLang = localStorage.getItem("lang") || "en";
+let currentLang = validLangs.includes(savedLang) ? savedLang : "en";//default en
 
 // Translation dictionary (FULLY SELF-CONTAINED)
 const translations = {
@@ -128,11 +86,12 @@ const translations = {
         "payment.item":"ITEM",
         "payment.unit":"UNIT",
         "payment.cost":"COST",
+        "payment.totalcost":"Total Cost",
         "payment.clearcart":"CLEAR CART",
         "payment.return":"RETURN TO TICKET SELECTION",
         "payment.cash":"Cash/Coins",
         "payment.card":"Credit/Debit",
-        "payment.empty":"No ticets selected yet.",
+        "payment.empty":"No tickets selected yet.",
     //pay cash screen
         "paycash.header":"Insert Coins or Bills.",
         "paycash.processing":"Processing payment...",
@@ -179,8 +138,6 @@ const translations = {
         "home.checksched":"Check Timings",
         "home.checktext":"Find out when the next bus is arriving.",
         "home.shortcut":"Quick Buy: 1 Adult Ticket"
-
-        
 
     },
 
@@ -251,6 +208,7 @@ const translations = {
         "payment.cart":"Votre Panier",
         "payment.item":"ARTICLE",
         "payment.unit":"UNITÉ",
+        "payment.totalcost":"Total",
         "payment.cost":"PRIX",
         "payment.clearcart":"ViDER LE PANIER",
         "payment.return":"RETOUR À LA SÉLECTION DE TICKETS",
@@ -271,11 +229,11 @@ const translations = {
         "paycard.sub":"Traitement de votre paiement...",
     //receipt menu
         "receipt.header":"Comment souhaitez-vous recevoir votre reçu ?",
-        "receipt.print":"imprimé",
+        "receipt.print":"Imprimé",
         "receipt.email":"E-mail",
         "receipt.none":"Aucun",
         //print receipt
-        "print.header":"imprimant votre reçu",
+        "print.header":"Imprimant votre reçu...",
         "print.processing":"Traitement...",
     //enter email
         "enteremail.header":"Veuillez saisir votre adresse e-mail :",
@@ -303,8 +261,6 @@ const translations = {
         "home.checktext":"Renseignez-vous sur l'heure d'arrivée du prochain bus.",
         "home.shortcut":"Achat rapide: 1 ticket adulte"
 
-
-
     }
 };
 
@@ -313,7 +269,10 @@ const translations = {
    APPLY TRANSLATIONS
 ----------------------------------------- */
 function applyTranslations() {
+    if(!translations[currentLang]) return;//quit in case lang doesn't match translations
+
     const elements = document.querySelectorAll("[data-i18n]");
+//    let currentLocale = (currentLang === "en" ? "en-us" : "fr-CA");
 
     elements.forEach(el => {
         const key = el.getAttribute("data-i18n");
@@ -336,16 +295,42 @@ function applyTranslations() {
     });
 }
 
+//moved the updateclock function here to handle timezones
+function updateClock() {
+    const dt = document.getElementById("datetime");
+    if (!dt) return;  // If the page doesn't have a clock, skip safely
+
+    const now = new Date();
+
+    // maps fr to fr-CA
+    const locale = currentLang === "fr" ? "fr-CA" : "en-CA";
+
+    const time = now.toLocaleTimeString(locale, {
+        hour: "2-digit",
+        minute: "2-digit",
+        hour12: currentLang === "en"  // French uses 24h; English keeps 12h
+    });
+
+    const date = now.toLocaleDateString(locale, {
+        weekday: "long",
+        month: "long",
+        day: "numeric"
+    });
+
+    // Formatting: French expects date above time, same as your UI layout
+    dt.innerHTML = `${date}<br>${time}`;
+}
 
 /* -----------------------------------------
    LANGUAGE TOGGLE
 ----------------------------------------- */
 function toggleLanguage() {
     currentLang = currentLang === "en" ? "fr" : "en";
+    //currentLocale = currentLang === "en" ? "en-us" : "fr-CA";//should support switching time/date to french
     localStorage.setItem("lang", currentLang);
     applyTranslations();
+    updateClock();//updates the clock too
 }
-
 
 /* -----------------------------------------
    INITIALIZATION
@@ -353,6 +338,9 @@ function toggleLanguage() {
 document.addEventListener("DOMContentLoaded", () => {
     applyTranslations();
 
-    const btn = document.getElementById("lang-toggle");
+    updateClock();//start the clock immediately
+    setInterval(updateClock, 1000);//update every 1s
+
+    const btn = document.getElementById("lang-toggle");//link lang button
     if (btn) btn.addEventListener("click", toggleLanguage);
 });

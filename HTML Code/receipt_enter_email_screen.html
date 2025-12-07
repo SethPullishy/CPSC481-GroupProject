@@ -44,25 +44,6 @@
     <div class="top-right" id="datetime"></div>
   </div>
 
-  <script>
-    function updateClock() {
-      const now = new Date();
-      const time = now.toLocaleTimeString('en-US', {
-        hour: '2-digit',
-        minute: '2-digit',
-        hour12: true
-      });
-      const date = now.toLocaleDateString('en-US', {
-        weekday: 'long',
-        month: 'long',
-        day: 'numeric'
-      });
-      document.getElementById('datetime').innerHTML = `${date}<br>${time}`;
-    }
-    updateClock();
-    setInterval(updateClock, 1000);
-  </script>
-
   <!-- Title -->
   <div class="receipt-email-hero">
     <h1 class="receipt-email-title" data-i18n="enteremail.header">Please type in your email</h1>

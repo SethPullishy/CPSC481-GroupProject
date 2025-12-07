@@ -31,25 +31,7 @@
 
     <div class="top-right" id="datetime"></div>
   </div>
-
-  <script>
-    function updateClock() {
-      const now = new Date();
-      const time = now.toLocaleTimeString('en-US', {
-        hour: '2-digit',
-        minute: '2-digit',
-        hour12: true
-      });
-      const date = now.toLocaleDateString('en-US', {
-        weekday: 'long',
-        month: 'long',
-        day: 'numeric'
-      });
-      document.getElementById('datetime').innerHTML = `${date}<br>${time}`;
-    }
-    updateClock();
-    setInterval(updateClock, 1000);
-  </script>
+  <!--script is being handled in external js file now-->
 
   <div class="help-hero">
     <h1 data-i18n="help.header">Help & Support</h1>
@@ -164,7 +146,7 @@
       });
     });
   </script>
-  <script src="translate.js"></script>
 
+  <script src="translate.js"></script>
 </body>
 </html>

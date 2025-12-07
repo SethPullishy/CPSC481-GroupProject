@@ -43,25 +43,6 @@
     <div class="top-right" id="datetime"></div>
   </div>
 
-  <script>
-    function updateClock() {
-      const now = new Date();
-      const time = now.toLocaleTimeString('en-US', {
-        hour: '2-digit',
-        minute: '2-digit',
-        hour12: true
-      });
-      const date = now.toLocaleDateString('en-US', {
-        weekday: 'long',
-        month: 'long',
-        day: 'numeric'
-      });
-      document.getElementById('datetime').innerHTML = `${date}<br>${time}`;
-    }
-    updateClock();
-    setInterval(updateClock, 1000);
-  </script>
-
   <main class="thank-center">
     <div class="thank-card">
       <h1 data-i18n="thank.card">Thank you for using Calgary Transit</h1>
