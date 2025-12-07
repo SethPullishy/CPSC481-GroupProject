@@ -66,11 +66,11 @@ const translations = {
         "ticket.youthfare":"Youth",
         "ticket.youthfaredesc":"For riders ages 13 to 17.",
     //adult ticket screen
-        "adultticket.header":"Select Adult Ticket:",
-        "adultticket.toggle":"+ Select Youth Fare",
+        "adultticket.toggle":"+ Select Youth Fare",//the toggle on the adult screen
+        "adultticket.header":"Select <span class='adult-highlight'>Adult</span> Ticket:",
     //youth screen
-        "youthscreen.header":"Select Youth Ticket",
-        "youthticket.toggle":"+ Select Adult Fare",
+        "youthticket.header":"Select <span class='youth-highlight'>Youth</span> Ticket:",
+        "youthticket.toggle":"+ Select Adult Fare",//the toggle on the youth screen
     //ticket purchase screen text
         "ticket.single":"Single",
         "ticket.singletime":"Valid for 90 minutes",
@@ -189,11 +189,11 @@ const translations = {
         "ticket.youthfare":"Jeune",
         "ticket.youthfaredesc":"Pour les passagers âgés de 13 à 17 ans",
     //adult ticket
-        "youthticket.toggle":"+ Sélectionnez le Tarif Jeunesse",
-        "adultticket.header":"Selectionnez Vos Tickets:",
+        "youthticket.toggle":"+ Sélectionnez le Tarif Adulte",//otggle on the youth screen
+        "adultticket.header":"Selectionnez le tarif <span class ='adult-highlight'>Adulte:</span>",
     //youth tickets
-        "youthticket.header":"Selectionnez Vos Tickets:",
-        "adultticket.toggle":"+ Sélectionnez le Tarif Adulte",
+        "youthticket.header":"Selectionnez le tarif <span class='youth-highlight'>Jeune:</span>",
+        "adultticket.toggle":"+ Sélectionnez le Tarif Jeune",//toggle on the adult screen
     //generic ticket text
         "ticket.single":"Aller Simple",
         "ticket.singletime":"Valable pour 90 minutes",
@@ -283,15 +283,16 @@ function applyTranslations() {
 
         // If the element has an icon (.icon)
         const icon = el.querySelector(".icon");
-
         if (icon) {
             // Keep the icon on the right
             icon.remove(); // remove temporarily
-            el.textContent = text; // set translated text
+            //el.textContent = text; // set translated text
+            el.innerHTML = text;//accepts html
             el.appendChild(icon); // reinsert the icon
         } else {
             // Simple text element
-            el.textContent = text;
+            //el.textContent = text;
+            el.innerHTML = text;
         }
     });
 }
