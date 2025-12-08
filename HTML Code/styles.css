@@ -2360,3 +2360,9 @@ div.youth-bottom-option h3 {
   font-size: 15px;
   font-weight: 700;
 }
+
+
+.adult-hero,
+.youth-hero {
+  display: block;
+}
