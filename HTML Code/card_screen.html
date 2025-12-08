@@ -19,37 +19,74 @@
       <span data-i18n="location.brentwood">Brentwood Station</span>
 
       <div class="weather-mini">
-        <iframe
-          src="https://widgets.commoninja.com/iframe/d0542a0e-2b72-4421-9c7d-d52b9fb80201"
-          width="760"
-          height="165"
-          frameborder="0"
-          scrolling="no">
-        </iframe>
+        <div id="ww_cc758efd500b8" 
+             v="1.3" 
+             loc="id" 
+             a='{"t":"horizontal","lang":"en","sl_lpl":1,"ids":["wl3002"],
+                 "font":"Arial","sl_ics":"one_a","sl_sot":"celsius",
+                 "cl_bkg":"#FFFFFF00","cl_font":"rgba(255,255,255,1)",
+                 "cl_cloud":"#d4d4d4","cl_persp":"#2196F3",
+                 "cl_sun":"#FFC107","cl_moon":"#FFC107",
+                 "cl_thund":"#FF5722","el_nme":3,"el_phw":3,"el_whr":3}'>
+          More forecasts: 
+          <a href="https://oneweather.org/calgary/30_days/" 
+             id="ww_cc758efd500b8_u" target="_blank">
+             Calgary weather 30 days
+          </a>
+        </div>
+        <script async src="https://app3.weatherwidget.org/js/?id=ww_cc758efd500b8"></script>
       </div>
-    </div>
+      </div>
 
     <div class="top-right" id="datetime"></div>
   </div>
 
   <div style="position: absolute; left: 45%; bottom: 10%;" >
-      <img class="cash-cash" src="../images/visa.png" alt="Calgary Logo">
-      <img class="cash-cash" src="../images/MS.png" alt="Calgary Logo">
+      <img class="cash-cash" src="../images/visa.png" alt="Visa Logo">
+      <img class="cash-cash" src="../images/MS.png" alt="Mastercard Logo">
   </div>
 
   <main class="card-center">
-  <a href="../HTML Code/receipt_selection_screen.html" class="card-loader-link">
-    <div class="card-loader">
-      <h1 data-i18n="paycard.header">Please follow the instructions on the card reader</h1>
-      <p class="processing-text" data-i18n="paycard.sub">Processing your payment…</p>
+    <a href="../HTML Code/receipt_selection_screen.html" class="card-loader-link">
+      <div class="card-loader">
+        <h1 data-i18n="paycard.header">Please follow the instructions on the card reader</h1>
+        <p class="processing-text" data-i18n="paycard.sub">Processing your payment…</p>
 
-      <div class="loader-dots" aria-hidden="true">
-        <span></span><span></span><span></span>
+        <div class="loader-dots" aria-hidden="true">
+          <span></span><span></span><span></span>
+        </div>
       </div>
-    </div>
-  </a>
-</main>
+    </a>
+  </main>
 
-<script src="translate.js"></script>
+  <script src="translate.js"></script>
+
+  <script>
+    // Wait 3000 milliseconds (3 seconds), then go to the receipt screen
+    setTimeout(function() {
+      window.location.href = "../HTML Code/receipt_selection_screen.html";
+    }, 3000);
+  </script>
+
+  <script>
+    function updateClock() {
+      const now = new Date();
+      const time = now.toLocaleTimeString('en-US', {
+        hour: '2-digit',
+        minute: '2-digit',
+        hour12: true
+      });
+      const date = now.toLocaleDateString('en-US', {
+        weekday: 'long',
+        month: 'long',
+        day: 'numeric'
+      });
+      
+      document.getElementById('datetime').innerHTML = `${date}<br>${time}`;
+    }
+    updateClock();
+    setInterval(updateClock, 1000);
+  </script>
+
 </body>
 </html>

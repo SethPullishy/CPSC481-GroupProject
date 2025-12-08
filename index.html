@@ -52,7 +52,6 @@
     setInterval(updateClock, 1000);
   </script>
 
-<!--can't use translation code on an image - fix if time-->
   <div class="hero-container">
     <a href="HTML Code/home_screen.html">
       <img src="images/calgary_downtown.png" alt="Calgary Downtown">
@@ -77,45 +76,112 @@
           <h3 data-i18n="sidebar.help">HELP</h3>
         </a>
 
-<!--        <a href="HTML Code/home_screen_fr.html" class="side-bar-option">
-          <img src="images/language_icon.png" alt="Language Icon">
-          <h3 data-i18n="sidebar.lang">FRANÇAIS</h3>
-        </a>-->
-        <!--lang button streches to fill sidebar for some reason-->
-        <button id="lang-toggle" class="ticket-side-option">
+        <button id="lang-toggle" class="side-bar-option">
           <img src="images/language_icon.png" alt="Language Icon">
           <h3 data-i18n="sidebar.lang"></h3>
         </button>
       </div>
 
-      <img src="images/traintime.png" class="train-time-img" alt="Train Times">
+      <div class="train-schedule-list">
+        
+        <div class="train-card">
+          <div class="train-left">
+            <svg class="train-icon-svg" viewBox="0 0 24 24">
+              <path fill="white" d="M12 2c-4.42 0-8 .5-8 4v9.5C4 17.43 5.57 19 7.5 19L6 20.5v.5h2.23l2-2H14l2 2h2v-.5L16.5 19c1.93 0 3.5-1.57 3.5-3.5V6c0-3.5-3.58-4-8-4zM7.5 17c-.83 0-1.5-.67-1.5-1.5S6.67 14 7.5 14s1.5.67 1.5 1.5S8.33 17 7.5 17zm3.5-7H6V6h5v4zm2 0V6h5v4h-5zm3.5 7c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/>
+            </svg>
+            <span class="train-route-name">Tuscany</span>
+          </div>
+          <div class="train-right">
+            <div class="train-time-primary">4 <span class="train-time-unit">minutes</span></div>
+            <div class="train-time-secondary">15 minutes</div>
+          </div>
+        </div>
+
+        <div class="train-card">
+          <div class="train-left">
+            <svg class="train-icon-svg" viewBox="0 0 24 24">
+              <path fill="white" d="M12 2c-4.42 0-8 .5-8 4v9.5C4 17.43 5.57 19 7.5 19L6 20.5v.5h2.23l2-2H14l2 2h2v-.5L16.5 19c1.93 0 3.5-1.57 3.5-3.5V6c0-3.5-3.58-4-8-4zM7.5 17c-.83 0-1.5-.67-1.5-1.5S6.67 14 7.5 14s1.5.67 1.5 1.5S8.33 17 7.5 17zm3.5-7H6V6h5v4zm2 0V6h5v4h-5zm3.5 7c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/>
+            </svg>
+            <span class="train-route-name" style="font-size: 22px;">Somerset-Bridlewood</span>
+          </div>
+          <div class="train-right">
+            <div class="train-time-primary">6 <span class="train-time-unit">minutes</span></div>
+            <div class="train-time-secondary">12 minutes</div>
+          </div>
+        </div>
+
+      </div>
     </div>
 
     <div class="right-column">
-      <img src="images/waiting_bus_inf.png" alt="Bus Info">
+      <div class="bus-schedule-list">
+        
+        <div class="bus-card">
+          <div class="bus-left">
+            <span class="route-name">8 Foothills Medical Centre</span>
+          </div>
+          <div class="bus-right">
+            <div class="time-primary">3 <span class="time-unit">minutes</span></div>
+            <div class="time-secondary">12:58 PM</div>
+          </div>
+        </div>
+
+        <div class="bus-card">
+          <div class="bus-left">
+            <span class="route-name">303 Saddletowne</span>
+          </div>
+          <div class="bus-right">
+            <div class="time-primary">5 <span class="time-unit">minutes</span></div>
+            <div class="time-secondary">1:00 PM</div>
+          </div>
+        </div>
+
+        <div class="bus-card">
+          <div class="bus-left">
+            <span class="route-name">65 Downtown West</span>
+          </div>
+          <div class="bus-right">
+            <div class="time-primary">5 <span class="time-unit">minutes</span></div>
+            <div class="time-secondary">1:00 PM</div>
+          </div>
+        </div>
+
+        <div class="bus-card">
+          <div class="bus-left">
+            <span class="route-name">38 Temple</span>
+          </div>
+          <div class="bus-right">
+            <div class="time-primary">8 <span class="time-unit">minutes</span></div>
+            <div class="time-secondary">1:03 PM</div>
+          </div>
+        </div>
+
+      </div>
     </div>
   </div>
 
-  <img src="images/news.png" class="news-banner" alt="News banner">
+<div class="news-banner">
+    <h2 class="banner-title">Blue Line: Significant Delays</h2>
+    <p class="banner-text">Riders be advised that trains on the Blue Line are experiencing significant delays.</p>
+    <p class="banner-text">For the latest updates and service information, please visit calgarytransit.com/service-updates</p>
+  </div>
+  
   
   <script>
-  // keys you used for tickets
-  const TICKET_KEYS = [
-    "adult-single",
-    "adult-day",
-    "adult-monthly",
-    "youth-single",
-    "youth-day",
-    "youth-monthly"
-  ];
+    const TICKET_KEYS = [
+      "adult-single",
+      "adult-day",
+      "adult-monthly",
+      "youth-single",
+      "youth-day",
+      "youth-monthly"
+    ];
 
-  // clear them on load of the home screen
-  window.addEventListener("DOMContentLoaded", () => {
-    TICKET_KEYS.forEach(key => localStorage.removeItem(key));
-  });
-</script>
-<script src="HTML Code/translate.js"></script>
-
+    window.addEventListener("DOMContentLoaded", () => {
+      TICKET_KEYS.forEach(key => localStorage.removeItem(key));
+    });
+  </script>
+  <script src="HTML Code/translate.js"></script>
 
 </body>
 </html>

@@ -2,7 +2,7 @@
 html, body {
   width: 100%;
   height: 100%;
-  overflow: hidden;
+  overflow-x: hidden; 
 }
 
 body {
@@ -10,7 +10,7 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-/* ===== Top Bar (Shared) ===== */
+/* ===== Top Bar ===== */
 .top-bar {
   background-color: #CC1330;
   color: #f2f2f2;
@@ -43,23 +43,19 @@ body {
   line-height: 1.3;
 }
 
-
-/* Weather Widget Window */
+/* ===== Weather Widget ===== */
 .weather-mini {
   display: block;
   position: relative;
-
   margin-left: 130px;
   width: 300px;
   height: 80px;
-
   border-radius: 15px;
   background: transparent;
   border: none;
   box-shadow: none;
   overflow: hidden;
   flex-shrink: 0;
-
   position: absolute;
   left: 50%;
   top: -15px;
@@ -67,28 +63,22 @@ body {
   pointer-events: auto !important;
 }
 
-/* Weather widget contents */
 .weather-mini #ww_abe5a5917cfa1 {
   width: 1200px !important;
   height: 250px !important;
-
   transform: scale(0.28);
   transform-origin: top left;
-
   position: absolute;
   top: -15px;
   left: 0;
-
   font-size: 16px !important;
   color: white !important;
   display: block !important;
 }
 
-/* Hide the link text */
 .weather-mini a {
   display: none !important;
 }
-
 
 /* ===== Waiting Screen ===== */
 .hero-container img {
@@ -112,13 +102,20 @@ body {
   gap: 24px;
   padding: 20px 40px 0;
   box-sizing: border-box;
-  flex-wrap: nowrap;
+  width: 100%;
 }
 
 .left-column {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 0px;
+  flex: 0 0 auto; 
+}
+
+.right-column {
+  flex: 1; 
+  display: flex;
+  flex-direction: column;
 }
 
 .ticket-side-bar {
@@ -141,18 +138,27 @@ body {
 }
 
 .side-bar-option {
-  text-decoration: none;
-  text-align: center;
-  height: 100px;
+  box-sizing: border-box; 
   width: 148px;
+  height: 100px;
   margin-left: 20px;
   margin-bottom: 10px;
-  background-color: #ccc;
-  border-radius: 5px;
+  padding: 10px 0;
   display: flex;
-  flex-direction: column;
+  flex-direction: column; 
   align-items: center;
   justify-content: center;
+  background-color: #ccc;
+  border-radius: 5px;
+  color: black;
+  text-decoration: none; 
+  border: none;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: pointer;
+  -webkit-appearance: none; 
+  appearance: none;
+  outline: none;
   transition: background-color 0.15s ease, transform 0.1s ease, box-shadow 0.15s ease;
 }
 
@@ -160,43 +166,187 @@ body {
   background-color: #d6d6d6;
   transform: translateY(-2px);
   box-shadow: 0 3px 6px rgba(0,0,0,0.25);
-  cursor: pointer;
 }
 
 .side-bar-option img {
   width: 40px;
   height: 40px;
   margin-bottom: 6px;
+  display: block;
 }
 
 .side-bar-option h3 {
-  color: black;
   margin: 0;
   font-size: 15px;
+  color: black;
+  font-weight: 700;
 }
 
-.train-time-img {
-  width: 720px;
-  height: 230px !important;
-}
-
-.right-column img {
-  max-width: 700px;
-  max-height: 350px;
+/* ===== Waiting Screen Train Widget ===== */
+.train-schedule-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
   width: 100%;
-  height: auto;
-  display: block;
-  object-fit: contain;
+  margin-top: 25px; 
 }
 
+.train-card {
+  background-color: #CC1330; 
+  border-radius: 6px;
+  padding: 20px 25px; 
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: white;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.train-left {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.train-icon-svg {
+  width: 46px;
+  height: 46px;
+  min-width: 46px;
+}
+
+.train-route-name {
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.train-right {
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.train-time-primary {
+  font-size: 38px; 
+  font-weight: 700;
+  line-height: 1;
+  display: flex;
+  align-items: baseline;
+}
+
+.train-time-unit {
+  font-size: 15px;
+  font-weight: 400;
+  margin-left: 6px;
+  opacity: 0.9;
+}
+
+.train-time-secondary {
+  font-size: 17px;
+  font-weight: 500;
+  margin-top: 4px;
+  opacity: 0.9;
+}
+
+/* ===== Waiting Screen Bus Widget ===== */
+.bus-schedule-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  max-width: 100%; 
+  margin-top: 10px;
+}
+
+.bus-card {
+  background-color: white;
+  border-radius: 4px;
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px; 
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.bus-left {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.route-name {
+  font-size: 26px;
+  font-weight: 600;
+  color: black;
+  letter-spacing: -0.5px;
+}
+
+.bus-right {
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.time-primary {
+  font-size: 25px; 
+  font-weight: 700;
+  color: black;
+  line-height: 1;
+  display: flex;
+  align-items: baseline;
+  justify-content: flex-end; 
+}
+
+.time-unit {
+  font-size: 20px;
+  font-weight: 700;
+  color: #333;
+  margin-left: 8px; 
+}
+
+.time-secondary {
+  font-size: 18px;
+  color: #444;
+  margin-top: 4px;
+  font-weight: 500;
+}
+
+/* ===== News Banner ===== */
 .news-banner {
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
   height: 120px;
-  display: block;
+  background-color: #465EFD; 
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  box-sizing: border-box;
+  padding: 10px 20px;
   z-index: 100;
+  box-shadow: 0 -4px 10px rgba(0,0,0,0.1);
+}
+
+.banner-title {
+  font-size: 32px;
+  font-weight: 700;
+  margin: 0 0 5px 0;
+  line-height: 1.1;
+}
+
+.banner-text {
+  font-size: 18px;
+  margin: 2px 0;
+  font-weight: 400;
+  opacity: 0.95;
 }
 
 /* ===== Home Screen ===== */
@@ -300,8 +450,6 @@ body {
   padding-bottom: 10px;
 }
 
-
-
 .bottom-bar-button {
   text-decoration: none;
   flex: 1;
@@ -319,8 +467,7 @@ body {
   color: black;
 }
 
-
-/* Ticket screen */
+/* ===== Ticket Screen ===== */
 .ticket-page {
   background: white;
 }
@@ -348,6 +495,7 @@ body {
   box-sizing: border-box;
 }
 
+/* Sidebar Container (Vertical) */
 .ticket-side-bar {
   width: 120px;
   display: flex;
@@ -357,7 +505,28 @@ body {
   background-color: #f0f0f0;
   padding: 10px 0;
   flex-shrink: 0;
+  
+  /* FIXED: Removed negative margin so it doesn't jump up */
+  margin-top: 0; 
 }
+
+
+
+/* Specific fix for the Home/Welcome screen sidebar wrapper */
+.side-bar {
+  display: flex;
+  flex-direction: row; /* Horizontal on Home Screen */
+  align-items: center;
+  justify-content: center;      
+  gap: 15px;                    
+  border: 2px solid #ccc;
+  background-color: #f0f0f0;
+  padding: 10px 30px;
+  
+  /* Ensure no weird margins here either */
+  margin: 0; 
+}
+
 
 .ticket-side-option {
   text-decoration: none;
@@ -367,12 +536,10 @@ body {
   margin-bottom: 10px;
   border-radius: 5px;
   padding: 10px 0;
-
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
   transition: background-color 0.15s ease, transform 0.1s ease, box-shadow 0.15s ease;
 }
 
@@ -414,11 +581,9 @@ body {
   height: 300px;
   background-color: #dddddd;
   color: black;
-
   display: flex;
   flex-direction: column;
   justify-content: center;
-
   transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
@@ -441,8 +606,7 @@ body {
   font-size: 18px;
 }
 
-
-/* Adult ticket screen */
+/* ===== Adult Ticket Screen ===== */
 .adult-page {
   background: white;
   position: relative;
@@ -474,7 +638,7 @@ body {
   gap: 20px;
   align-items: flex-start;
   box-sizing: border-box;
-  padding-bottom: 110px; /* space for fixed bottom bar */
+  padding-bottom: 110px;
 }
 
 .adult-actions {
@@ -495,11 +659,9 @@ body {
   padding: 18px;
   text-align: center;
   box-sizing: border-box;
-
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-
   border-radius: 8px;
 }
 
@@ -552,57 +714,11 @@ body {
   text-align: center;
 }
 
-.adult-bottom-bar {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  gap: 20px;
 
-  border-top: 2px solid #ccc;
-  background-color: #f0f0f0;
-  padding: 10px 14px;
-  box-sizing: border-box;
-}
 
-.adult-bottom-option {
-  flex: 1;
-  text-decoration: none;
-  text-align: center;
-  background-color: #ccc;
-  border-radius: 6px;
-  padding: 10px 0;
-  color: black;
 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
 
-  transition: background-color 0.15s ease, transform 0.1s ease, box-shadow 0.15s ease;
-}
-
-.adult-bottom-option:hover {
-  background-color: #d6d6d6;
-  transform: translateY(-2px);
-  box-shadow: 0 3px 6px rgba(0,0,0,0.25);
-  cursor: pointer;
-}
-
-.adult-bottom-option img {
-  width: 40px;
-  height: 40px;
-  margin-bottom: 6px;
-}
-
-.adult-bottom-option h3 {
-  margin: 0;
-  font-size: 15px;
-  color: black;
-}
-
+/* ===== Youth Ticket Screen ===== */
 .youth-page {
   background: white;
   position: relative;
@@ -677,54 +793,8 @@ body {
   line-height: 1.6;
 }
 
-.youth-bottom-bar {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  border-top: 2px solid #ccc;
-  background-color: #f0f0f0;
-  padding: 10px 14px;
-  box-sizing: border-box;
-}
 
-.youth-bottom-option {
-  flex: 1;
-  text-decoration: none;
-  text-align: center;
-  background-color: #ccc;
-  border-radius: 6px;
-  padding: 10px 0;
-  color: black;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  transition: background-color 0.15s ease, transform 0.1s ease, box-shadow 0.15s ease;
-}
-
-.youth-bottom-option:hover {
-  background-color: #d6d6d6;
-  transform: translateY(-2px);
-  box-shadow: 0 3px 6px rgba(0,0,0,0.25);
-  cursor: pointer;
-}
-
-.youth-bottom-option img {
-  width: 40px;
-  height: 40px;
-  margin-bottom: 6px;
-}
-
-.youth-bottom-option h3 {
-  margin: 0;
-  font-size: 15px;
-  color: black;
-}
-
+/* ===== Payment Screen ===== */
 .payment-page {
   background: white;
   height: 100vh;
@@ -884,6 +954,7 @@ body {
   box-shadow: 0 3px 6px rgba(0,0,0,0.2);
 }
 
+/* ===== Card Processing Screen ===== */
 .card-page {
   background: #ffffff;
   height: 100vh;
@@ -934,7 +1005,6 @@ body {
   color: inherit;
 }
 
-
 .loader-dots {
   margin-top: 18px;
   display: flex;
@@ -959,8 +1029,7 @@ body {
   40% { transform: translateY(-8px); opacity: 1; }
 }
 
-
-/* Receipt selection screen */
+/* ===== Receipt Selection Screen ===== */
 .receipt-page {
   background: white;
   height: 100vh;
@@ -978,7 +1047,6 @@ body {
   font-size: 48px;
   font-weight: 700;
   margin-top: 50px; 
-
 }
 
 .receipt-layout {
@@ -1000,7 +1068,6 @@ body {
   padding: 20px 0;
   box-sizing: border-box;
   margin-top: 90px; 
-
 }
 
 .receipt-button {
@@ -1012,11 +1079,9 @@ body {
   height: 160px;
   background-color: #dddddd;
   color: black;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   border-radius: 8px;
   transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
 }
@@ -1036,7 +1101,7 @@ body {
   cursor: pointer;
 }
 
-/* Print receipt loading screen */
+/* ===== Print Receipt Loading Screen ===== */
 .print-page {
   background: #ffffff;
   height: 100vh;
@@ -1078,7 +1143,7 @@ body {
   font-weight: 700;
 }
 
-/* Thank you screen */
+/* ===== Thank You Screen ===== */
 .thank-page {
   background: #ffffff;
   height: 100vh;
@@ -1125,7 +1190,7 @@ body {
   color: #CC1330;
 }
 
-/* Receipt enter email screen */
+/* ===== Receipt Email Screen ===== */
 .receipt-email-page {
   background: #ffffff;
   height: 100vh;
@@ -1229,8 +1294,7 @@ body {
   cursor: pointer;
 }
 
-
-/* Email Sent Screen */
+/* ===== Email Sent Screen ===== */
 .email-sent-page {
   background: white;
   height: 100vh;
@@ -1301,7 +1365,7 @@ body {
   margin-top: 18px;
 }
 
-/* Cash / Coin Screen */
+/* ===== Cash / Coin Screen ===== */
 .cash-page {
   background: white;
   height: 100vh;
@@ -1394,17 +1458,18 @@ body {
   font-size: 18px;
   color: #666;
 }
+
 .cash-coin{
   width: 40px; 
   height: 40px;
 }
+
 .cash-cash{
   width: 70px; 
   height: 40px;
 }
 
-/* Payment error screen */
-
+/* ===== Payment Error Screen ===== */
 .error-word {
   color: #CC1330; 
   font-weight: 700;
@@ -1479,7 +1544,7 @@ body {
   max-width: 1500px;
 }
 
-/* Prevent text highlighting on tappable cash cards */
+/* Prevent text highlighting */
 .cash-card-link,
 .cash-card,
 .cash-card * {
@@ -1492,13 +1557,7 @@ body {
   -webkit-tap-highlight-color: transparent;
 }
 
-.train-time-img {
-  width: 800px;
-  height: 300px;
-}
-
-
-/* Check Route screen */
+/* ===== Route Screen ===== */
 .route-page {
   background: white;
   height: 100vh;
@@ -1587,7 +1646,6 @@ body {
 }
 
 /* ===== LIVE SCHEDULE WIDGET (Schedule Screen) ===== */
-
 .schedule-widget {
   background-color: white;
   border-radius: 16px;
@@ -1651,9 +1709,6 @@ body {
   background-color: #fff5f6; /* Very faint red hover */
 }
 
-
-
-
 .schedule-table td {
   padding: 15px 20px;
   font-size: 20px;
@@ -1661,18 +1716,16 @@ body {
   vertical-align: middle;
 }
 
-
-
 /* ===== Route Screen Search Bar ===== */
 .search-container {
   display: flex;
   width: 100%;
-  gap: 10px; /* Space between input and button */
-  margin-bottom: 15px; /* Space between search and map */
+  gap: 10px;
+  margin-bottom: 15px; 
 }
 
 .search-input {
-  flex: 1; /* Takes up all available space */
+  flex: 1; 
   padding: 15px 20px;
   font-size: 20px;
   border: 2px solid #ccc;
@@ -1682,7 +1735,7 @@ body {
 }
 
 .search-input:focus {
-  border-color: #CC1330; /* Turns red when you tap it */
+  border-color: #CC1330; 
 }
 
 .search-btn {
@@ -1701,17 +1754,14 @@ body {
   background-color: #CC1330;
 }
 
-
 /* ===== Route Screen Split Layout ===== */
-
-/* Container for the two columns */
 .route-main-split {
   flex: 1;
   display: flex;
-  flex-direction: row; /* Side by Side */
+  flex-direction: row; 
   justify-content: center;
   align-items: center;
-  gap: 50px; /* Space between inputs and map */
+  gap: 50px; 
   padding: 20px;
 }
 
@@ -1756,7 +1806,7 @@ body {
 }
 
 .fixed-input {
-  background-color: #e0e0e0; /* Greyed out to show it's fixed */
+  background-color: #e0e0e0; 
   color: #555;
 }
 
@@ -1767,15 +1817,14 @@ body {
 
 /* Right Column: Map */
 .map-box {
-  border: 4px solid #CC1330; /* Red border around map */
+  border: 4px solid #CC1330; 
   border-radius: 12px;
   overflow: hidden;
   width: 400px;
   height: 300px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-  background: #eee; /* Placeholder color while loading */
+  background: #eee; 
 }
-
 
 /* Red box for Route Number */
 .route-box {
@@ -1802,7 +1851,6 @@ body {
   position: relative;
 }
 
-/* Optional: Add a little "live" icon */
 .time-live::before {
   content: '•';
   color: #CC1330;
@@ -1860,8 +1908,6 @@ body {
 }
 
 /* ===== Route Screen Split Layout ===== */
-
-/* Whole page */
 .route-page {
   background: white;
   height: 100vh;
@@ -1869,7 +1915,6 @@ body {
   flex-direction: column;
 }
 
-/* Main container under the top bar */
 .route-layout {
   flex: 1;
   display: flex;
@@ -1882,12 +1927,10 @@ body {
   padding-bottom: 20px;
 }
 
-/* Sidebar behaves normally here */
 .route-page .ticket-side-bar {
   margin-top: 0;
 }
 
-/* Column with planner on top and map underneath */
 .route-main-split {
   flex: 1;
   display: flex;
@@ -1900,7 +1943,7 @@ body {
   background: #f7f7f7;
   border: 2px solid #d0d0d0;
   border-radius: 12px;
-  padding: 10px 24px 16px; /* Padding around contents */
+  padding: 10px 24px 16px; 
   width: 100%;
   box-sizing: border-box;
   height: auto; 
@@ -1913,14 +1956,12 @@ body {
   color: #CC1330;
 }
 
-/* Container for the row of inputs */
 .planner-row {
   display: flex;
   align-items: flex-end; 
   gap: 20px;
 }
 
-/* Inputs take up available space */
 .input-group {
   flex: 1;
   display: flex;
@@ -1955,7 +1996,6 @@ body {
   outline: none;
 }
 
-/* Button sits on the right of the row */
 .continue-button {
   display: flex;
   align-items: center;
@@ -1991,11 +2031,10 @@ body {
   background: #eee;
 }
 
-/* Iframe and images both fill the map box */
 .map-box iframe, 
 .map-box .destination-map {
   width: 100%;
-  height: 100%;
+  height: 130%;
   display: block;
   object-fit: cover;
   border: 0;
@@ -2006,7 +2045,6 @@ body {
 }
 
 /* ===== Help Screen ===== */
-
 .help-page {
   background: white;
   height: 100vh;
@@ -2074,7 +2112,6 @@ body {
   transition: background-color 0.2s;
 }
 
-
 .accordion-card-header:hover {
   background-color: #d0d0d0;
 }
@@ -2101,3 +2138,225 @@ body {
   color: #333;
 }
 
+
+.ticket-layout,
+.adult-layout,
+.youth-layout,
+.payment-layout,
+.route-layout,
+.schedule-layout,
+.help-layout,
+.receipt-layout,
+.receipt-email-layout,
+.email-sent-layout,
+.cash-layout,
+.payment-error-layout {
+  display: flex;
+  width: 98%;
+  max-width: 1900px;
+  
+  margin-top: 20px !important; 
+  margin-left: auto;
+  margin-right: auto;
+  
+  gap: 20px;
+  align-items: flex-start; 
+  padding-bottom: 20px;
+  box-sizing: border-box;
+}
+
+
+.ticket-side-bar {
+  width: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid #ccc;
+  background-color: #f0f0f0;
+  padding: 10px 0;
+  flex-shrink: 0;
+  margin-top: 0 !important; 
+}
+
+
+.adult-hero, .youth-hero, .ticket-hero, .payment-hero, .route-hero, .help-hero {
+  display: none; 
+}
+
+
+div.youth-bottom-option {
+  background-color: #e6e6e6; 
+  cursor: default;           
+  
+  transform: none !important;
+  transition: none !important;
+  box-shadow: none !important;
+}
+
+div.youth-bottom-option:hover {
+  background-color: #e6e6e6;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+div.youth-bottom-option h3 {  
+  color: #CC1330;    
+}
+
+.adult-bottom-bar,
+.youth-bottom-bar {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+
+  border-top: 2px solid #ccc;
+  background-color: #f0f0f0;
+  padding: 10px 14px;
+  box-sizing: border-box;
+  z-index: 1000;
+}
+
+.adult-bottom-option,
+.youth-bottom-option {
+  flex: 1;
+  text-decoration: none;
+  text-align: center;
+  
+  background-color: #ccc;
+  border-radius: 6px;
+  color: black;
+  
+  padding: 0px 0; 
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  transition: background-color 0.15s ease, transform 0.1s ease, box-shadow 0.15s ease;
+}
+
+/* Hover Effect for Clickable Buttons */
+a.adult-bottom-option:hover,
+a.youth-bottom-option:hover {
+  background-color: #d6d6d6;
+  transform: translateY(-2px);
+  box-shadow: 0 3px 6px rgba(0,0,0,0.25);
+  cursor: pointer;
+}
+
+.adult-bottom-option img,
+.youth-bottom-option img {
+  width: 30px;
+  height: 30px;
+  margin-bottom: 4px;
+  margin-top: 7px;
+  display: block;
+}
+
+.adult-bottom-option h3,
+.youth-bottom-option h3 {
+  margin: 5px;
+  font-size: 15px;
+  color: black;
+}
+
+
+div.adult-bottom-option,
+div.youth-bottom-option {
+  background-color: #e6e6e6; 
+  border: 2px solid #bbb;    
+  cursor: default;  
+  
+  transform: none !important;
+  transition: none !important;
+  box-shadow: none !important;
+}
+
+div.adult-bottom-option:hover,
+div.youth-bottom-option:hover {
+  background-color: #e6e6e6;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+div.adult-bottom-option h3,
+div.youth-bottom-option h3 {
+  font-size: 20px;   
+  color: #CC1330;    
+  font-weight: 800;
+  margin-top: 5px;
+}
+
+/* --- Hide icon--- */
+div.adult-bottom-option img,
+div.youth-bottom-option img {
+  display: none; 
+}
+
+div.adult-bottom-option h3,
+div.youth-bottom-option h3 {
+  font-size: 30px;   
+  color: #CC1330;    
+  font-weight: 800;
+  margin: 0;         
+}
+
+
+.ticket-side-option {
+  /* Layout & Size */
+  width: 80%;
+  text-align: center;
+  margin-bottom: 10px;
+  padding: 10px 0;
+  
+  /* Flexbox Alignment */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  
+  background-color: #ccc;
+  border-radius: 5px;
+  color: black;
+  text-decoration: none;
+  
+  border: none;           
+  font-family: inherit;   
+  font-size: inherit;     
+  cursor: pointer;      
+  -webkit-appearance: none; 
+  appearance: none;
+  outline: none;
+
+  transition: background-color 0.15s ease, transform 0.1s ease, box-shadow 0.15s ease;
+}
+
+/* Hover Effect */
+.ticket-side-option:hover {
+  background-color: #d6d6d6;
+  transform: translateY(-2px);
+  box-shadow: 0 3px 6px rgba(0,0,0,0.25);
+  cursor: pointer;
+}
+
+/* Icon Styling */
+.ticket-side-option img {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 6px;
+  display: block;
+}
+
+/* Text Styling */
+.ticket-side-option h3 {
+  color: black;
+  margin: 0;
+  font-size: 15px;
+  font-weight: 700;
+}
