@@ -18,9 +18,13 @@ The ticket screens will automatically add the total cost of the tickets, alond w
 
 The payment screen will simulate when a user has not added any tickets on the ticket screens. The clear cart will automatically remove all selected tickets in the cart.
 
-The card screen is simulating a payment process which would wait until the user finish using the card machine, which will be simulated by pressing on the center button.
+The cash screen is simulating the payment progress from the cash machine, which will be completed by pressing the center button.
 
-The print reciept screen is simulating the printing of reciept process which would wait until the reciept has been full printed by the reciept printing machine, which will be simulated by pressing on the center button.
+The cash option will always result in an error screen, and so, return to payment through the button on the bottom of the screen and procees to card payment to see the full successful flow of the kiosk.
+
+The card screen is simulating a payment process which would wait until the user finish using the card machine, which will be simulated by pressing on the center button or will automatically go to the next screen after 3 seconds.
+
+The print reciept screen is simulating the printing of reciept process which would wait until the reciept has been full printed by the reciept printing machine, which will be simulated by pressing on the center button or will automatically go to the next screen after 3 seconds.
 
 The french buttons will change the pages and the folling changes to french, which can be reverted by pressing the now changed english button and will remain in the french language until the thank you screen resets the kiosk.
 
