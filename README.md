@@ -16,7 +16,7 @@ The welcome screen presents 4 buttons for the user, Buy tickets, Map, Check timi
 
 The ticket screens will automatically add the total cost of the tickets, along with the respective ticket quantities.  Pressing on the + adds 1 ticket and - removes 1 ticket. The Youth/Adult screens can be switched with the "+ Select Youth/Adult tickets" button and the difference of the screens will be represented by the bolded "Select Youth/Adult Ticket" title.
 
-The payment screen will simulate when a user has not added any tickets on the ticket screens. The clear cart will automatically remove all selected tickets in the cart.
+The payment screen will simulate when a user has not added any tickets on the ticket screens. The clear cart will automatically remove all selected tickets in the cart and the return to ticket selection screen returns to ticket screen.
 
 The cash screen is simulating the payment progress from the cash machine, which will be completed by pressing the center button.
 
