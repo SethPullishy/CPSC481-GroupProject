@@ -60,11 +60,7 @@
     setInterval(updateClock, 1000);
   </script>-->
 
-  <div class="youth-hero">
-    <h1 data-i18n="youthticket.header">Select <span class="youth-highlight">Youth</span> Ticket</h1>
-  </div>
-
-  <div class="youth-layout">
+    <div class="youth-layout">
 
     <!-- Side bar -->
     <div class="ticket-side-bar">
@@ -99,53 +95,62 @@
       </a>
     </div>
 
-    <div class="youth-actions">
-      <div class="youth-card" data-price="2.55" data-key="youth-single">
-        <h2 data-i18n="ticket.single">Single</h2>
-        <ul>
-          <li data-i18n="ticket.singletime">Valid for 90 minutes</li>
-          <!--<li>One time use</li>-->
-          <li>$2.55</li>
-        </ul>
-
-        <div class="qty-widget">
-          <button class="qty-btn">-</button>
-          <p class="qty-read">0</p>
-          <button class="qty-btn">+</button>
-        </div>
+    <!-- Right side: title + cards -->
+    <div class="youth-main">
+      <div class="youth-hero">
+        <h1 data-i18n="youthticket.header">
+          Select <span class="youth-highlight">Youth</span> Ticket
+        </h1>
       </div>
 
-      <div class="youth-card" data-price="8.75" data-key="youth-day">
-        <h2 data-i18n="ticket.daypass">Day</h2>
-        <ul>
-          <li data-i18n="ticket.daytime">Valid until end of service that day</li>
-          <li>$8.75</li>
-        </ul>
+      <div class="youth-actions">
+        <div class="youth-card" data-price="2.55" data-key="youth-single">
+          <h2 data-i18n="ticket.single">Single</h2>
+          <ul>
+            <li data-i18n="ticket.singletime">Valid for 90 minutes</li>
+            <li>$2.55</li>
+          </ul>
 
-        <div class="qty-widget">
-          <button class="qty-btn">-</button>
-          <p class="qty-read">0</p>
-          <button class="qty-btn">+</button>
+          <div class="qty-widget">
+            <button class="qty-btn">-</button>
+            <p class="qty-read">0</p>
+            <button class="qty-btn">+</button>
+          </div>
         </div>
-      </div>
 
-      <div class="youth-card" data-price="86.00" data-key="youth-monthly">
-        <h2 data-i18n="ticket.monthpass">Monthly</h2>
-        <ul>
-          <li data-i18n="ticket.monthtime">Valid until end of current calendar month</li>
-          <li>$86.00</li>
-        </ul>
+        <div class="youth-card" data-price="8.75" data-key="youth-day">
+          <h2 data-i18n="ticket.daypass">Day</h2>
+          <ul>
+            <li data-i18n="ticket.daytime">Valid until end of service that day</li>
+            <li>$8.75</li>
+          </ul>
 
-        <div class="qty-widget">
-          <button class="qty-btn">-</button>
-          <p class="qty-read">0</p>
-          <button class="qty-btn">+</button>
+          <div class="qty-widget">
+            <button class="qty-btn">-</button>
+            <p class="qty-read">0</p>
+            <button class="qty-btn">+</button>
+          </div>
+        </div>
+
+        <div class="youth-card" data-price="86.00" data-key="youth-monthly">
+          <h2 data-i18n="ticket.monthpass">Monthly</h2>
+          <ul>
+            <li data-i18n="ticket.monthtime">Valid until end of current calendar month</li>
+            <li>$86.00</li>
+          </ul>
+
+          <div class="qty-widget">
+            <button class="qty-btn">-</button>
+            <p class="qty-read">0</p>
+            <button class="qty-btn">+</button>
+          </div>
         </div>
       </div>
     </div>
 
   </div>
 
+  
   <div class="youth-bottom-bar">
     <a href="../HTML Code/adult_ticket_screen.html" class="youth-bottom-option">
       <img src="../images/home_icon.png" alt="Adult Fare">

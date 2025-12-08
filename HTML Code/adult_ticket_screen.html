@@ -41,56 +41,58 @@
     <div class="top-right" id="datetime"></div>
   </div>
 
-  <div class="adult-hero">
-    <h1 data-i18n="adultticket.header">Select <span class="adult-highlight">Adult</span> Ticket</h1><!--figure how to translate-->
-  </div>
-
-  
-
   <div class="adult-layout">
 
-    <!-- Side bar -->
-    <div class="ticket-side-bar">
-      <a href="../HTML Code/home_screen.html" class="ticket-side-option">
-        <img src="../images/home_icon.png" alt="Home Icon">
-        <h3 data-i18n="sidebar.home">HOME</h3>
-      </a>
+  <!-- Side bar stays on the left, untouched -->
+  <div class="ticket-side-bar">
+    <a href="../HTML Code/home_screen.html" class="ticket-side-option">
+      <img src="../images/home_icon.png" alt="Home Icon">
+      <h3 data-i18n="sidebar.home">HOME</h3>
+    </a>
 
-      <a href="../HTML Code/check_route_screen.html" class="ticket-side-option">
-        <img src="../images/route_icon.png" alt="Route Icon">
-        <h3 data-i18n="sidebar.route">MAP</h3>
-      </a>
+    <a href="../HTML Code/check_route_screen.html" class="ticket-side-option">
+      <img src="../images/route_icon.png" alt="Route Icon">
+      <h3 data-i18n="sidebar.route">MAP</h3>
+    </a>
 
-      <a href="../HTML Code/schedule_screen.html" class="ticket-side-option">
-        <img src="../images/schedule_icon.png" alt="Schedule Icon">
-        <h3 data-i18n="sidebar.schedule">SCHEDULE</h3>
-      </a>
+    <a href="../HTML Code/schedule_screen.html" class="ticket-side-option">
+      <img src="../images/schedule_icon.png" alt="Schedule Icon">
+      <h3 data-i18n="sidebar.schedule">SCHEDULE</h3>
+    </a>
 
-      <a href="../HTML Code/help_screen.html" class="ticket-side-option">
-        <img src="../images/help_icon.png" alt="Help Icon">
-        <h3 data-i18n="sidebar.help">HELP</h3>
-      </a>
+    <a href="../HTML Code/help_screen.html" class="ticket-side-option">
+      <img src="../images/help_icon.png" alt="Help Icon">
+      <h3 data-i18n="sidebar.help">HELP</h3>
+    </a>
 
-      <button id="lang-toggle" class="ticket-side-option">
-        <img src="../images/language_icon.png" alt="Language Icon">
-        <h3 data-i18n="sidebar.lang"></h3>
-      </button>
+    <button id="lang-toggle" class="ticket-side-option">
+      <img src="../images/language_icon.png" alt="Language Icon">
+      <h3 data-i18n="sidebar.lang"></h3>
+    </button>
 
-      <a onclick="history.back()" class="ticket-side-option">
-        <img src="../images/back_icon.png" alt="Back Icon">
-        <h3 data-i18n="sidebar.previous">PREVIOUS</h3>
-      </a>
+    <a onclick="history.back()" class="ticket-side-option">
+      <img src="../images/back_icon.png" alt="Back Icon">
+      <h3 data-i18n="sidebar.previous">PREVIOUS</h3>
+    </a>
+  </div>
+
+  <!-- New right column: title + cards -->
+  <div class="adult-main">
+    <!-- Title -->
+    <div class="adult-hero">
+      <h1 data-i18n="adultticket.header">
+        Select <span class="adult-highlight">Adult</span> Ticket
+      </h1>
     </div>
 
+    <!-- Cards -->
     <div class="adult-actions">
       <div class="adult-card" data-price="3.80" data-key="adult-single">
         <h2 data-i18n="ticket.single">Single</h2>
         <ul>
           <li data-i18n="ticket.singletime">Valid for 90 minutes</li>
-          <!--<li>One time use</li>-->
           <li>$3.80</li>
         </ul>
-
         <div class="qty-widget">
           <button class="qty-btn">-</button>
           <p class="qty-read">0</p>
@@ -104,7 +106,6 @@
           <li data-i18n="ticket.daytime">Valid until end of service that day</li>
           <li>$11.95</li>
         </ul>
-
         <div class="qty-widget">
           <button class="qty-btn">-</button>
           <p class="qty-read">0</p>
@@ -118,7 +119,6 @@
           <li data-i18n="ticket.monthtime">Valid until end of current calendar month</li>
           <li>$118.00</li>
         </ul>
-
         <div class="qty-widget">
           <button class="qty-btn">-</button>
           <p class="qty-read">0</p>
@@ -126,8 +126,11 @@
         </div>
       </div>
     </div>
-
   </div>
+
+</div>
+
+
 
   <div class="adult-bottom-bar">
     <a href="../HTML Code/youth_ticket_screen.html" class="adult-bottom-option">

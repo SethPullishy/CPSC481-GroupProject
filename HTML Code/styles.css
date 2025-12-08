@@ -2360,9 +2360,24 @@ div.youth-bottom-option h3 {
   font-size: 15px;
   font-weight: 700;
 }
-
-
+.adult-hero, .youth-hero, .ticket-hero, .payment-hero, .route-hero, .help-hero {
+  display: none; 
+}
 .adult-hero,
 .youth-hero {
   display: block;
+}
+
+.adult-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.youth-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
 }
